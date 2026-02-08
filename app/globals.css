@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #9d174d;
+  /* Deep Burgundy Red */
+  --color-primary-hover: #831843;
+  --color-secondary: #f43f5e;
+  /* Vibrant Rose */
+  --color-accent: #fbbf24;
+  /* Golden Accent */
+
+  --font-inter: var(--font-inter);
+  --font-outfit: var(--font-outfit);
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    color: #1e293b;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Custom Components (Using Standard CSS for Reliability) */
+.glass {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-dark {
+  background-color: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(51, 65, 85, 0.3);
+}
+
+.premium-card {
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.premium-card:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.btn-primary {
+  padding: 1rem 2rem;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  border-radius: 1rem;
+  box-shadow: 0 10px 15px -3px rgba(157, 23, 77, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-hover);
+  box-shadow: 0 20px 25px -5px rgba(157, 23, 77, 0.4);
+}
+
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
+/* Custom Scroller */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.medical-gradient {
+  background: linear-gradient(135deg, #9d174d 0%, #f43f5e 100%);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #dc2626, #e11d48, #ef4444);
+}
