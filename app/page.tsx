@@ -277,11 +277,11 @@ export default function Home() {
             {/* Buttons - Smaller */}
             <div className="flex flex-col sm:flex-row gap-4 pt-1">
               <button className="px-6 py-3 bg-[#9d174d] hover:bg-[#831843] text-white font-bold text-sm rounded-xl shadow-lg shadow-red-500/20 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                Book Consultation <ArrowRightIcon className="w-4 h-4" />
+                Book Consultation <span className="w-4 h-4 flex items-center justify-center"><ArrowRightIcon /></span>
               </button>
               <button className="px-6 py-3 bg-white border border-gray-200 text-gray-800 font-bold text-sm rounded-xl hover:bg-gray-50 transition-all flex items-center justify-center gap-2 shadow-sm">
                 <div className="w-6 h-6 bg-red-50 rounded-full flex items-center justify-center text-[#9d174d]">
-                  <PlayIcon className="w-3 h-3" />
+                  <span className="w-3 h-3 flex items-center justify-center"><PlayIcon /></span>
                 </div>
                 Virtual Tour
               </button>
