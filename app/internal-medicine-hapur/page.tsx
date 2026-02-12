@@ -6,7 +6,7 @@ import { Stethoscope, Activity, ShieldCheck, Heart, UserCheck, Clock, ArrowRight
 
 export default function InternalMedicinePage() {
   return (
-    <div className="bg-white min-h-screen animate-page-enter mt-20">
+    <div className="bg-white min-h-screen animate-page-enter mt-32">
       {/* Hero Section */}
       <div className="relative h-[450px] md:h-[650px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">

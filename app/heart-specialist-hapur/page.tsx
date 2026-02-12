@@ -28,7 +28,7 @@ export default function HeartSpecialistPage() {
   };
 
   return (
-    <div className="bg-white min-h-screen animate-page-enter mt-20">
+    <div className="bg-white min-h-screen animate-page-enter mt-32">
       {/* Hero Section */}
       <div className="relative h-[450px] md:h-[650px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -193,7 +193,7 @@ export default function HeartSpecialistPage() {
         {/* Testimonials (Premium Carousal Style) */}
         <div className="mt-32">
           <div className="bg-gray-50 p-12 md:p-24 rounded-[5rem] relative text-center border border-gray-100 overflow-hidden group">
-            <div className="absolute top-0 left-0 w-64 h-64 bg-rose-500/5 rounded-full blur-3xl -ml-20 -mt-20"></div>
+            <div className="absolute top-0 left-0 w-64 h-64 bg-rose-500/5 rounded-full blur-3xl -ml-20 -mt-32"></div>
             <div className="text-[#9d174d] opacity-10 absolute top-10 left-1/2 -translate-x-1/2 font-serif text-[20rem] leading-none select-none">“</div>
 
             <div key={currentTestimonial} className="relative z-10 animate-page-enter">

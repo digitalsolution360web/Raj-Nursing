@@ -6,7 +6,7 @@ import { ArrowLeft, Award, Baby, Briefcase, Calendar, CheckCircle2, GraduationCa
 
 export default function DrSrishtiBhardwaj() {
     return (
-        <div className="bg-white min-h-screen animate-page-enter mt-20">
+        <div className="bg-white min-h-screen animate-page-enter mt-32">
             {/* Hero Section */}
             <div className="relative h-[400px] md:h-[500px] flex items-center overflow-hidden bg-gradient-to-br from-rose-900 via-pink-800 to-rose-900">
                 <div className="absolute inset-0 opacity-10">

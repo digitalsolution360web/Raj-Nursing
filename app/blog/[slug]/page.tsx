@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { Calendar, Facebook, Twitter, Linkedin, CheckCircle2, User } from "lucide-react";
+import { Calendar, Facebook, Twitter, Linkedin, CheckCircle2, User, Phone } from "lucide-react";
 
 const blogPosts = [
     {
@@ -47,6 +47,7 @@ const postData = {
     "diabetes-thyroid-clinic-hapur": {
         title: "Diabetes & Thyroid Clinic in Hapur",
         image: "/Thyroid.jpg",
+        date: "13-11-2025",
         content: (
             <div className="space-y-8 text-gray-700 leading-relaxed font-medium text-lg">
                 <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
@@ -81,7 +82,8 @@ const postData = {
 
                 <h3 className="text-3xl font-bold text-gray-900 pt-8">Why Raj Nursing Home for Thyroid and Diabetes Treatment in Hapur?</h3>
                 <p>We understand every result, symptom, and treatment assessment of thyroid and diabetes issues you are facing, our first priority is taking care for our patients. Our multidisciplined approach combines when with skilled specialists, surgeons, and nutritionists to provide any level service.</p>
-                <div className="grid gap-6 bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                <div className="bg-slate-50 rounded-3xl p-8 border-l-8 border-[#800020] shadow-sm space-y-4">
+                    <p className="font-bold text-gray-900 text-xl mb-2">Our Key Differentiators:</p>
                     <p><strong>Personalized Manifestations and Meetings:</strong> We treat patients above their thoughts and work accordingly to provide personalized services.</p>
                     <p><strong>Individualized Treatment:</strong> Every patient gets the right treatment matching their condition for medication, including diabetes and thyroid.</p>
                     <p><strong>Age Group Focus:</strong> Doctors at Raj Nursing Home are experts in endocrinology, treating patients of all ages.</p>
@@ -112,6 +114,7 @@ const postData = {
     "best-gynecologist-hapur": {
         title: "Best Gynaecologist in Hapur",
         image: "/Diagnostic.jpg",
+        date: "21-06-2025",
         content: (
             <div className="space-y-8 text-gray-700 leading-relaxed font-medium text-lg">
                 <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
@@ -156,10 +159,12 @@ const postData = {
                     ))}
                 </div>
 
-                <div className="bg-[#800020]/5 p-8 rounded-[2rem] border-l-8 border-[#800020] mt-12">
-                    <h3 className="text-2xl font-black text-gray-900 mb-4">Book Your Appointment Today</h3>
-                    <p className="font-semibold mb-6">Ensure the best care for your reproductive and overall women's health by scheduling a consultation with Dr. Srishti Bhardwaj, the leading gynaecologist in Hapur.</p>
-                    <Link href="/contact" className="inline-block bg-[#800020] text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest hover:bg-black transition-all">
+                <div className="bg-slate-50 p-10 rounded-[2.5rem] border-l-8 border-[#800020] shadow-sm relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-[#800020]/5 rounded-full -mr-16 -mt-16"></div>
+                    <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-4">Book Your Appointment Today</h3>
+                    <p className="font-bold text-gray-700 mb-8 text-lg">Ensure the best care for your reproductive and overall women's health by scheduling a consultation with Dr. Srishti Bhardwaj, the leading gynaecologist in Hapur.</p>
+                    <Link href="/contact" className="inline-flex items-center gap-3 bg-[#800020] text-white px-10 py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-black transition-all shadow-lg">
+                        <Phone className="w-5 h-5" />
                         Schedule Consultation
                     </Link>
                 </div>
@@ -169,6 +174,7 @@ const postData = {
     "pregnancy-ultrasound-guide-hindi": {
         title: "गर्भावस्था में अल्ट्रासाउंड क्यों जरूरी है? हापुड़ की महिलाओं के लिए गाइड",
         image: "/india-doctor.jpg",
+        date: "19-06-2025",
         content: (
             <div className="space-y-10 text-gray-700 leading-relaxed font-medium text-lg">
                 <div className="bg-rose-50 p-8 rounded-3xl border-2 border-rose-100 italic">
@@ -268,6 +274,7 @@ const postData = {
     "laparoscopic-hapur": {
         title: "Laproscpic in Hapur",
         image: "/laparoscopic.jpg",
+        date: "15-06-2025",
         content: (
             <div className="space-y-8 text-gray-700 leading-relaxed font-medium text-lg">
                 <h3 className="text-2xl font-black text-gray-900">Why do we use it?</h3>
@@ -280,6 +287,7 @@ const postData = {
     "ultrasound-advanced-diagnostic-hapur": {
         title: "Ultrasound & Imaging – Ultrasound & Imaging in Hapur",
         image: "/ultrasound.jpg",
+        date: "15-06-2025",
         content: (
             <div className="space-y-12 text-gray-700 leading-relaxed font-medium text-lg">
                 <section className="space-y-6">
@@ -399,58 +407,112 @@ export default function BlogDetail() {
     }
 
     return (
-        <div className="bg-white min-h-screen animate-page-enter mt-20">
-            {/* Hero Section */}
-            <div className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-gradient-to-r from-[#800020] via-[#9d174d] to-[#800020]">
-                <div className="absolute inset-0 opacity-10">
-                    <Image src="/raj/banner2.webp" alt="Blog" fill className="object-cover" />
-                </div>
-                <div className="container mx-auto px-6 z-10 relative">
-                    <div className="max-w-screen-2xl mx-auto">
-                        <h1 className="text-3xl md:text-5xl font-black text-white mb-4 line-clamp-1">
+        <div className="bg-slate-50/50 min-h-screen animate-page-enter mt-32 pb-20">
+            {/* Main Content Area */}
+            <div className="max-w-7xl mx-auto px-4 md:px-6 py-12">
+                <div className="flex flex-col lg:flex-row gap-10">
+
+                    {/* Left Column: Article */}
+                    <article className="flex-1 bg-white rounded-[2rem] p-6 md:p-10 shadow-sm border border-gray-100">
+                        {/* Main Image */}
+                        <div className="relative w-full aspect-[16/9] md:aspect-[21/10] rounded-3xl overflow-hidden mb-8 shadow-md">
+                            <Image
+                                src={currentPost.image}
+                                alt={currentPost.title}
+                                fill
+                                className="object-cover"
+                            />
+                        </div>
+
+                        {/* Meta Information */}
+                        <div className="flex items-center gap-6 mb-6 text-sm font-bold text-gray-500">
+                            <div className="flex items-center gap-2">
+                                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[#800020]">
+                                    <User className="w-4 h-4" />
+                                </div>
+                                <span>ADMIN</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[#800020]">
+                                    <Calendar className="w-4 h-4" />
+                                </div>
+                                <span>{currentPost.date || "10 JUL 2025"}</span>
+                            </div>
+                        </div>
+
+                        {/* Title */}
+                        <h1 className="text-3xl md:text-5xl font-black text-gray-900 mb-8 leading-tight">
                             {currentPost.title}
                         </h1>
-                        <nav className="flex items-center text-sm text-white/90 font-semibold">
-                            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-                            <span className="mx-2">/</span>
-                            <Link href="/blog" className="hover:text-white transition-colors">Blog Detail</Link>
-                        </nav>
-                    </div>
-                </div>
-            </div>
 
-            <div className="max-w-screen-2xl mx-auto px-6 py-12 md:py-20">
-                <div className="grid lg:grid-cols-[1fr,350px] gap-12">
-                    <article className="space-y-10">
-                        <div className="relative h-[400px] md:h-[550px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
-                            <Image src={currentPost.image} alt={currentPost.title} fill className="object-cover" />
+                        {/* Content */}
+                        <div className="prose prose-lg max-w-none">
+                            {currentPost.content}
                         </div>
-                        {currentPost.content}
                     </article>
 
-                    <aside className="space-y-12">
-                        <div className="bg-white rounded-3xl p-8 border border-gray-100 shadow-xl sticky top-32">
-                            <h3 className="text-xl font-black text-gray-900 mb-8 flex items-center gap-3">
-                                <div className="w-2 h-8 bg-[#9d174d] rounded-full"></div>
-                                LATEST POST
-                            </h3>
+                    {/* Right Column: Sidebar */}
+                    <aside className="w-full lg:w-[380px] space-y-8">
+
+                        {/* Search Blogs */}
+                        <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                            <h3 className="text-xl font-black text-gray-900 mb-6">Search Blogs</h3>
+                            <div className="relative">
+                                <input
+                                    type="text"
+                                    placeholder="Ask a question..."
+                                    className="w-full bg-slate-50 border border-gray-100 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#800020]/20 transition-all font-bold placeholder:text-gray-400"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Recent Posts */}
+                        <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                            <h3 className="text-xl font-black text-gray-900 mb-8">Recent Posts</h3>
                             <div className="space-y-6">
                                 {blogPosts.map((post) => (
-                                    <Link key={post.id} href={`/blog/${post.slug}`} className="group flex gap-4 items-center">
-                                        <div className="relative w-20 h-20 rounded-2xl overflow-hidden shrink-0">
-                                            <Image src={post.image} alt={post.title} fill className="object-cover group-hover:scale-110 transition-transform duration-500" />
+                                    <Link key={post.id} href={`/blog/${post.slug}`} className="group flex gap-4 items-start">
+                                        <div className="relative w-20 h-20 rounded-2xl overflow-hidden shrink-0 shadow-sm">
+                                            <Image
+                                                src={post.image}
+                                                alt={post.title}
+                                                fill
+                                                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                                            />
                                         </div>
-                                        <div className="space-y-1">
-                                            <h4 className="text-sm font-bold text-gray-800 group-hover:text-[#9d174d] transition-colors line-clamp-2 leading-snug">
+                                        <div className="space-y-1.5 flex-1">
+                                            <h4 className="text-[15px] font-black text-gray-900 group-hover:text-[#800020] transition-colors line-clamp-2 leading-tight">
                                                 {post.title}
                                             </h4>
-                                            <p className="text-[10px] text-gray-400 font-black uppercase tracking-widest flex items-center gap-1">
-                                                <Calendar className="w-3 h-3" />
-                                                Date: {post.date}
+                                            <p className="text-[11px] text-gray-500 font-bold uppercase tracking-wider">
+                                                {post.date}
                                             </p>
                                         </div>
                                     </Link>
                                 ))}
+                            </div>
+                        </div>
+
+                        {/* CTA Card */}
+                        <div className="bg-[#0c4a4e] rounded-3xl p-10 text-white relative overflow-hidden shadow-xl">
+                            {/* Background Pattern */}
+                            <div className="absolute inset-0 opacity-10">
+                                <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
+                            </div>
+
+                            <div className="relative z-10">
+                                <h3 className="text-2xl font-black mb-4 leading-tight">
+                                    Ready for your best health journey?
+                                </h3>
+                                <p className="text-teal-100 font-medium mb-8 text-sm leading-relaxed">
+                                    Join 1000+ happy patients at Raj Nursing Home's most trusted clinic.
+                                </p>
+                                <Link
+                                    href="/contact"
+                                    className="block w-full bg-[#4fd1c5] text-[#0c4a4e] text-center py-4 rounded-xl font-black uppercase tracking-widest hover:bg-white transition-all shadow-lg"
+                                >
+                                    Book Appointment
+                                </Link>
                             </div>
                         </div>
 

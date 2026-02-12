@@ -44,9 +44,9 @@ const blogPosts = [
 
 export default function BlogPage() {
     return (
-        <div className="bg-white min-h-screen animate-page-enter mt-20">
-            {/* Hero Section */}
-            <div className="relative h-[250px] md:h-[300px] flex items-center overflow-hidden bg-gradient-to-r from-[#800020] via-[#9d174d] to-[#800020]">
+        <div className="bg-slate-50/50 min-h-screen animate-page-enter mt-32 pb-20">
+            {/* Header Section */}
+            <div className="bg-[#800020] text-white py-20 px-6 relative overflow-hidden">
                 <div className="absolute inset-0 opacity-10">
                     <Image
                         src="/raj/banner2.webp"
@@ -55,57 +55,61 @@ export default function BlogPage() {
                         className="object-cover"
                     />
                 </div>
-
-                <div className="container mx-auto px-6 z-10 relative">
-                    <div className="max-w-screen-2xl mx-auto">
-                        <h1 className="text-4xl md:text-6xl font-black text-white mb-4">
-                            Blog
-                        </h1>
-                        <nav className="flex items-center text-sm text-white/90 font-semibold">
-                            <Link href="/" className="hover:text-white transition-colors">Home</Link>
-                            <span className="mx-2">/</span>
-                            <span className="text-white">Blog</span>
-                        </nav>
-                    </div>
+                <div className="max-w-7xl mx-auto relative z-10 text-center">
+                    <h1 className="text-4xl md:text-6xl font-black mb-6">Health Insights & News</h1>
+                    <p className="text-xl text-rose-100 font-medium max-w-2xl mx-auto">
+                        Stay updated with the latest health tips, medical advancements, and news from Raj Nursing Home.
+                    </p>
                 </div>
             </div>
 
-            {/* Main Content */}
-            <div className="max-w-screen-2xl mx-auto px-6 py-16 md:py-24">
-                {/* Section Header */}
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl md:text-5xl font-black text-gray-900">
-                        News and Health Tips
-                    </h2>
-                    <div className="h-1 w-24 bg-[#9d174d] mx-auto mt-6 rounded-full"></div>
+            {/* Breadcrumbs */}
+            <div className="bg-white border-b border-gray-100 py-4 px-6 mb-12">
+                <div className="max-w-7xl mx-auto">
+                    <nav className="flex items-center text-sm font-bold text-gray-500">
+                        <Link href="/" className="hover:text-[#800020] transition-colors">Home</Link>
+                        <span className="mx-3 text-gray-300">/</span>
+                        <span className="text-[#800020]">Blog</span>
+                    </nav>
                 </div>
+            </div>
 
-                {/* Blog Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Blog Grid */}
+            <div className="max-w-7xl mx-auto px-6">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {blogPosts.map((post) => (
                         <Link
                             key={post.id}
                             href={`/blog/${post.slug}`}
-                            className="group bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+                            className="group bg-white rounded-[2rem] overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2 flex flex-col"
                         >
-                            {/* Image */}
-                            <div className="relative h-60 overflow-hidden">
+                            {/* Image Container */}
+                            <div className="relative h-64 overflow-hidden">
                                 <Image
                                     src={post.image}
                                     alt={post.title}
                                     fill
                                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
+                                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-[#800020] px-4 py-2 rounded-xl text-xs font-black shadow-sm">
+                                    HEALTH TIPS
+                                </div>
                             </div>
 
-                            {/* Content area matching screenshot (gray background) */}
-                            <div className="p-6 bg-gray-100/80 min-h-[140px] flex flex-col justify-center">
-                                <h3 className="text-xl font-bold text-[#8a143d] leading-snug line-clamp-2 mb-2">
+                            {/* Content area */}
+                            <div className="p-8 flex-1 flex flex-col">
+                                <div className="flex items-center gap-2 mb-4 text-xs font-black text-gray-400 uppercase tracking-widest">
+                                    <Calendar className="w-3.5 h-3.5" />
+                                    {post.date}
+                                </div>
+                                <h3 className="text-xl md:text-2xl font-black text-gray-900 leading-tight mb-4 group-hover:text-[#800020] transition-colors line-clamp-2">
                                     {post.title}
                                 </h3>
-                                <p className="text-sm font-black text-[#8a143d] opacity-90">
-                                    {post.date}
-                                </p>
+                                <div className="mt-auto pt-6 border-t border-gray-50 flex items-center justify-between">
+                                    <span className="text-[#800020] font-black text-sm group-hover:gap-3 transition-all flex items-center gap-2 uppercase tracking-widest">
+                                        Read More <ArrowRight className="w-4 h-4" />
+                                    </span>
+                                </div>
                             </div>
                         </Link>
                     ))}

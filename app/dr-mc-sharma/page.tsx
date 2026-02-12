@@ -6,7 +6,7 @@ import { ArrowLeft, Award, Briefcase, Calendar, CheckCircle2, Clock, GraduationC
 
 export default function DrMCSharma() {
     return (
-        <div className="bg-white min-h-screen animate-page-enter mt-20">
+        <div className="bg-white min-h-screen animate-page-enter mt-32">
             {/* Hero Section */}
             <div className="relative h-[400px] md:h-[500px] flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-slate-800 to-gray-900">
                 <div className="absolute inset-0 opacity-10">

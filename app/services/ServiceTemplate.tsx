@@ -58,7 +58,7 @@ export default function ServicePage({
                 </div>
 
                 {children && (
-                    <div className="mt-20">
+                    <div className="mt-32">
                         {children}
                     </div>
                 )}
