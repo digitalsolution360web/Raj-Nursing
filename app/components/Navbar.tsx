@@ -340,9 +340,9 @@ export default function Navbar() {
             : "py-4"
             }`}
         >
-          <div className="max-w-[1700px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 flex items-center justify-between gap-4 flex-nowrap">
-            <Link href="/" className="flex items-center gap-3 sm:gap-4 group shrink-0">
-              <div className="relative w-14 h-14 md:w-16 md:h-16 transition-transform group-hover:rotate-[360deg] duration-1000">
+          <div className="max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between gap-4 lg:gap-6 flex-nowrap">
+            <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0 pr-6 lg:pr-8">
+              <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 shrink-0 transition-transform group-hover:rotate-[360deg] duration-1000">
                 <Image
                   src="/RNH logo.png"
                   alt="RNH Logo"
@@ -351,22 +351,22 @@ export default function Navbar() {
                   priority
                 />
               </div>
-              <div className="flex flex-col">
-                <h1 className="text-lg md:text-xl lg:text-2xl font-black text-[#9d174d] tracking-tight leading-none uppercase">
+              <div className="flex flex-col min-w-0 max-w-[260px] sm:max-w-[300px]">
+                <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl font-black text-[#9d174d] tracking-tight leading-none uppercase whitespace-nowrap">
                   {t("nav.rajNursingHome")}
                 </h1>
-                <p className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">
+                <p className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-0.5 sm:mt-1 leading-tight">
                   {t("nav.excellenceSince")}
                 </p>
               </div>
             </Link>
 
-            <div className="hidden xl:flex flex-1 items-center justify-center min-w-0 gap-2 sm:gap-3 flex-nowrap">
+            <div className="hidden xl:flex flex-1 items-center justify-center min-w-0 gap-1 sm:gap-2 flex-nowrap">
               {navLinks.slice(0, 2).map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="px-5 py-3 text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-2xl transition-all whitespace-nowrap shrink-0"
+                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-sm sm:text-base font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all whitespace-nowrap shrink-0"
                 >
                   {item.label}
                 </Link>
@@ -375,7 +375,7 @@ export default function Navbar() {
               <div className="relative group shrink-0">
                 <Link
                   href="/services"
-                  className="px-5 py-3 text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-2xl transition-all flex items-center gap-2 whitespace-nowrap shrink-0"
+                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-sm sm:text-base font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0"
                 >
                   {t("nav.ourServices")}
                   <svg
@@ -412,14 +412,14 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="px-5 py-3 text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-2xl transition-all whitespace-nowrap shrink-0"
+                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-sm sm:text-base font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all whitespace-nowrap shrink-0"
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
 
-            <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0 pl-4 lg:pl-6">
               {/* Custom Language Switcher (EN / हिन्दी) - Desktop */}
               <div className="hidden lg:block">{langDropdown}</div>
 
