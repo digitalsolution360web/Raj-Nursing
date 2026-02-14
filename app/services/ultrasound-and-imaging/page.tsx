@@ -1,15 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function UltrasoundPage() {
+    const { t } = useLanguage();
+
     return (
         <div className="bg-white">
             {/* Hero Section */}
             <div className="relative bg-[#701a2e] text-white overflow-hidden h-[300px] md:h-[400px] flex items-center">
                 <div className="absolute inset-0 z-0">
-                    {/* Placeholder for header image if available, overlaying color */}
                     <div className="absolute inset-0 bg-[#701a2e] opacity-90 z-10"></div>
-                    {/* If there is a banner image, we could put it here */}
                     <Image
                         src="/raj/banner1.webp"
                         alt="Banner"
@@ -19,10 +22,10 @@ export default function UltrasoundPage() {
                 </div>
                 <div className="container mx-auto px-4 z-20 relative h-full flex flex-col justify-center">
                     <h1 className="text-3xl md:text-5xl font-bold mb-4">
-                        Ultrasound & Imaging - Ultrasound & Imaging in Hapur
+                        {t("ultrasoundImaging.heroTitle")}
                     </h1>
                     <nav className="text-sm md:text-base text-gray-200">
-                        <Link href="/" className="hover:underline text-white">Home</Link> / Ultrasound & Imaging
+                        <Link href="/" className="hover:underline text-white">{t("ultrasoundImaging.home")}</Link> / {t("ultrasoundImaging.breadcrumbCurrent")}
                     </nav>
                 </div>
                 <div className="absolute right-0 bottom-0 h-full w-1/3 md:w-1/4 z-20 hidden md:block">
@@ -30,8 +33,7 @@ export default function UltrasoundPage() {
                         src="/raj/dr-Srishti.jpg"
                         alt="Doctor"
                         fill
-                        className="object-cover object-top"
-                        style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)' }}
+                        className="object-contain object-center"
                     />
                 </div>
             </div>
@@ -41,9 +43,9 @@ export default function UltrasoundPage() {
 
                 {/* Intro */}
                 <div className="space-y-6">
-                    <h2 className="text-3xl font-bold text-[#701a2e]">Ultrasound & Imaging in Hapur</h2>
+                    <h2 className="text-3xl font-bold text-[#701a2e]">{t("ultrasoundImaging.introTitle")}</h2>
                     <p className="leading-relaxed">
-                        Modern healthcare relies on advanced diagnostic tools to assess and monitor health conditions with accuracy. Among these, ultrasound and imaging services are some of the most important for early diagnosis, treatment planning, and preventive care. If you are searching for ultrasound in Hapur, you can access a wide range of safe, affordable, and reliable imaging solutions designed to support patients and doctors alike.
+                        {t("ultrasoundImaging.introP1")}
                     </p>
                 </div>
 

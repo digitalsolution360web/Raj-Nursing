@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const PhoneIcon = () => (
   <svg
@@ -65,6 +66,11 @@ const ChevronRightIcon = ({ className }: { className?: string }) => (
     strokeLinejoin="round"
   >
     <path d="m9 18 6-6-6-6" />
+  </svg>
+);
+const ChevronDownIcon = ({ className }: { className?: string }) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="m6 9 6 6 6-6" />
   </svg>
 );
 const ArrowRightIcon = () => (
@@ -132,31 +138,37 @@ const MailIcon = () => (
     <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
   </svg>
 );
-
-const navLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/about" },
-  { label: "Doctors", href: "/#doctors" },
-  { label: "Blogs", href: "/blog" },
-  { label: "Testimonials", href: "/#testimonials" },
-  { label: "Treatment", href: "/treatment" },
-  { label: "Contact", href: "/contact" },
-];
+const AyushmanCardIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <rect width="20" height="14" x="2" y="5" rx="2" />
+    <line x1="2" x2="22" y1="10" y2="10" />
+  </svg>
+);
 
 const servicesList = [
-  { name: "Heart Specialist Hapur", slug: "heart-specialist-hapur", href: "/heart-specialist-hapur" },
-  { name: "Internal Medicine Hapur", slug: "internal-medicine-hapur", href: "/internal-medicine-hapur" },
-  { name: "Laparoscopic Surgery Hapur", slug: "laparoscopic-surgery-hapur", href: "/laparoscopic-surgery-hapur" },
-  { name: "Diagnostic Center Hapur", slug: "diagnostic-center-hapur", href: "/diagnostic-center-hapur" },
-  { name: "Ultrasound & Imaging", slug: "ultrasound-and-imaging", href: "/services/ultrasound-and-imaging" },
-  { name: "2D Echo & ECG", slug: "heart-diagnostics-in-hapur", href: "/heart-diagnostics-in-hapur" },
-  { name: "PFT Testing", slug: "pft-testing-in-hapur", href: "/pft-testing-in-hapur" },
-  { name: "Digital X-Ray", slug: "xray-in-hapur", href: "/xray-in-hapur" },
-  { name: "IVF & Fertility Treatment", slug: "ivf-treatment-in-hapur", href: "/ivf-treatment-in-hapur" },
-  { name: "Heart & Chest Care", slug: "heart-chest-care-in-hapur", href: "/heart-chest-care-in-hapur" },
-  { name: "Woman's Health", slug: "womens-health-in-hapur", href: "/womens-health-in-hapur" },
-  { name: "Health Checkup Plans", slug: "health-checkup-plans", href: "/health-checkup-plans" },
-  { name: "Best Hospital in Hapur", slug: "best-hospital", href: "/best-hospital-nursing-home-hapur" },
+  { nameKey: "nav.serviceHeartSpecialistHapur", slug: "heart-specialist-hapur", href: "/heart-specialist-hapur" },
+  { nameKey: "nav.serviceInternalMedicineHapur", slug: "internal-medicine-hapur", href: "/internal-medicine-hapur" },
+  { nameKey: "nav.serviceLaparoscopicSurgeryHapur", slug: "laparoscopic-surgery-hapur", href: "/laparoscopic-surgery-hapur" },
+  { nameKey: "nav.serviceDiagnosticCenterHapur", slug: "diagnostic-center-hapur", href: "/diagnostic-center-hapur" },
+  { nameKey: "nav.serviceUltrasoundImaging", slug: "ultrasound-and-imaging", href: "/services/ultrasound-and-imaging" },
+  { nameKey: "nav.service2DEchoECG", slug: "heart-diagnostics-in-hapur", href: "/heart-diagnostics-in-hapur" },
+  { nameKey: "nav.servicePFTTesting", slug: "pft-testing-in-hapur", href: "/pft-testing-in-hapur" },
+  { nameKey: "nav.serviceDigitalXRay", slug: "xray-in-hapur", href: "/xray-in-hapur" },
+  { nameKey: "nav.serviceIVFFertility", slug: "ivf-treatment-in-hapur", href: "/ivf-treatment-in-hapur" },
+  { nameKey: "nav.serviceHeartChestCare", slug: "heart-chest-care-in-hapur", href: "/heart-chest-care-in-hapur" },
+  { nameKey: "nav.serviceWomansHealth", slug: "womens-health-in-hapur", href: "/womens-health-in-hapur" },
+  { nameKey: "nav.serviceHealthCheckupPlans", slug: "health-checkup-plans", href: "/health-checkup-plans" },
+  { nameKey: "nav.serviceBestHospitalHapur", slug: "best-hospital", href: "/best-hospital-nursing-home-hapur" },
 ];
 
 export default function Navbar() {
@@ -187,76 +199,64 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    // Initialize Google Translate
-    const initGoogleTranslate = () => {
-      if ((window as any).google && (window as any).google.translate) {
-        const targetId = 'google_translate_desktop';
-        if (!document.getElementById(targetId)?.hasChildNodes()) {
-          new (window as any).google.translate.TranslateElement({
-            pageLanguage: 'en',
-            includedLanguages: 'en,hi',
-            layout: (window as any).google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false
-          }, targetId);
-        }
-      }
-    };
+  const { lang, setLang, t } = useLanguage();
+  const [isLangOpen, setIsLangOpen] = useState(false);
 
-    (window as any).googleTranslateElementInit = initGoogleTranslate;
+  const navLinks = [
+    { label: t("nav.home"), href: "/#home" },
+    { label: t("nav.aboutUs"), href: "/about" },
+    { label: t("nav.expertDoctors"), href: "/#doctors" },
+    { label: t("nav.blogs"), href: "/blog" },
+    { label: t("nav.testimonials"), href: "/#testimonials" },
+    { label: t("nav.treatments"), href: "/treatment" },
+    { label: t("nav.contactUs"), href: "/contact" },
+  ];
 
-    const scriptId = 'google-translate-script';
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement('script');
-      script.id = scriptId;
-      script.type = 'text/javascript';
-      script.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      script.async = true;
-      document.body.appendChild(script);
-    } else {
-      initGoogleTranslate();
-    }
-  }, []);
+  const setLanguage = (l: "en" | "hi") => {
+    setLang(l);
+    setIsLangOpen(false);
+  };
 
-  // Handle Moving Widget between Desktop and Mobile
-  useEffect(() => {
-    const moveWidget = () => {
-      try {
-        const desktopContainer = document.getElementById('google_translate_desktop');
-        const mobileContainer = document.getElementById('google_translate_mobile');
-        const widget = document.querySelector('.goog-te-gadget-simple');
-
-        if (!widget) return;
-
-        if (isMenuOpen && mobileContainer) {
-          // Move to Mobile Container if not already there
-          if (!mobileContainer.contains(widget)) {
-            mobileContainer.appendChild(widget);
-          }
-        } else if (desktopContainer) {
-          // Move back to Desktop Container if not already there
-          if (!desktopContainer.contains(widget)) {
-            desktopContainer.appendChild(widget);
-          }
-        }
-      } catch (e) {
-        console.error('Error moving translate widget:', e);
-      }
-    };
-
-    // Run immediately and after a short delay to catch initialization
-    moveWidget();
-    const interval = setInterval(moveWidget, 1000); // Check periodically for widget existence
-
-    return () => clearInterval(interval);
-  }, [isMenuOpen]);
+  const langDropdown = (
+    <div className="relative">
+      <button
+        type="button"
+        onClick={() => setIsLangOpen((o) => !o)}
+        className="flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#9d174d] text-white text-sm font-bold border border-[#831843] shadow-sm hover:bg-[#831843] transition-colors min-w-[72px] justify-center"
+      >
+        <span>{lang === "en" ? "EN" : "हिन्दी"}</span>
+        <ChevronDownIcon className={`text-white transition-transform ${isLangOpen ? "rotate-180" : ""}`} />
+      </button>
+      {isLangOpen && (
+        <>
+          <div className="fixed inset-0 z-40" onClick={() => setIsLangOpen(false)} />
+          <div className="absolute top-full right-0 mt-1 z-50 w-[140px] py-1 bg-white rounded-xl border border-[#9d174d]/20 shadow-xl shadow-red-500/10">
+            <button
+              type="button"
+              onClick={() => setLanguage("en")}
+              className={`w-full text-left px-4 py-2.5 text-sm font-semibold transition-colors rounded-t-lg ${lang === "en" ? "text-[#9d174d] bg-red-50" : "text-gray-800 hover:bg-gray-50"}`}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              onClick={() => setLanguage("hi")}
+              className={`w-full text-left px-4 py-2.5 text-sm font-semibold transition-colors rounded-b-lg ${lang === "hi" ? "text-[#9d174d] bg-red-50" : "text-gray-800 hover:bg-gray-50"}`}
+            >
+              हिन्दी
+            </button>
+          </div>
+        </>
+      )}
+    </div>
+  );
 
   return (
     <>
       <nav className="fixed top-0 w-full z-50">
-        {/* Top Header Bar */}
-        <div className="bg-[#9d174d] text-white py-2 px-6 lg:px-12 border-b border-white/10">
-          <div className="max-w-[1700px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 py-1">
+        {/* Top Header Bar - equal left/right gap via padding inside max-w container */}
+        <div className="bg-[#9d174d] text-white py-2 border-b border-white/10">
+          <div className="max-w-[1700px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 lg:gap-4 py-1 justify-items-center">
             <a
               href="tel:+916397970802"
               className="flex items-center gap-3 hover:text-red-100 transition-colors group"
@@ -266,7 +266,7 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest">
-                  Need Urgent Care?
+                  {t("nav.needUrgentCare")}
                 </span>
                 <span className="text-sm font-black">+91 63979 70802</span>
               </div>
@@ -281,7 +281,7 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest">
-                  Send us a Mail
+                  {t("nav.sendUsMail")}
                 </span>
                 <span className="text-sm font-black">
                   drvipinkumar@gmail.com
@@ -295,24 +295,38 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest">
-                  Our Location
+                  {t("nav.ourLocation")}
                 </span>
                 <span className="text-sm font-black italic">
-                  Kavi Nagar, Hapur, UP
+                  {t("nav.locationAddress")}
+                </span>
+              </div>
+            </div>
+
+            <div className="hidden lg:flex items-center gap-3 group">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
+                <ClockIcon />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest">
+                  {t("nav.workingHours")}
+                </span>
+                <span className="text-sm font-black">
+                  {t("nav.timing")}
                 </span>
               </div>
             </div>
 
             <div className="hidden xl:flex items-center gap-3 group">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
-                <ClockIcon />
+                <AyushmanCardIcon />
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest">
-                  Working Hours
+                  {t("nav.ayushmanCard")}
                 </span>
                 <span className="text-sm font-black">
-                  Mon - Sun 08:00 - 19:00
+                  {t("nav.acceptedHere")}
                 </span>
               </div>
             </div>
@@ -339,31 +353,31 @@ export default function Navbar() {
               </div>
               <div className="flex flex-col">
                 <h1 className="text-lg md:text-xl lg:text-2xl font-black text-[#9d174d] tracking-tight leading-none uppercase">
-                  RAJ NURSING HOME
+                  {t("nav.rajNursingHome")}
                 </h1>
                 <p className="text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">
-                  Excellence in Healthcare since 1999
+                  {t("nav.excellenceSince")}
                 </p>
               </div>
             </Link>
 
-            <div className="hidden xl:flex items-center gap-1">
+            <div className="hidden xl:flex items-center gap-1 flex-nowrap">
               {navLinks.slice(0, 2).map((item) => (
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="px-5 py-3 text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-2xl transition-all"
+                  className="px-5 py-3 text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-2xl transition-all whitespace-nowrap shrink-0"
                 >
                   {item.label}
                 </Link>
               ))}
 
-              <div className="relative group">
+              <div className="relative group shrink-0">
                 <Link
                   href="/services"
-                  className="px-5 py-3 text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-2xl transition-all flex items-center gap-2"
+                  className="px-5 py-3 text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-2xl transition-all flex items-center gap-2 whitespace-nowrap shrink-0"
                 >
-                  Services
+                  {t("nav.ourServices")}
                   <svg
                     className="w-4 h-4 transition-transform group-hover:rotate-180"
                     fill="none"
@@ -387,7 +401,7 @@ export default function Navbar() {
                         className="flex items-center px-4 py-3 text-sm font-bold text-gray-600 hover:text-[#9d174d] hover:bg-red-50 rounded-xl transition-all"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-gray-300 mr-2 group-hover:bg-[#9d174d] transition-colors"></span>
-                        {service.name}
+                        {t(service.nameKey)}
                       </Link>
                     ))}
                   </div>
@@ -398,7 +412,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="px-5 py-3 text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-2xl transition-all"
+                  className="px-5 py-3 text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-2xl transition-all whitespace-nowrap shrink-0"
                 >
                   {item.label}
                 </Link>
@@ -406,15 +420,15 @@ export default function Navbar() {
             </div>
 
             <div className="flex items-center gap-2 sm:gap-4 shrink-0">
-              {/* Language Selector Container (Desktop) */}
-              <div className="hidden lg:block min-w-[100px]" id="google_translate_desktop"></div>
+              {/* Custom Language Switcher (EN / हिन्दी) - Desktop */}
+              <div className="hidden lg:block">{langDropdown}</div>
 
               <Link
                 href="/contact"
                 className="hidden md:flex px-4 py-2 sm:px-6 sm:py-3 bg-[#9d174d] hover:bg-[#831843] text-white text-xs sm:text-sm font-black rounded-full shadow-lg shadow-red-500/20 transition-all hover:-translate-y-1 items-center gap-2 uppercase tracking-wide whitespace-nowrap"
               >
-                <span className="hidden sm:inline">Book Appointment</span>
-                <span className="sm:hidden">Book</span>
+                <span className="hidden sm:inline">{t("nav.bookAppointment")}</span>
+                <span className="sm:hidden">{t("nav.book")}</span>
                 <ArrowRightIcon />
               </Link>
 
@@ -452,7 +466,7 @@ export default function Navbar() {
             <div className="flex items-center justify-between p-6 border-b border-gray-50 bg-white/90 backdrop-blur-xl sticky top-0 z-20">
               <span className="font-black text-xl text-[#9d174d] uppercase tracking-wider flex items-center gap-2">
                 <div className="w-2 h-8 bg-[#9d174d] rounded-full"></div>
-                Menu
+                {t("nav.menu")}
               </span>
               <button
                 onClick={() => setIsMenuOpen(false)}
@@ -463,25 +477,25 @@ export default function Navbar() {
             </div>
 
             <div className="flex-1 overflow-y-auto px-6 py-8 space-y-3">
-              {/* Mobile Language Selector */}
-              <div className="mb-6 flex items-center justify-between p-4 bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+              {/* Mobile Language Switcher (EN / हिन्दी) */}
+              <div className="mb-6 flex items-center justify-between p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
                 <span className="font-bold text-sm text-gray-600 flex items-center gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                  Language
+                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                  {t("nav.language")}
                 </span>
-                <div id="google_translate_mobile" className="origin-right scale-90"></div>
+                {langDropdown}
               </div>
 
               {[
-                { label: "Home", href: "/#home" },
-                { label: "About Us", href: "/about" },
-                { label: "Our Services", href: "/services", isDropdown: true },
-                { label: "Blogs", href: "/blog" },
-                { label: "Health Plans", href: "/health-checkup-plans" },
-                { label: "Expert Doctors", href: "/#doctors" },
-                { label: "Testimonials", href: "/#testimonials" },
-                { label: "Treatments", href: "/treatment" },
-                { label: "Contact Us", href: "/contact" },
+                { label: t("nav.home"), href: "/#home" },
+                { label: t("nav.aboutUs"), href: "/about" },
+                { label: t("nav.ourServices"), href: "/services", isDropdown: true },
+                { label: t("nav.blogs"), href: "/blog" },
+                { label: t("nav.healthPlans"), href: "/health-checkup-plans" },
+                { label: t("nav.expertDoctors"), href: "/#doctors" },
+                { label: t("nav.testimonials"), href: "/#testimonials" },
+                { label: t("nav.treatments"), href: "/treatment" },
+                { label: t("nav.contactUs"), href: "/contact" },
               ].map((item, index) => (
                 <div
                   key={item.label}
@@ -508,7 +522,7 @@ export default function Navbar() {
                               style={{ transitionDelay: `${i * 30}ms` }}
                               className="block px-4 py-2.5 text-sm font-medium text-gray-600 hover:text-[#9d174d] hover:bg-red-50 rounded-lg transition-all transform hover:translate-x-1"
                             >
-                              {service.name}
+                              {t(service.nameKey)}
                             </Link>
                           ))}
                         </div>
@@ -534,7 +548,7 @@ export default function Navbar() {
                 onClick={() => setIsMenuOpen(false)}
                 className="w-full py-5 bg-gradient-to-r from-[#9d174d] to-[#be185d] text-white font-black text-lg rounded-2xl shadow-xl shadow-red-500/20 flex items-center justify-center gap-3 transition-transform active:scale-95 hover:shadow-red-500/30 group"
               >
-                <span>Book Appointment</span>
+                <span>{t("nav.bookAppointment")}</span>
                 <div className="bg-white/20 p-1 rounded-full group-hover:translate-x-1 transition-transform">
                   <ArrowRightIcon />
                 </div>

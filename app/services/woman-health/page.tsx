@@ -51,8 +51,7 @@ export default function WomanHealthPage() {
                         src="/raj/dr.Vipin.jpg"
                         alt="Gynecologist"
                         fill
-                        className="object-cover object-top"
-                        style={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)' }}
+                        className="object-cover object-center"
                     />
                 </div>
             </div>

@@ -2,8 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function ContactPage() {
+  const { t } = useLanguage();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-gray-900 pt-[110px] md:pt-[130px]">
       <section className="relative overflow-hidden">
@@ -19,14 +27,14 @@ export default function ContactPage() {
         </div>
         <div className="max-w-screen-2xl mx-auto px-6 pt-12 pb-12 relative">
           <span className="inline-flex w-fit items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/15 text-white border border-white/20">
-            Contact Us
+            {t("contact.title")}
           </span>
           <div className="mt-4 flex items-center gap-2 text-xs font-bold text-white/80">
             <Link href="/" className="hover:text-white transition-colors">
-              Home
+              {t("nav.home")}
             </Link>
             <span>/</span>
-            <span className="text-white">Contact</span>
+            <span className="text-white">{t("contact.breadcrumbContact")}</span>
           </div>
         </div>
       </section>
@@ -40,64 +48,64 @@ export default function ContactPage() {
               </span>
               <div>
                 <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900">
-                  We&apos;re Here For You 24/7
+                  {t("contact.hereForYou")}
                 </h1>
                 <p className="text-sm text-gray-500 mt-1">
-                  Share your details and our team will get back quickly.
+                  {t("contact.hereDesc")}
                 </p>
               </div>
             </div>
             <form className="grid gap-5 md:grid-cols-2">
               <div>
                 <label className="text-xs font-bold uppercase tracking-widest text-gray-500">
-                  Name
+                  {t("contact.name")}
                 </label>
                 <input
                   type="text"
-                  placeholder="Name"
+                  placeholder={t("contact.namePlaceholder")}
                   className="mt-2 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30"
                 />
               </div>
               <div>
                 <label className="text-xs font-bold uppercase tracking-widest text-gray-500">
-                  Email address
+                  {t("contact.email")}
                 </label>
                 <p className="text-[10px] text-gray-400 mt-1">
-                  We&apos;ll never share your email with anyone else.
+                  {t("contact.emailNote")}
                 </p>
                 <input
                   type="email"
-                  placeholder="Enter email"
+                  placeholder={t("contact.emailPlaceholder")}
                   className="mt-2 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30"
                 />
               </div>
               <div>
                 <label className="text-xs font-bold uppercase tracking-widest text-gray-500">
-                  Phone
+                  {t("contact.phone")}
                 </label>
                 <input
                   type="tel"
-                  placeholder="Phone"
+                  placeholder={t("contact.phonePlaceholder")}
                   className="mt-2 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30"
                 />
               </div>
               <div>
                 <label className="text-xs font-bold uppercase tracking-widest text-gray-500">
-                  Subject
+                  {t("contact.subject")}
                 </label>
                 <input
                   type="text"
-                  placeholder="Subject"
+                  placeholder={t("contact.subjectPlaceholder")}
                   className="mt-2 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30"
                 />
               </div>
               <div className="md:col-span-2">
                 <label className="text-xs font-bold uppercase tracking-widest text-gray-500">
-                  Message
+                  {t("contact.message")}
                 </label>
                 <textarea
                   rows={5}
-                  placeholder="Message"
+                  placeholder={t("contact.messagePlaceholder")}
                   className="mt-2 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30"
                 />
               </div>
@@ -106,10 +114,10 @@ export default function ContactPage() {
                   type="submit"
                   className="px-8 py-3.5 rounded-xl bg-[#9d174d] text-white text-xs font-black uppercase tracking-widest shadow-lg shadow-red-500/20 hover:bg-[#831843] transition-all"
                 >
-                  Submit
+                  {t("contact.sendMessage")}
                 </button>
                 <span className="text-[11px] text-gray-400">
-                  By submitting, you agree to be contacted by our team.
+                  {t("contact.submitNote")}
                 </span>
               </div>
             </form>
@@ -123,10 +131,10 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-black text-gray-900">
-                    24/7 Emergency Service
+                    {t("contact.emergencyService")}
                   </h3>
                   <p className="text-sm text-gray-600 mt-2">
-                    🚨 Call: 9958314740
+                    🚨 {t("contact.emergencyCallNum")}
                   </p>
                 </div>
               </div>
@@ -139,13 +147,13 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-black text-gray-900">
-                    OPD Hours
+                    {t("contact.opdHours")}
                   </h3>
                   <p className="text-sm text-gray-600 mt-2">
-                    Mon-Sat: 9 AM - 2 PM | 6 PM - 8 PM
+                    {t("contact.opdHoursDetail")}
                   </p>
                   <p className="text-sm text-gray-600 mt-1">
-                    Sun: 9 AM - 1 PM ( Free OPD)
+                    {t("contact.opdHoursSun")}
                   </p>
                 </div>
               </div>
@@ -158,14 +166,13 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-black text-gray-900">
-                    Main Center
+                    {t("contact.mainCenter")}
                   </h3>
                   <p className="text-sm text-gray-600 mt-2">
-                    Raj Nursing Home
+                    {t("contact.mainCenterName")}
                   </p>
                   <p className="text-sm text-gray-600 mt-1">
-                    Swarg Ashram Road, Near Ganga College, Hapur, Uttar Pradesh
-                    245101
+                    {t("contact.mainCenterAddress")}
                   </p>
                 </div>
               </div>
@@ -178,13 +185,13 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-lg font-black text-gray-900">
-                    Book Appointments
+                    {t("contact.bookAppointments")}
                   </h3>
                   <p className="text-sm text-gray-600 mt-2">
-                    WhatsApp: Send &quot;APPOINT&quot; to +91-9958314740
+                    {t("contact.whatsappAppoint")}
                   </p>
                   <p className="text-sm text-gray-600 mt-1">
-                    Email: drvipinkumarsharma@gmail.com
+                    {t("contact.emailLabel")}
                   </p>
                 </div>
               </div>
@@ -198,25 +205,27 @@ export default function ContactPage() {
           <div className="flex items-center justify-between mb-5">
             <div>
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#9d174d]">
-                Location
+                {t("contact.location")}
               </span>
               <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mt-2">
-                Find Us On Map
+                {t("contact.findOnMap")}
               </h2>
             </div>
             <Link
               href="https://maps.google.com/?q=Raj%20Nursing%20Home%20Hapur"
               className="hidden sm:inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-gray-900 font-black text-xs uppercase tracking-widest border border-gray-200 hover:border-[#9d174d] hover:text-[#9d174d] transition-all shadow-sm"
             >
-              Get Directions
+              {t("contact.getDirections")}
             </Link>
           </div>
           <div className="rounded-[2.5rem] overflow-hidden border border-gray-100 shadow-2xl">
             <iframe
               title="Raj Nursing Home - Hapur"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.269095989641!2d77.7911043!3d28.5628547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c8c2aebd2c6b3%3A0x3a4b5b46b8305a46!2sRaj%20Nursing%20Home%20-%20Hapur!5e0!3m2!1sen!2sin!4v1739010000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13993.960902714158!2d77.788486!3d28.734777!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c85b28f530843%3A0x255093a94d78e2dc!2sRaj%20Nursing%20Home%20-%20Hapur!5e0!3m2!1sen!2sin!4v1771085116646!5m2!1sen!2sin"
               width="100%"
-              height="420"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
               loading="lazy"
               className="w-full"
               referrerPolicy="no-referrer-when-downgrade"

@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLanguage } from "@/app/context/LanguageContext";
 import {
   ChevronDown,
   Check,
@@ -16,6 +17,7 @@ import {
   Building2,
   FileText,
   HeartHandshake,
+  CreditCard,
   Star,
   ArrowRight,
   CheckCircle2
@@ -61,33 +63,23 @@ const FAQItem = ({
 };
 
 export default function BestHospitalPage() {
+  const { t } = useLanguage();
   const [openFAQ, setOpenFAQ] = useState<number | null>(0);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const faqs = [
-    {
-      q: "Why is Raj Nursing Home the best hospital and nursing home in Hapur?",
-      a: "There are reasons behind becoming the best healthcare provider and a private hospital Hapur, such as: Experience advanced laparoscopic surgery, Emergency medical care, Outpatient services, High success rate, Positive responses from family, Affordable hospital expenses.",
-    },
-    {
-      q: "Is Raj Nursing Home open 24/7?",
-      a: "Yes, as a responsible health service provider, we offer 24/7 emergency services, supported by our staff, management, and all the other associates.",
-    },
-    {
-      q: "Is Raj Nursing Home a trusted hospital Hapur?",
-      a: "Of course, yes! At Raj Nursing Home, extensive care for every group of patients is always available. We do the treatment with compassion and focus to offer a swift recovery all the time.",
-    },
-    {
-      q: "What's the review about the Raj Nursing Home?",
-      a: "Being the best hospital and nursing home in Hapur, we receive positive responses from our previous patients all the time. Their love and support encourage us to keep going in the same direction.",
-    },
-    {
-      q: "Can I book an appointment online?",
-      a: "Yes, our officials have provided the number and all the details on the website to get an appointment online.",
-    },
+    { q: t("bestHospital.faq1q"), a: t("bestHospital.faq1a") },
+    { q: t("bestHospital.faq2q"), a: t("bestHospital.faq2a") },
+    { q: t("bestHospital.faq3q"), a: t("bestHospital.faq3a") },
+    { q: t("bestHospital.faq4q"), a: t("bestHospital.faq4a") },
+    { q: t("bestHospital.faq5q"), a: t("bestHospital.faq5a") },
   ];
 
   return (
@@ -102,26 +94,26 @@ export default function BestHospitalPage() {
             <div className="space-y-8 animate-in slide-in-from-left-5 duration-700 fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-widest bg-red-50 text-[#9d174d] border border-red-100 shadow-sm hover:shadow-md transition-shadow cursor-default">
                 <span className="w-2 h-2 rounded-full bg-[#9d174d] animate-pulse"></span>
-                Top Rated Facility
+                {t("bestHospital.badge")}
               </span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 tracking-tighter leading-[1.1] drop-shadow-sm">
-                An Excellent & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d174d] to-pink-600">Top-Rated</span> Nursing Home in Hapur
+                {t("bestHospital.heroTitle")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d174d] to-pink-600">{t("bestHospital.heroTitleHighlight")}</span> {t("bestHospital.heroTitleSuffix")}
               </h1>
               <p className="text-xl text-gray-500 leading-relaxed max-w-xl font-medium">
-                Healthcare is a fundamental requirement for all individuals living in modern society. Without proper medical facilities and advanced treatment, people may fail to save their relatives on time. That's why choosing a reliable and trusted hospital in Hapur is the right move.
+                {t("bestHospital.heroPara")}
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link
                   href="/contact"
                   className="px-10 py-5 rounded-2xl bg-[#9d174d] text-white font-black text-sm uppercase tracking-widest shadow-xl shadow-red-500/25 hover:bg-[#831843] hover:-translate-y-1 hover:shadow-2xl hover:shadow-red-500/40 transition-all duration-300"
                 >
-                  Book Appointment
+                  {t("bestHospital.bookAppointment")}
                 </Link>
                 <Link
                   href="/services"
                   className="px-10 py-5 rounded-2xl bg-white text-gray-900 border-2 border-gray-100 font-black text-sm uppercase tracking-widest hover:bg-gray-50 hover:border-gray-200 transition-all duration-300"
                 >
-                  Our Services
+                  {t("bestHospital.ourServices")}
                 </Link>
               </div>
             </div>
@@ -138,8 +130,8 @@ export default function BestHospitalPage() {
                 <div className="absolute bottom-0 left-0 p-10 text-white w-full">
                   <div className="flex justify-between items-end">
                     <div>
-                      <p className="text-sm font-bold uppercase tracking-widest opacity-80 mb-2">Since 1999</p>
-                      <p className="text-3xl font-black tracking-tight">Trusted by Thousands</p>
+                      <p className="text-sm font-bold uppercase tracking-widest opacity-80 mb-2">{t("bestHospital.since1999")}</p>
+                      <p className="text-3xl font-black tracking-tight">{t("bestHospital.trustedByThousands")}</p>
                     </div>
                     <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/30">
                       <Star className="w-6 h-6 text-white fill-current" />
@@ -165,11 +157,11 @@ export default function BestHospitalPage() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-transparent to-gray-200" />
         <div className="max-w-5xl mx-auto px-6 text-center">
           <p className="text-2xl md:text-3xl font-medium text-gray-800 leading-relaxed font-serif italic">
-            "In Uttar Pradesh, <span className="text-[#9d174d] font-bold not-italic font-sans bg-red-50 px-2 py-1 rounded-lg">Raj Nursing Home</span> has risen as one of the most popular options in terms of providing elegant and world-class medical treatment. It is a good option for people who seek these types of treatment right at their doorstep.
+            {t("bestHospital.intro1")}
             <br /><br />
-            The tag of becoming the <span className="text-[#9d174d] font-bold not-italic font-sans">“best hospital and nursing home in Hapur”</span> isn’t just a self-proclaimed slogan, but our mission in Hapur and its nearby locations.
+            {t("bestHospital.intro2")}
             <br /><br />
-            Let’s take a quick look at the Raj Nursing Home Hapur reviews that reveal why we care for people the most!"
+            {t("bestHospital.intro3")}
           </p>
           <div className="mt-12 flex justify-center">
             <div className="flex gap-2">
@@ -203,8 +195,8 @@ export default function BestHospitalPage() {
                     <Phone className="w-7 h-7" />
                   </div>
                   <div>
-                    <p className="text-xs font-black text-gray-400 uppercase tracking-widest">Emergency</p>
-                    <p className="text-2xl font-black text-[#9d174d]">24 / 7 <span className="text-black">Active</span></p>
+                    <p className="text-xs font-black text-gray-400 uppercase tracking-widest">{t("bestHospital.emergency")}</p>
+                    <p className="text-2xl font-black text-[#9d174d]">{t("common.hour24_7")} <span className="text-black">{t("bestHospital.active24_7")}</span></p>
                   </div>
                 </div>
               </div>
@@ -213,29 +205,24 @@ export default function BestHospitalPage() {
             <div className="order-1 lg:order-2 space-y-10">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 rounded-full text-[#9d174d] font-bold text-xs uppercase tracking-wider mb-4 border border-red-100">
-                  Critical Care
+                  {t("bestHospital.criticalCare")}
                 </div>
                 <h2 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight leading-tight">
-                  24/7 Emergency and Critical Care Response
+                  {t("bestHospital.emergencyTitle")}
                 </h2>
               </div>
               <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                 <p>
-                  A hospital's responsibilities are not just like some mere office's working hours. As a respected private hospital in Hapur, we keep the 24/7 emergency service active all the time without any delay.
+                  {t("bestHospital.emergencyP1")}
                 </p>
                 <p className="p-6 bg-white rounded-2xl border-l-4 border-[#9d174d] shadow-sm italic">
-                  "Whether it's a cardiac arrest or any type of tragic road accident, our emergency team is always ready to handle life-threatening situations."
+                  {"\""}{t("bestHospital.emergencyQuote")}{"\""}
                 </p>
                 <p>
-                  Also, we have the operations that we always keep active in the emergency ward to deliver smooth healthcare facilities without trouble, such as:
+                  {t("bestHospital.emergencyP2")}
                 </p>
                 <ul className="grid gap-3">
-                  {[
-                    "Monitor patients requiring intensive support.",
-                    "Use advanced ventilators in case of life-saving situations.",
-                    "Have a centralized oxygen supply system to provide constant vigilance.",
-                    "Ensure that financial or logistical issues won’t be a problem in life-saving care."
-                  ].map((item, i) => (
+                  {[t("bestHospital.emergencyL1"), t("bestHospital.emergencyL2"), t("bestHospital.emergencyL3"), t("bestHospital.emergencyL4")].map((item, i) => (
                     <li key={i} className="flex items-start gap-3">
                       <div className="mt-1.5 w-5 h-5 rounded-full bg-red-100 flex items-center justify-center shrink-0 text-[#9d174d] text-xs font-bold">
                         <Check className="w-3 h-3" />
@@ -246,8 +233,8 @@ export default function BestHospitalPage() {
                 </ul>
                 <div className="bg-[#9d174d] text-white p-6 rounded-2xl shadow-xl shadow-red-500/20 flex items-center justify-between gap-4 mt-6 transform hover:scale-[1.02] transition-transform cursor-pointer">
                   <div>
-                    <p className="font-bold text-red-100 text-xs uppercase tracking-wider mb-1">Medical Emergency?</p>
-                    <p className="font-black text-xl">Save our 24/7 Number</p>
+                    <p className="font-bold text-red-100 text-xs uppercase tracking-wider mb-1">{t("bestHospital.medicalEmergency")}</p>
+                    <p className="font-black text-xl">{t("bestHospital.saveNumber")}</p>
                   </div>
                   <div className="bg-white text-[#9d174d] px-5 py-3 rounded-xl font-black shadow-lg">
                     +91 63979 70802
@@ -266,23 +253,23 @@ export default function BestHospitalPage() {
             <div className="space-y-10">
               <div>
                 <div className="inline-flex items-center gap-2 px-4 py-2 bg-pink-50 rounded-full text-pink-600 font-bold text-xs uppercase tracking-wider mb-4 border border-pink-100">
-                  Maternity & Gynecology
+                  {t("bestHospital.maternityBadge")}
                 </div>
                 <h2 className="text-3xl md:text-4xl font-black text-gray-900 tracking-tight">
-                  Holistic Women's Health and Maternity Excellence
+                  {t("bestHospital.maternityTitle")}
                 </h2>
               </div>
               <p className="text-2xl font-serif italic text-[#9d174d] leading-relaxed">
-                "At Raj Nursing Home, we don't just deliver babies; we nurture families."
+                {"\""}{t("bestHospital.womenQuote")}{"\""}
               </p>
               <p className="text-gray-600 text-lg leading-relaxed">
-                This is not just a claim as we carry the initiative "caring for Women" all the time with the assistance of our gynecologists and nurses. We are proud to be the top-rated nursing home in Hapur for safe, painless deliveries and neonatal support.
+                {t("bestHospital.womenPara")}
               </p>
 
               <div className="space-y-8 bg-pink-50/50 p-8 rounded-[2.5rem] border border-pink-100">
                 <h3 className="text-xl font-black text-gray-900 flex items-center gap-3">
                   <span className="w-8 h-1 bg-[#9d174d] rounded-full"></span>
-                  Why Choose Us?
+                  {t("bestHospital.whyChooseUs")}
                 </h3>
                 <ul className="space-y-6">
                   <li className="flex gap-4 group">
@@ -290,9 +277,9 @@ export default function BestHospitalPage() {
                       <Activity className="w-6 h-6" />
                     </div>
                     <div>
-                      <span className="font-bold text-gray-900 block text-lg mb-2">Complex Gynecological Issues</span>
+                      <span className="font-bold text-gray-900 block text-lg mb-2">{t("bestHospital.complexGynae")}</span>
                       <div className="flex flex-wrap gap-2">
-                        {["Uterine fibroids", "Infertility", "Menstrual disorders"].map((item, i) => (
+                        {[t("bestHospital.fibroids"), t("bestHospital.infertility"), t("bestHospital.menstrual")].map((item, i) => (
                           <span key={i} className="px-3 py-1 bg-white text-gray-600 text-xs font-bold rounded-lg border border-pink-100 shadow-sm">
                             {item}
                           </span>
@@ -304,35 +291,35 @@ export default function BestHospitalPage() {
                     <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-pink-500 shadow-sm border border-pink-100 group-hover:scale-110 transition-transform">
                       <ShieldCheck className="w-6 h-6" />
                     </div>
-                    <span className="text-gray-600 font-medium pt-2">Experts from our gynecology department are great at removing cysts and tumors with minimal recovery time.</span>
+                    <span className="text-gray-600 font-medium pt-2">{t("bestHospital.expertsCysts")}</span>
                   </li>
                   <li className="flex gap-4 group">
                     <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center text-pink-500 shadow-sm border border-pink-100 group-hover:scale-110 transition-transform">
                       <Baby className="w-6 h-6" />
                     </div>
-                    <span className="text-gray-600 font-medium pt-2">Ensure both mother and baby transition smoothly into their new life together.</span>
+                    <span className="text-gray-600 font-medium pt-2">{t("bestHospital.motherBaby")}</span>
                   </li>
                 </ul>
                 <div className="bg-white p-6 rounded-2xl border border-pink-100 text-[#9d174d] font-bold text-lg text-center shadow-lg shadow-pink-100">
-                  "It’s time to give your newborn the best start in life with the expert maternity care at Raj Nursing Home. Schedule a prenatal visit today!"
+                  {"\""}{t("bestHospital.newbornCta")}{"\""}
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl shadow-pink-900/10 border-8 border-white group">
+              <div className="relative w-full h-[420px] md:h-[520px] overflow-hidden group bg-transparent">
                 <Image
                   src="/raj/dr-Srishti.jpg"
                   alt="Women's Health Specialist"
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#9d174d]/90 via-transparent to-transparent opacity-90" />
                 <div className="absolute bottom-0 left-0 w-full p-10 text-white">
                   <div className="w-16 h-1 bg-white/50 mb-6 rounded-full"></div>
-                  <p className="font-black text-3xl mb-2">Dr. Srishti Bhardwaj</p>
-                  <p className="text-lg opacity-90 font-medium tracking-wide">Obstetrician & Gynecologist</p>
+                  <p className="font-black text-3xl mb-2">{t("bestHospital.drSrishtiName")}</p>
+                  <p className="text-lg opacity-90 font-medium tracking-wide">{t("bestHospital.obstetricianGynecologist")}</p>
                 </div>
               </div>
             </div>
@@ -349,37 +336,26 @@ export default function BestHospitalPage() {
           <div className="grid lg:grid-cols-2 gap-20 items-center mb-20">
             <div>
               <h2 className="text-3xl md:text-4xl font-black mb-8 leading-tight">
-                Patient-Centric Facilities and Ethical Transparency
+                {t("bestHospital.facilitiesMainTitle")}
               </h2>
               <div className="h-1 w-24 bg-gradient-to-r from-[#9d174d] to-transparent rounded-full mb-8"></div>
             </div>
             <div className="text-gray-400 text-lg space-y-6 leading-relaxed">
               <p>
-                The modern healthcare system is now giving people the best experience at hospitals. In Hapur, Raj Nursing Home has provided the best range of treatment and delivered its loyalty towards every patient.
+                {t("bestHospital.facilitiesP1")}
               </p>
               <p>
-                We always ensure that every interaction is marked by respect and kindness. When you pick the best hospital and nursing home in Hapur, it’s none other than Raj Nursing Home.
+                {t("bestHospital.facilitiesP2")}
               </p>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              {
-                title: "Premium Facilities",
-                desc: "We need to complete all the requirements on time with premium healthcare facilities, from wards to ICUs.",
-                icon: <Building2 className="w-8 h-8" />
-              },
-              {
-                title: "Transparent System",
-                desc: "We are thankful to our management for building a transparent system that helps doctors and assists patients and families.",
-                icon: <FileText className="w-8 h-8" />
-              },
-              {
-                title: "Respect & Kindness",
-                desc: "We always ensure that every interaction is marked by respect and kindness. We prioritize your comfort and budget.",
-                icon: <HeartHandshake className="w-8 h-8" />
-              }
+              { title: t("bestHospital.premiumFacilities"), desc: t("bestHospital.premiumDesc"), icon: <Building2 className="w-8 h-8" /> },
+              { title: t("bestHospital.transparentSystem"), desc: t("bestHospital.transparentDesc"), icon: <FileText className="w-8 h-8" /> },
+              { title: t("bestHospital.respectKindness"), desc: t("bestHospital.respectDesc"), icon: <HeartHandshake className="w-8 h-8" /> },
+              { title: t("bestHospital.ayushmanTitle"), desc: t("bestHospital.ayushmanDesc"), icon: <CreditCard className="w-8 h-8" /> }
             ].map((feature, i) => (
               <div key={i} className="bg-white/5 backdrop-blur-md border border-white/10 p-10 rounded-[2.5rem] hover:-translate-y-2 hover:bg-white/10 transition-all duration-300 group">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#9d174d] to-pink-600 rounded-2xl flex items-center justify-center mb-8 text-white shadow-lg shadow-red-900/30 group-hover:scale-110 transition-transform">
@@ -406,21 +382,17 @@ export default function BestHospitalPage() {
             <div className="relative z-10 space-y-10">
               <div>
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
-                  Our Promise
+                  {t("bestHospital.ourPromise")}
                 </span>
                 <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-6 leading-tight">
-                  Conclusion
+                  {t("bestHospital.conclusion")}
                 </h2>
               </div>
               <div className="space-y-8 text-lg md:text-2xl text-red-50 max-w-4xl mx-auto leading-relaxed font-light">
-                <p>
-                  At last, Raj Nursing Home is not just a mere medical facility; it is a center of healing where patients get extensive care from experienced doctors and nurses by using advanced equipment and medicine for smooth and budget-friendly healing.
-                </p>
-                <p>
-                  In case you are seeking a trusted hospital Hapur for a complex surgery or any medical emergency, join the best hospital and nursing home in Hapur without hesitation.
-                </p>
+                <p>{t("bestHospital.conclusionP1")}</p>
+                <p>{t("bestHospital.conclusionP2")}</p>
                 <p className="font-bold text-white text-3xl pt-4 drop-shadow-md">
-                  Discover healthcare that prioritizes your comfort and budget. Explore our specialized health packages today!
+                  {t("bestHospital.conclusionCta")}
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row justify-center gap-6 pt-10">
@@ -428,13 +400,13 @@ export default function BestHospitalPage() {
                   href="/contact"
                   className="px-12 py-5 bg-white text-[#9d174d] rounded-2xl font-black text-lg uppercase tracking-widest shadow-xl hover:bg-gray-50 hover:scale-105 transition-all duration-300"
                 >
-                  Contact Us Now
+                  {t("bestHospital.contactUsNow")}
                 </Link>
                 <Link
                   href="/health-checkup-plans"
                   className="px-12 py-5 bg-[#9d174d] border-2 border-white/30 text-white rounded-2xl font-black text-lg uppercase tracking-widest hover:bg-[#831843] hover:border-white/50 hover:scale-105 transition-all duration-300"
                 >
-                  Health Packages
+                  {t("bestHospital.healthPackages")}
                 </Link>
               </div>
             </div>
@@ -446,9 +418,9 @@ export default function BestHospitalPage() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="text-[#9d174d] font-black tracking-[0.2em] uppercase text-sm bg-red-50 px-4 py-2 rounded-full border border-red-100">Common Questions</span>
+            <span className="text-[#9d174d] font-black tracking-[0.2em] uppercase text-sm bg-red-50 px-4 py-2 rounded-full border border-red-100">{t("bestHospital.commonQuestions")}</span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-6 tracking-tight">
-              Frequently Asked Questions
+              {t("bestHospital.faqTitle")}
             </h2>
           </div>
 

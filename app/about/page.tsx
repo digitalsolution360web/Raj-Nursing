@@ -2,8 +2,16 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function AboutPage() {
+  const { t } = useLanguage();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-gray-900 pt-[110px] md:pt-[130px]">
       <section className="relative overflow-hidden">
@@ -20,14 +28,14 @@ export default function AboutPage() {
         <div className="max-w-screen-2xl mx-auto px-6 pt-12 pb-12 relative flex items-center justify-between">
           <div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white tracking-tight mb-2">
-              About Us
+              {t("about.title")}
             </h1>
             <div className="flex items-center gap-2 text-xs font-bold text-white/80">
               <Link href="/" className="hover:text-white transition-colors">
-                Home
+                {t("about.breadcrumbHome")}
               </Link>
               <span>/</span>
-              <span className="text-white">About Us</span>
+              <span className="text-white">{t("about.breadcrumbAbout")}</span>
             </div>
           </div>
           <div className="hidden md:block relative h-40 w-40 overflow-hidden rounded-full border-4 border-white/20">
@@ -46,45 +54,45 @@ export default function AboutPage() {
           <div className="space-y-8">
             <div>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-tight mb-4">
-                15 Years of Healing Hapur - <span className="text-[#9d174d]">Our Story</span>
+                {t("about.storyTitle")} <span className="text-[#9d174d]">{t("about.storyHighlight")}</span>
               </h2>
               <p className="text-gray-600 leading-relaxed text-lg">
-                Founded in 2009 on Swarg Ashram Road, Raj Nursing Home began with 10 beds and a vision: &quot;Make advanced healthcare accessible to Hapur&apos;s families.&quot; Today, we&apos;re a 50-bed facility serving 200+ patients daily from Ghaziabad, Meerut, and Bulandshahr.
+                {t("about.storyPara")}
               </p>
             </div>
 
             <div>
-              <h3 className="text-xl md:text-2xl font-black text-[#9d174d] mb-4">Why Choose Us?</h3>
+              <h3 className="text-xl md:text-2xl font-black text-[#9d174d] mb-4">{t("about.whyChoose")}</h3>
               <div className="space-y-4">
                 <div className="flex gap-4">
                   <div className="shrink-0 w-6 h-6 mt-1 text-[#9d174d]">🩺</div>
                   <div>
-                    <h4 className="font-bold text-gray-900">Doctor-Led Diagnostics:</h4>
-                    <p className="text-sm text-gray-600">Reports analyzed by MD specialists, not technicians</p>
+                    <h4 className="font-bold text-gray-900">{t("about.doctorLed")}</h4>
+                    <p className="text-sm text-gray-600">{t("about.doctorLedDesc")}</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="shrink-0 w-6 h-6 mt-1 text-[#9d174d]">💡</div>
                   <div>
-                    <h4 className="font-bold text-gray-900">Technology Meets Compassion:</h4>
-                    <p className="text-sm text-gray-600">HD ultrasound, laparoscopic towers + regional language counseling</p>
+                    <h4 className="font-bold text-gray-900">{t("about.techCompassion")}</h4>
+                    <p className="text-sm text-gray-600">{t("about.techCompassionDesc")}</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <div className="shrink-0 w-6 h-6 mt-1 text-[#9d174d]">🌱</div>
                   <div>
-                    <h4 className="font-bold text-gray-900">Community Impact:</h4>
-                    <p className="text-sm text-gray-600">Free health camps, monsoon relief kits, and school health programs</p>
+                    <h4 className="font-bold text-gray-900">{t("about.communityImpact")}</h4>
+                    <p className="text-sm text-gray-600">{t("about.communityImpactDesc")}</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-xl md:text-2xl font-black text-[#9d174d] mb-4">Milestones</h3>
+              <h3 className="text-xl md:text-2xl font-black text-[#9d174d] mb-4">{t("about.milestones")}</h3>
               <ul className="space-y-2 list-disc list-inside text-gray-700 font-medium">
-                <li><span className="font-bold">2023:</span> Launched Hapur&apos;s first tele-ICU for remote villages</li>
-                <li><span className="font-bold">2024:</span> Recognized as &quot;Best Hospital and Nursing Home in Western UP&quot; by UP Medical Council</li>
+                <li>{t("about.milestone1")}</li>
+                <li>{t("about.milestone2")}</li>
               </ul>
             </div>
           </div>
@@ -112,19 +120,15 @@ export default function AboutPage() {
           </div>
           <div className="space-y-10">
             <div>
-              <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-4">Our Vision</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Ad everti virtute adversarium usu. Errem legere adolescens ut cum. Te quo purto altera, mei nisl causae laboramus no. Te liber graeco quo, nam velit intellegebat an. Vis et sumo temporibus.
-                <br /><br />
-                In ius illud idque nobis. Sed ut equidem omittam. Ius enim nullam insolens ex, munere insolens tractatos vel an, sea iriure virtute adipiscing ex. Vel dignissim hendrerit id. Quem expetenda at duo.
+              <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-4">{t("about.visionTitle")}</h3>
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+                {t("about.visionText")}
               </p>
             </div>
             <div>
-              <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-4">Our Mission</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Eam etiam blandit an, no ius alia affert antiopam. Vim gubergren inciderint ea. Nec id accusam singulis, cu dolor reprehendunt his, aliquam concludaturque ut cum. In mazim omnium consequuntur per, ea semper fabulas sed.
-                <br /><br />
-                Eripuit molestiae persequeris eam no, vis ex primis blandit. Expetenda abhorreant ne sit. Omnes eripuit vis eu, pertinax adipiscing moderatius has te. Sed ad quot facete, vim et quas recteque repudiare. Detraxit definiebas an duo, officiis perfecto est id.
+              <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-4">{t("about.missionTitle")}</h3>
+              <p className="text-gray-600 leading-relaxed whitespace-pre-line">
+                {t("about.missionText")}
               </p>
             </div>
           </div>

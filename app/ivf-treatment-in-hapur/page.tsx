@@ -3,57 +3,62 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Baby, HeartHandshake, Microscope, Dna, ArrowRight, ShieldCheck, Clock, UserCheck, Activity, Heart, CheckCircle2, Sparkles } from "lucide-react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function IvfTreatmentPage() {
+  const { t } = useLanguage();
+
   return (
     <div className="bg-white min-h-screen animate-page-enter mt-32">
       {/* Hero Section */}
-      <div className="relative h-[450px] md:h-[650px] flex items-center overflow-hidden">
+      <div className="relative min-h-[450px] md:min-h-[650px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/raj/banner1.webp"
             alt="IVF & Fertility Center in Hapur"
             fill
-            className="object-cover object-center scale-105 animate-pulse-slow"
+            className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#9d174d] via-[#9d174d]/90 to-transparent z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#9d174d] via-[#9d174d]/85 to-[#9d174d]/40 z-10"></div>
         </div>
 
         <div className="container mx-auto px-6 z-20 relative">
           <div className="max-w-4xl space-y-8">
             <div className="inline-flex mt-10 items-center gap-2 px-5 py-2.5 rounded-full glass text-white text-sm font-bold animate-float tracking-wide">
               <Sparkles className="w-4 h-4 text-rose-300 fill-rose-300" />
-              <span>Advanced Fertility Excellence</span>
+              <span>{t("ivfTreatment.badge")}</span>
             </div>
             <h1 className="text-4xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
-              Hope for Your <br /><span className="text-rose-300">Parenthood Journey</span>
+              {t("ivfTreatment.heroTitle")}<br /><span className="text-rose-300">{t("ivfTreatment.heroTitleHighlight")}</span>
             </h1>
             <p className="text-xl text-gray-100 leading-relaxed max-w-2xl font-medium">
-              Raj Nursing Home offers advanced IVF and fertility treatments in Hapur. With cutting-edge technology and compassionate care, we help couples navigate their journey to building a family with confidence.
+              {t("ivfTreatment.heroDesc")}
             </p>
             <div className="flex flex-wrap gap-5 pt-4">
               <Link href="#appointment" className="px-10 py-5 bg-white text-[#9d174d] rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl hover:bg-rose-50 transition-all transform hover:-translate-y-1">
-                Book Fertility Consultation <ArrowRight className="w-5 h-5 ml-2 inline" />
+                {t("ivfTreatment.bookCta")} <ArrowRight className="w-5 h-5 ml-2 inline" />
               </Link>
               <nav className="flex items-center text-sm text-white/80 py-3 font-semibold">
-                <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                <Link href="/" className="hover:text-white transition-colors">{t("ivfTreatment.home")}</Link>
                 <span className="mx-2">/</span>
-                <span className="text-white">IVF Treatment</span>
+                <span className="text-white">{t("ivfTreatment.breadcrumbCurrent")}</span>
               </nav>
             </div>
           </div>
         </div>
 
-        {/* Floating Decoration */}
-        <div className="absolute right-0 bottom-0 h-full w-[45%] z-20 hidden lg:block opacity-90 transition-transform hover:scale-105 duration-1000">
-          <Image
-            src="/raj/dr.Vipin.jpg"
-            alt="Medical Expert"
-            fill
-            className="object-cover object-top"
-            style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)' }}
-          />
+        {/* Floating - full image */}
+        <div className="absolute right-0 top-0 bottom-0 w-[42%] max-w-[420px] z-20 hidden lg:flex items-end justify-center">
+          <div className="relative w-full h-full min-h-[450px]">
+            <Image
+              src="/raj/dr.Vipin.jpg"
+              alt="Medical Expert"
+              fill
+              className="object-contain object-bottom"
+              sizes="(max-width: 1024px) 0px, 420px"
+            />
+          </div>
         </div>
       </div>
 
@@ -63,16 +68,16 @@ export default function IvfTreatmentPage() {
         {/* Quick Highlights Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32">
           {[
-            { icon: Baby, label: "Success Rate", color: "text-rose-600 bg-rose-50" },
-            { icon: Microscope, label: "Advanced Lab", color: "text-blue-600 bg-blue-50" },
-            { icon: HeartHandshake, label: "Caring Support", color: "text-amber-600 bg-amber-50" },
-            { icon: UserCheck, label: "Expert Doctors", color: "text-emerald-600 bg-emerald-50" },
+            { icon: Baby, labelKey: "ivfTreatment.stat1", color: "text-rose-600 bg-rose-50" },
+            { icon: Microscope, labelKey: "ivfTreatment.stat2", color: "text-blue-600 bg-blue-50" },
+            { icon: HeartHandshake, labelKey: "ivfTreatment.stat3", color: "text-amber-600 bg-amber-50" },
+            { icon: UserCheck, labelKey: "ivfTreatment.stat4", color: "text-emerald-600 bg-emerald-50" },
           ].map((item, idx) => (
             <div key={idx} className="bg-white border border-gray-100 p-8 rounded-[3rem] shadow-xl hover:shadow-[0_30px_60px_rgba(157,23,77,0.1)] transition-all duration-500 group flex flex-col items-center text-center">
               <div className={`p-5 rounded-3xl ${item.color} group-hover:scale-110 transition-transform duration-500 mb-6 shadow-sm`}>
                 <item.icon className="w-8 h-8" />
               </div>
-              <span className="font-extrabold text-gray-900 text-lg md:text-xl tracking-tight leading-tight">{item.label}</span>
+              <span className="font-extrabold text-gray-900 text-lg md:text-xl tracking-tight leading-tight">{t(item.labelKey)}</span>
             </div>
           ))}
         </div>
@@ -81,22 +86,18 @@ export default function IvfTreatmentPage() {
         <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
           <div className="space-y-10 animate-page-enter">
             <div className="space-y-5">
-              <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-sm">Building Families</span>
+              <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-sm">{t("ivfTreatment.introLabel")}</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1] tracking-tighter">
-                Understanding <span className="text-[#9d174d]">IVF Excellence</span>
+                {t("ivfTreatment.introTitle")}<span className="text-[#9d174d]">{t("ivfTreatment.introTitleHighlight")}</span>
               </h2>
             </div>
             <div className="space-y-6 text-gray-600 text-xl leading-relaxed font-medium">
-              <p>
-                In vitro fertilization (IVF) is one of the most widely used assisted reproductive technologies to help couples conceive. At Raj Nursing Home, we combine world-class medical protocols with a personalized approach to ensure the highest chances of success.
-              </p>
-              <p>
-                Whether you're facing blocked fallopian tubes, ovulation disorders, or male factor infertility, our experts are here to guide you through every step of the process with clarity and compassion.
-              </p>
+              <p>{t("ivfTreatment.introP1")}</p>
+              <p>{t("ivfTreatment.introP2")}</p>
             </div>
             <div className="bg-rose-50 border-l-4 border-[#9d174d] p-8 rounded-r-[2rem] shadow-sm">
               <p className="italic text-[#9d174d] text-xl font-semibold leading-relaxed">
-                "We act as your partners in this journey, offering not just medical treatment but emotional support to help you build your dream family."
+                &quot;{t("ivfTreatment.introQuote")}&quot;
               </p>
             </div>
           </div>
@@ -114,8 +115,8 @@ export default function IvfTreatmentPage() {
         {/* Detailed Services (Styled as Cards) */}
         <div className="mb-32">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
-            <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-sm">Our Expertise</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter">Diagnostic & <span className="text-[#9d174d]">Fertility Services</span></h2>
+            <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-sm">{t("ivfTreatment.expertiseLabel")}</span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter">{t("ivfTreatment.expertiseTitle")}<span className="text-[#9d174d]">{t("ivfTreatment.expertiseTitleHighlight")}</span></h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {[

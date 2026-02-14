@@ -3,49 +3,21 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { useEffect } from "react";
 import { Calendar, Facebook, Twitter, Linkedin, CheckCircle2, User, Phone } from "lucide-react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const blogPosts = [
-    {
-        id: 1,
-        title: "Diabetes & Thyroid Clinic in Hapur",
-        date: "13-11-2025",
-        image: "/Thyroid.jpg",
-        slug: "diabetes-thyroid-clinic-hapur"
-    },
-    {
-        id: 2,
-        title: "Best Gynaecologist in Hapur",
-        date: "21-06-2025",
-        image: "/Diagnostic.jpg",
-        slug: "best-gynecologist-hapur"
-    },
-    {
-        id: 3,
-        title: "गर्भावस्था में अल्ट्रासाउंड क्यों जरूरी है? हापुड़ की महिलाओं के लिए गाइड",
-        date: "19-06-2025",
-        image: "/india-doctor.jpg",
-        slug: "pregnancy-ultrasound-guide-hindi"
-    },
-    {
-        id: 4,
-        title: "Laproscpic in Hapur",
-        date: "15-06-2025",
-        image: "/laparoscopic.jpg",
-        slug: "laparoscopic-hapur"
-    },
-    {
-        id: 5,
-        title: "Ultrasound in Hapur – Advanced Diagnostic Services at Raj Nursing Home",
-        date: "15-06-2025",
-        image: "/ultrasound.jpg",
-        slug: "ultrasound-advanced-diagnostic-hapur"
-    }
+    { id: 1, titleKey: "blog.post1Title", date: "13-11-2025", image: "/Thyroid.jpg", slug: "diabetes-thyroid-clinic-hapur" },
+    { id: 2, titleKey: "blog.post2Title", date: "21-06-2025", image: "/Diagnostic.jpg", slug: "best-gynecologist-hapur" },
+    { id: 3, titleKey: "blog.post3Title", date: "19-06-2025", image: "/india-doctor.jpg", slug: "pregnancy-ultrasound-guide-hindi" },
+    { id: 4, titleKey: "blog.post4Title", date: "15-06-2025", image: "/laparoscopic.jpg", slug: "laparoscopic-hapur" },
+    { id: 5, titleKey: "blog.post5Title", date: "15-06-2025", image: "/ultrasound.jpg", slug: "ultrasound-advanced-diagnostic-hapur" }
 ];
 
 const postData = {
     "diabetes-thyroid-clinic-hapur": {
-        title: "Diabetes & Thyroid Clinic in Hapur",
+        titleKey: "blog.post1Title",
         image: "/Thyroid.jpg",
         date: "13-11-2025",
         content: (
@@ -112,7 +84,7 @@ const postData = {
         )
     },
     "best-gynecologist-hapur": {
-        title: "Best Gynaecologist in Hapur",
+        titleKey: "blog.post2Title",
         image: "/Diagnostic.jpg",
         date: "21-06-2025",
         content: (
@@ -172,7 +144,7 @@ const postData = {
         )
     },
     "pregnancy-ultrasound-guide-hindi": {
-        title: "गर्भावस्था में अल्ट्रासाउंड क्यों जरूरी है? हापुड़ की महिलाओं के लिए गाइड",
+        titleKey: "blog.post3Title",
         image: "/india-doctor.jpg",
         date: "19-06-2025",
         content: (
@@ -272,7 +244,7 @@ const postData = {
         )
     },
     "laparoscopic-hapur": {
-        title: "Laproscpic in Hapur",
+        titleKey: "blog.post4Title",
         image: "/laparoscopic.jpg",
         date: "15-06-2025",
         content: (
@@ -285,7 +257,7 @@ const postData = {
         )
     },
     "ultrasound-advanced-diagnostic-hapur": {
-        title: "Ultrasound & Imaging – Ultrasound & Imaging in Hapur",
+        titleKey: "blog.post5Title",
         image: "/ultrasound.jpg",
         date: "15-06-2025",
         content: (
@@ -393,14 +365,19 @@ const postData = {
 
 export default function BlogDetail() {
     const { slug } = useParams();
+    const { t } = useLanguage();
     const currentPost = postData[slug as keyof typeof postData];
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [slug]);
 
     if (!currentPost) {
         return (
             <div className="min-h-screen flex items-center justify-center pt-20">
                 <div className="text-center">
-                    <h1 className="text-4xl font-black text-gray-900 mb-4">Post Not Found</h1>
-                    <Link href="/blog" className="text-[#9d174d] font-bold hover:underline">Back to Blog</Link>
+                    <h1 className="text-4xl font-black text-gray-900 mb-4">{t("blog.postNotFound")}</h1>
+                    <Link href="/blog" className="text-[#9d174d] font-bold hover:underline">{t("blog.backToBlog")}</Link>
                 </div>
             </div>
         );
@@ -418,7 +395,7 @@ export default function BlogDetail() {
                         <div className="relative w-full aspect-[16/9] md:aspect-[21/10] rounded-3xl overflow-hidden mb-8 shadow-md">
                             <Image
                                 src={currentPost.image}
-                                alt={currentPost.title}
+                                alt={t(currentPost.titleKey)}
                                 fill
                                 className="object-cover"
                             />
@@ -436,13 +413,13 @@ export default function BlogDetail() {
                                 <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-[#800020]">
                                     <Calendar className="w-4 h-4" />
                                 </div>
-                                <span>{currentPost.date || "10 JUL 2025"}</span>
+                                <span>{currentPost.date ?? "10 JUL 2025"}</span>
                             </div>
                         </div>
 
                         {/* Title */}
                         <h1 className="text-3xl md:text-5xl font-black text-gray-900 mb-8 leading-tight">
-                            {currentPost.title}
+                            {t(currentPost.titleKey)}
                         </h1>
 
                         {/* Content */}
@@ -456,11 +433,11 @@ export default function BlogDetail() {
 
                         {/* Search Blogs */}
                         <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-                            <h3 className="text-xl font-black text-gray-900 mb-6">Search Blogs</h3>
+                            <h3 className="text-xl font-black text-gray-900 mb-6">{t("blog.searchBlogs")}</h3>
                             <div className="relative">
                                 <input
                                     type="text"
-                                    placeholder="Ask a question..."
+                                    placeholder={t("blog.askPlaceholder")}
                                     className="w-full bg-slate-50 border border-gray-100 rounded-xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-[#800020]/20 transition-all font-bold placeholder:text-gray-400"
                                 />
                             </div>
@@ -468,21 +445,21 @@ export default function BlogDetail() {
 
                         {/* Recent Posts */}
                         <div className="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-                            <h3 className="text-xl font-black text-gray-900 mb-8">Recent Posts</h3>
+                            <h3 className="text-xl font-black text-gray-900 mb-8">{t("blog.recentPosts")}</h3>
                             <div className="space-y-6">
                                 {blogPosts.map((post) => (
                                     <Link key={post.id} href={`/blog/${post.slug}`} className="group flex gap-4 items-start">
                                         <div className="relative w-20 h-20 rounded-2xl overflow-hidden shrink-0 shadow-sm">
                                             <Image
                                                 src={post.image}
-                                                alt={post.title}
+                                                alt={t(post.titleKey)}
                                                 fill
                                                 className="object-cover group-hover:scale-110 transition-transform duration-500"
                                             />
                                         </div>
                                         <div className="space-y-1.5 flex-1">
                                             <h4 className="text-[15px] font-black text-gray-900 group-hover:text-[#800020] transition-colors line-clamp-2 leading-tight">
-                                                {post.title}
+                                                {t(post.titleKey)}
                                             </h4>
                                             <p className="text-[11px] text-gray-500 font-bold uppercase tracking-wider">
                                                 {post.date}
@@ -502,16 +479,16 @@ export default function BlogDetail() {
 
                             <div className="relative z-10">
                                 <h3 className="text-2xl font-black mb-4 leading-tight">
-                                    Ready for your best health journey?
+                                    {t("blog.ctaTitle")}
                                 </h3>
                                 <p className="text-teal-100 font-medium mb-8 text-sm leading-relaxed">
-                                    Join 1000+ happy patients at Raj Nursing Home's most trusted clinic.
+                                    {t("blog.ctaDesc")}
                                 </p>
                                 <Link
                                     href="/contact"
                                     className="block w-full bg-[#4fd1c5] text-[#0c4a4e] text-center py-4 rounded-xl font-black uppercase tracking-widest hover:bg-white transition-all shadow-lg"
                                 >
-                                    Book Appointment
+                                    {t("nav.bookAppointment")}
                                 </Link>
                             </div>
                         </div>

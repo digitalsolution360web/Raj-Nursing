@@ -3,57 +3,62 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Wind, Activity, ShieldCheck, Clock, ArrowRight, UserCheck, Stethoscope, Sparkles, Phone, Shield } from "lucide-react";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function PFTTestingPage() {
+    const { t } = useLanguage();
+
     return (
         <div className="bg-white min-h-screen animate-page-enter mt-32">
             {/* Hero Section */}
-            <div className="relative h-[450px] md:h-[650px] flex items-center overflow-hidden">
+            <div className="relative min-h-[450px] md:min-h-[650px] flex items-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/raj/banner3.webp"
                         alt="PFT Testing & Respiratory Center"
                         fill
-                        className="object-cover object-center scale-105 animate-pulse-slow"
+                        className="object-cover object-center"
                         priority
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#0891b2] via-[#0891b2]/90 to-transparent z-10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#0891b2] via-[#0891b2]/85 to-[#0891b2]/40 z-10"></div>
                 </div>
 
                 <div className="container mx-auto px-6 z-20 relative">
                     <div className="max-w-4xl space-y-8">
                         <div className="inline-flex mt-10 items-center gap-2 px-5 py-2.5 rounded-full glass text-white text-sm font-bold animate-float tracking-wide">
                             <Sparkles className="w-4 h-4 text-cyan-200 fill-cyan-200" />
-                            <span>Advanced Respiratory Wellness</span>
+                            <span>{t("pftTesting.badge")}</span>
                         </div>
                         <h1 className="text-4xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
-                            Pulmonary PFT <br /><span className="text-cyan-200">Testing Hapur</span>
+                            {t("pftTesting.heroTitle")}<br /><span className="text-cyan-200">{t("pftTesting.heroTitleHighlight")}</span>
                         </h1>
                         <p className="text-xl text-gray-100 leading-relaxed max-w-2xl font-medium">
-                            Breathe easier with advanced lung function assessments. Raj Nursing Home offers precise PFT testing to diagnose and manage respiratory conditions with world-class accuracy.
+                            {t("pftTesting.heroDesc")}
                         </p>
                         <div className="flex flex-wrap gap-5 pt-4">
                             <Link href="#appointment" className="px-10 py-5 bg-white text-[#0891b2] rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl hover:bg-cyan-50 transition-all transform hover:-translate-y-1">
-                                Book Test Now <ArrowRight className="w-5 h-5 ml-2 inline" />
+                                {t("pftTesting.bookCta")} <ArrowRight className="w-5 h-5 ml-2 inline" />
                             </Link>
                             <nav className="flex items-center text-sm text-white/80 py-3 font-semibold">
-                                <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                                <Link href="/" className="hover:text-white transition-colors">{t("pftTesting.home")}</Link>
                                 <span className="mx-2">/</span>
-                                <span className="text-white">PFT Testing</span>
+                                <span className="text-white">{t("pftTesting.breadcrumbCurrent")}</span>
                             </nav>
                         </div>
                     </div>
                 </div>
 
-                {/* Floating Decoration */}
-                <div className="absolute right-0 bottom-0 h-full w-[45%] z-20 hidden lg:block opacity-90 transition-transform hover:scale-105 duration-1000">
-                    <Image
-                        src="/raj/dr.Vipin.jpg"
-                        alt="Respiratory Specialist"
-                        fill
-                        className="object-cover object-top"
-                        style={{ clipPath: 'polygon(20% 0, 100% 0, 100% 100%, 0% 100%)' }}
-                    />
+                {/* Floating - full image */}
+                <div className="absolute right-0 top-0 bottom-0 w-[42%] max-w-[420px] z-20 hidden lg:flex items-end justify-center">
+                    <div className="relative w-full h-full min-h-[450px]">
+                        <Image
+                            src="/raj/dr.Vipin.jpg"
+                            alt="Respiratory Specialist"
+                            fill
+                            className="object-contain object-bottom"
+                            sizes="(max-width: 1024px) 0px, 420px"
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -63,16 +68,16 @@ export default function PFTTestingPage() {
                 {/* Quick Highlights Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32">
                     {[
-                        { icon: Wind, label: "Lung Analysis", color: "text-cyan-600 bg-cyan-50" },
-                        { icon: Stethoscope, label: "Asthma Care", color: "text-rose-600 bg-rose-50" },
-                        { icon: Clock, label: "Quick Process", color: "text-amber-600 bg-amber-50" },
-                        { icon: UserCheck, label: "Expert Doctors", color: "text-emerald-600 bg-emerald-50" },
+                        { icon: Wind, labelKey: "pftTesting.stat1", color: "text-cyan-600 bg-cyan-50" },
+                        { icon: Stethoscope, labelKey: "pftTesting.stat2", color: "text-rose-600 bg-rose-50" },
+                        { icon: Clock, labelKey: "pftTesting.stat3", color: "text-amber-600 bg-amber-50" },
+                        { icon: UserCheck, labelKey: "pftTesting.stat4", color: "text-emerald-600 bg-emerald-50" },
                     ].map((item, idx) => (
                         <div key={idx} className="bg-white border border-gray-100 p-8 rounded-[3rem] shadow-xl hover:shadow-[0_30px_60px_rgba(8,145,178,0.1)] transition-all duration-500 group flex flex-col items-center text-center">
                             <div className={`p-5 rounded-3xl ${item.color} group-hover:scale-110 transition-transform duration-500 mb-6 shadow-sm`}>
                                 <item.icon className="w-8 h-8" />
                             </div>
-                            <span className="font-extrabold text-gray-900 text-lg md:text-xl tracking-tight leading-tight">{item.label}</span>
+                            <span className="font-extrabold text-gray-900 text-lg md:text-xl tracking-tight leading-tight">{t(item.labelKey)}</span>
                         </div>
                     ))}
                 </div>
@@ -81,27 +86,23 @@ export default function PFTTestingPage() {
                 <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
                     <div className="space-y-10 animate-page-enter">
                         <div className="space-y-5">
-                            <span className="text-cyan-700 font-black tracking-[0.3em] uppercase text-sm">Advanced Respiratory Care</span>
+                            <span className="text-cyan-700 font-black tracking-[0.3em] uppercase text-sm">{t("pftTesting.introLabel")}</span>
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1] tracking-tighter">
-                                Precise Lung <br /><span className="text-cyan-700">Function Mapping</span>
+                                {t("pftTesting.introTitle")}<br /><span className="text-cyan-700">{t("pftTesting.introTitleHighlight")}</span>
                             </h2>
                         </div>
                         <div className="space-y-6 text-gray-600 text-xl leading-relaxed font-medium">
-                            <p>
-                                Pulmonary Function Tests (PFT) are essential tools for measuring how well your lungs are working. At Raj Nursing Home, we use the latest spirometry and lung volume measurement technology to detect respiratory issues early.
-                            </p>
-                            <p>
-                                Whether you're managing asthma, COPD, or experiencing unexplained shortness of breath, our diagnostic experts provide the clarity you need for effective treatment.
-                            </p>
+                            <p>{t("pftTesting.introP1")}</p>
+                            <p>{t("pftTesting.introP2")}</p>
                         </div>
                         <div className="grid sm:grid-cols-2 gap-6">
                             <div className="p-6 bg-cyan-50 rounded-3xl border border-cyan-100">
-                                <h5 className="font-black text-cyan-800 mb-2 tracking-tight">Non-Invasive</h5>
-                                <p className="text-gray-500 text-sm font-medium">Painless testing procedures with zero downtime.</p>
+                                <h5 className="font-black text-cyan-800 mb-2 tracking-tight">{t("pftTesting.nonInvasive")}</h5>
+                                <p className="text-gray-500 text-sm font-medium">{t("pftTesting.nonInvasiveDesc")}</p>
                             </div>
                             <div className="p-6 bg-cyan-50 rounded-3xl border border-cyan-100">
-                                <h5 className="font-black text-cyan-800 mb-2 tracking-tight">Fast Interpretation</h5>
-                                <p className="text-gray-500 text-sm font-medium">Expert analysis from senior respiratory physicians.</p>
+                                <h5 className="font-black text-cyan-800 mb-2 tracking-tight">{t("pftTesting.fastInterpretation")}</h5>
+                                <p className="text-gray-500 text-sm font-medium">{t("pftTesting.fastInterpretationDesc")}</p>
                             </div>
                         </div>
                     </div>
@@ -118,8 +119,8 @@ export default function PFTTestingPage() {
                 {/* Process & Comfort (Styled Boxes) */}
                 <div className="mb-32">
                     <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
-                        <span className="text-cyan-700 font-black tracking-[0.3em] uppercase text-sm">Patient Experience</span>
-                        <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter">Simple Testing <span className="text-cyan-700">Process</span></h2>
+                        <span className="text-cyan-700 font-black tracking-[0.3em] uppercase text-sm">{t("pftTesting.patientExperience")}</span>
+                        <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter">{t("pftTesting.simpleProcessTitle")}<span className="text-cyan-700">{t("pftTesting.simpleProcessHighlight")}</span></h2>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-10">
@@ -128,17 +129,17 @@ export default function PFTTestingPage() {
                                 <div className="w-16 h-16 bg-cyan-50 text-cyan-700 rounded-2xl flex items-center justify-center shrink-0 shadow-inner">
                                     <Clock className="w-8 h-8" />
                                 </div>
-                                <h4 className="text-3xl font-black text-gray-900 tracking-tight">Procedure Steps</h4>
+                                <h4 className="text-3xl font-black text-gray-900 tracking-tight">{t("pftTesting.procedureStepsTitle")}</h4>
                             </div>
                             <p className="text-gray-500 font-medium leading-relaxed text-lg mb-8">
-                                Our pulmonary assessment is straightforward. Guided by specialists, you will breathe into a high-precision mouthpiece. The machine maps your airflow and lung capacity in real-time.
+                                {t("pftTesting.procedureDesc")}
                             </p>
                             <ul className="space-y-4">
                                 {[
-                                    "Guided by expert technicians",
-                                    "Zero pain or discomfort",
-                                    "Clear breathing instructions",
-                                    "15-20 minute total duration"
+                                    t("pftTesting.procedureL1"),
+                                    t("pftTesting.procedureL2"),
+                                    t("pftTesting.procedureL3"),
+                                    t("pftTesting.procedureL4")
                                 ].map((li, i) => (
                                     <li key={i} className="flex items-center gap-3 font-bold text-gray-700">
                                         <div className="w-2 h-2 rounded-full bg-cyan-500"></div>
@@ -153,21 +154,21 @@ export default function PFTTestingPage() {
                                 <Shield className="w-48 h-48" />
                             </div>
                             <div className="relative z-10">
-                                <h4 className="text-3xl font-black mb-8 tracking-tight text-cyan-200">Pre-Test Guidance</h4>
+                                <h4 className="text-3xl font-black mb-8 tracking-tight text-cyan-200">{t("pftTesting.preTestTitle")}</h4>
                                 <p className="text-cyan-50/80 font-medium leading-relaxed text-lg mb-8">
-                                    To ensure the most accurate results, we recommend a few simple preparations before your appointment.
+                                    {t("pftTesting.preTestIntro")}
                                 </p>
                                 <div className="space-y-6">
                                     {[
-                                        { t: "Light Meals", d: "Avoid heavy meals 2 hours before the test." },
-                                        { t: "Loose Clothing", d: "Wear comfortable attire for unrestricted breathing." },
-                                        { t: "Smoking", d: "Refrain from smoking at least 1 hour prior." }
+                                        { titleKey: "pftTesting.preTest1Title", descKey: "pftTesting.preTest1Desc" },
+                                        { titleKey: "pftTesting.preTest2Title", descKey: "pftTesting.preTest2Desc" },
+                                        { titleKey: "pftTesting.preTest3Title", descKey: "pftTesting.preTest3Desc" }
                                     ].map((item, i) => (
                                         <div key={i} className="flex gap-4">
                                             <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2.5 shrink-0"></div>
                                             <div>
-                                                <p className="font-black text-xl tracking-tight">{item.t}</p>
-                                                <p className="text-cyan-200/70 text-sm font-medium">{item.d}</p>
+                                                <p className="font-black text-xl tracking-tight">{t(item.titleKey)}</p>
+                                                <p className="text-cyan-200/70 text-sm font-medium">{t(item.descKey)}</p>
                                             </div>
                                         </div>
                                     ))}
@@ -185,17 +186,17 @@ export default function PFTTestingPage() {
                     <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-20 items-center relative z-10">
                         <div className="space-y-10">
                             <h2 className="text-4xl md:text-7xl font-black leading-tight tracking-tighter">
-                                Breathe Freely <br /><span className="text-cyan-300">Live Fully.</span>
+                                {t("pftTesting.ctaTitle")}<br /><span className="text-cyan-300">{t("pftTesting.ctaHighlight")}</span>
                             </h2>
                             <p className="text-2xl text-white/80 font-medium leading-relaxed">
-                                Take a proactive step towards respiratory health. Join thousands of Hapur residents who trust us for lung wellness.
+                                {t("pftTesting.ctaDesc")}
                             </p>
                             <div className="flex flex-col sm:flex-row gap-6">
                                 <Link href="tel:+916397970802" className="flex items-center justify-center gap-4 bg-white text-cyan-900 px-12 py-6 rounded-3xl font-black text-xl shadow-2xl hover:scale-105 transition-all">
                                     <Phone className="w-8 h-8" /> +91 63979 70802
                                 </Link>
                                 <Link href="/contact" className="flex items-center justify-center gap-4 bg-cyan-800/40 backdrop-blur-md border border-white/30 text-white px-12 py-6 rounded-3xl font-black text-xl hover:bg-cyan-800/60 transition-all uppercase tracking-widest text-center">
-                                    Visit Center
+                                    {t("pftTesting.visitCenter")}
                                 </Link>
                             </div>
                         </div>
@@ -207,9 +208,9 @@ export default function PFTTestingPage() {
 
                 {/* Conclusion Box */}
                 <div className="mt-32 bg-gray-50 border border-gray-200 rounded-[3rem] p-12 md:p-20 text-center">
-                    <h2 className="text-3xl font-black text-gray-900 mb-8 tracking-tight">Your Partner in Respiratory Health</h2>
+                    <h2 className="text-3xl font-black text-gray-900 mb-8 tracking-tight">{t("pftTesting.partnerTitle")}</h2>
                     <p className="leading-relaxed text-gray-500 text-xl font-medium max-w-5xl mx-auto italic">
-                        "An assessment of pulmonary function is an essential part of chest care. Raj Nursing Home offers reliable assistance in breathing health with structured testing and professionally interpreted results."
+                        &quot;{t("pftTesting.partnerQuote")}&quot;
                     </p>
                 </div>
 

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/app/context/LanguageContext";
 
 const Heart = ({ className }: { className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
@@ -45,55 +46,60 @@ const UserCheck = ({ className }: { className?: string }) => (
 );
 
 export default function HeartDiagnosticsPage() {
+    const { t } = useLanguage();
+
     return (
         <div className="bg-white min-h-screen animate-page-enter">
-            {/* Hero Section */}
-            <div className="relative h-[450px] md:h-[550px] flex items-center overflow-hidden">
+            {/* Hero Section - background image more visible, doctor image full show */}
+            <div className="relative min-h-[450px] md:min-h-[550px] flex items-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/raj/banner1.webp"
                         alt="Heart Diagnostics Banner"
                         fill
-                        className="object-cover object-center scale-105 animate-pulse-slow"
+                        className="object-cover object-center"
                         priority
+                        sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#701a2e] via-[#701a2e]/90 to-transparent z-10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#701a2e] via-[#701a2e]/85 to-[#701a2e]/40 z-10"></div>
                 </div>
 
                 <div className="container mx-auto px-4 z-20 relative">
                     <div className="max-w-3xl space-y-6">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-white text-sm font-medium animate-float">
                             <Heart className="w-4 h-4 text-rose-400 fill-rose-400" />
-                            <span>Cardiac Excellence Center</span>
+                            <span>{t("heartDiagnostics.badge")}</span>
                         </div>
                         <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-                            Heart Diagnostics – <span className="text-rose-400">2D Echo & ECG</span>
+                            {t("heartDiagnostics.heroTitle")}<span className="text-rose-400">{t("heartDiagnostics.heroTitleHighlight")}</span>
                         </h1>
                         <p className="text-lg text-gray-200 leading-relaxed max-w-2xl">
-                            Advanced cardiac assessment delivering precision results for a healthier life. Experience world-class heart care at Raj Nursing Home.
+                            {t("heartDiagnostics.heroDesc")}
                         </p>
                         <div className="flex flex-wrap gap-4 pt-4">
                             <Link href="#appointment" className="btn-primary">
-                                Book Diagnostic <ArrowRight className="w-4 h-4" />
+                                {t("heartDiagnostics.bookDiagnostic")} <ArrowRight className="w-4 h-4" />
                             </Link>
                             <nav className="flex items-center text-sm text-white/80 py-3">
-                                <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                                <Link href="/" className="hover:text-white transition-colors">{t("heartDiagnostics.breadcrumbHome")}</Link>
                                 <span className="mx-2">/</span>
-                                <span className="text-white font-semibold">Heart Diagnostics</span>
+                                <span className="text-white font-semibold">{t("heartDiagnostics.breadcrumbCurrent")}</span>
                             </nav>
                         </div>
                     </div>
                 </div>
 
-                {/* Floating Doctor Image */}
-                <div className="absolute right-0 bottom-0 h-full w-[40%] z-20 hidden lg:block opacity-90 transition-transform hover:scale-105 duration-700">
-                    <Image
-                        src="/raj/dr.Vipin.jpg"
-                        alt="Dr. Vipin Kumar Sharma"
-                        fill
-                        className="object-cover object-top"
-                        style={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)' }}
-                    />
+                {/* Doctor Image - full visibility with object-contain */}
+                <div className="absolute right-0 top-0 bottom-0 w-[38%] max-w-[420px] z-20 hidden lg:flex items-center justify-end pr-0">
+                    <div className="relative w-full h-full min-h-[450px] flex items-end justify-center">
+                        <Image
+                            src="/raj/dr.Vipin.jpg"
+                            alt="Dr. Vipin Kumar Sharma"
+                            fill
+                            className="object-contain object-bottom object-right"
+                            sizes="(max-width: 1024px) 0px, 420px"
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -103,16 +109,16 @@ export default function HeartDiagnosticsPage() {
                 {/* Quick Stats / Highlights */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
                     {[
-                        { icon: Activity, label: "Real-time Imaging", color: "text-rose-600 bg-rose-50" },
-                        { icon: ShieldCheck, label: "Certified Labs", color: "text-blue-600 bg-blue-50" },
-                        { icon: Clock, label: "Fast Reports", color: "text-amber-600 bg-amber-50" },
-                        { icon: UserCheck, label: "Expert Doctors", color: "text-emerald-600 bg-emerald-50" },
+                        { icon: Activity, labelKey: "heartDiagnostics.stat1", color: "text-rose-600 bg-rose-50" },
+                        { icon: ShieldCheck, labelKey: "heartDiagnostics.stat2", color: "text-blue-600 bg-blue-50" },
+                        { icon: Clock, labelKey: "heartDiagnostics.stat3", color: "text-amber-600 bg-amber-50" },
+                        { icon: UserCheck, labelKey: "heartDiagnostics.stat4", color: "text-emerald-600 bg-emerald-50" },
                     ].map((item, idx) => (
                         <div key={idx} className="premium-card p-6 flex flex-col items-center text-center space-y-3 group">
                             <div className={`p-4 rounded-2xl ${item.color} group-hover:scale-110 transition-transform duration-300`}>
                                 <item.icon className="w-6 h-6" />
                             </div>
-                            <span className="font-bold text-gray-800 text-sm md:text-base leading-tight">{item.label}</span>
+                            <span className="font-bold text-gray-800 text-sm md:text-base leading-tight">{t(item.labelKey)}</span>
                         </div>
                     ))}
                 </div>
@@ -121,17 +127,17 @@ export default function HeartDiagnosticsPage() {
                 <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
                     <div className="space-y-8 animate-page-enter" style={{ animationDelay: '0.2s' }}>
                         <div className="space-y-4">
-                            <h2 className="text-sm font-bold tracking-widest text-rose-600 uppercase">Introduction</h2>
+                            <h2 className="text-sm font-bold tracking-widest text-rose-600 uppercase">{t("heartDiagnostics.introLabel")}</h2>
                             <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                                Prioritizing Your Cardiac Health with Precision
+                                {t("heartDiagnostics.introTitle")}
                             </h3>
                         </div>
                         <p className="text-gray-600 text-lg leading-relaxed">
-                            Cardiovascular health is crucial to general wellbeing, and early diagnosis can save lives. Our contemporary diagnostic center assists physicians in recognizing the functioning of the heart and vessels with unmatched accuracy.
+                            {t("heartDiagnostics.introPara")}
                         </p>
                         <div className="bg-rose-50 border-l-4 border-rose-600 p-6 rounded-r-xl">
                             <p className="italic text-rose-900">
-                                "At Raj Nursing Home, cardiac assessments are performed in a relaxed, caring environment by our heart experts, ensuring you feel educated and self-assured throughout."
+                                &quot;{t("heartDiagnostics.introQuote")}&quot;
                             </p>
                         </div>
                     </div>
@@ -149,7 +155,7 @@ export default function HeartDiagnosticsPage() {
                 {/* Detailed Services Grid */}
                 <div className="space-y-16 mb-24">
                     <div className="text-center space-y-4 max-w-2xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Comprehensive Testing Services</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t("heartDiagnostics.sectionTitle")}</h2>
                         <div className="h-1.5 w-24 bg-rose-600 mx-auto rounded-full"></div>
                     </div>
 
@@ -159,12 +165,12 @@ export default function HeartDiagnosticsPage() {
                             <div className="h-14 w-14 bg-rose-100 rounded-2xl flex items-center justify-center">
                                 <Activity className="w-8 h-8 text-rose-600" />
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900">2D Echo Testing</h3>
+                            <h3 className="text-2xl font-bold text-gray-900">{t("heartDiagnostics.echoTitle")}</h3>
                             <p className="text-gray-600 leading-relaxed">
-                                Utilizes high-frequency sound waves to generate real-time images of your heart. It allows our experts to view chambers, valves, and blood flow patterns with exceptional clarity. Safely performed for all ages with no discomfort.
+                                {t("heartDiagnostics.echoDesc")}
                             </p>
                             <ul className="space-y-3 pt-4">
-                                {['Non-invasive & Painless', 'Real-time Valve Visibility', 'Blood Flow Pattern Map'].map((li, i) => (
+                                {[t("heartDiagnostics.echoL1"), t("heartDiagnostics.echoL2"), t("heartDiagnostics.echoL3")].map((li, i) => (
                                     <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
                                         <ShieldCheck className="w-5 h-5 text-emerald-500" /> {li}
                                     </li>
@@ -177,12 +183,12 @@ export default function HeartDiagnosticsPage() {
                             <div className="h-14 w-14 bg-blue-100 rounded-2xl flex items-center justify-center">
                                 <Heart className="w-8 h-8 text-blue-600" />
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900">ECG Services</h3>
+                            <h3 className="text-2xl font-bold text-gray-900">{t("heartDiagnostics.ecgTitle")}</h3>
                             <p className="text-gray-600 leading-relaxed">
-                                Electrocardiograms record your heart's electrical activity to identify irregular rhythms and stress-related changes. Our modern equipment ensures accurate readings vital for timely diagnosis and proper treatment planning.
+                                {t("heartDiagnostics.ecgDesc")}
                             </p>
                             <ul className="space-y-3 pt-4">
-                                {['Rapid Signal Recording', 'Arrythmia Detection', 'Coronary Artery Assessment'].map((li, i) => (
+                                {[t("heartDiagnostics.ecgL1"), t("heartDiagnostics.ecgL2"), t("heartDiagnostics.ecgL3")].map((li, i) => (
                                     <li key={i} className="flex items-center gap-3 text-gray-700 font-medium">
                                         <ShieldCheck className="w-5 h-5 text-emerald-500" /> {li}
                                     </li>
@@ -199,26 +205,26 @@ export default function HeartDiagnosticsPage() {
                     </div>
                     <div className="max-w-3xl space-y-8 relative z-10">
                         <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-                            Integrated Cardiac Care for Long-term Wellness
+                            {t("heartDiagnostics.ctaTitle")}
                         </h2>
                         <p className="text-white/80 text-lg leading-relaxed">
-                            Our holistic approach combines scientific knowledge with advanced technology. Beyond diagnostics, we provide seamless lifestyle guidelines and follow-up treatments to ensure your heart stays strong.
+                            {t("heartDiagnostics.ctaPara")}
                         </p>
                         <div className="grid sm:grid-cols-2 gap-6 pt-6">
                             <div className="glass p-6 rounded-2xl">
-                                <h4 className="font-bold text-xl mb-2">Preventive Screening</h4>
-                                <p className="text-sm text-white/70">Early warning signs detected before symptoms take effect.</p>
+                                <h4 className="font-bold text-xl mb-2">{t("heartDiagnostics.ctaCard1Title")}</h4>
+                                <p className="text-sm text-white/70">{t("heartDiagnostics.ctaCard1Desc")}</p>
                             </div>
                             <div className="glass p-6 rounded-2xl">
-                                <h4 className="font-bold text-xl mb-2">Patient-Centered</h4>
-                                <p className="text-sm text-white/70">Confidential, caring, and professional environment.</p>
+                                <h4 className="font-bold text-xl mb-2">{t("heartDiagnostics.ctaCard2Title")}</h4>
+                                <p className="text-sm text-white/70">{t("heartDiagnostics.ctaCard2Desc")}</p>
                             </div>
                         </div>
                     </div>
 
                     <div className="mt-12">
                         <Link href="#appointment" className="inline-flex items-center gap-3 bg-white text-[#701a2e] px-10 py-4 rounded-2xl font-bold text-lg hover:bg-rose-50 transition-all shadow-xl hover:-translate-y-1">
-                            Schedule Your Check-up <ArrowRight className="w-5 h-5" />
+                            {t("heartDiagnostics.scheduleCheckup")} <ArrowRight className="w-5 h-5" />
                         </Link>
                     </div>
                 </div>
@@ -235,17 +241,17 @@ export default function HeartDiagnosticsPage() {
                     </div>
                     <div className="space-y-8">
                         <div className="space-y-4">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Expert Interpretation</h2>
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t("heartDiagnostics.expertTitle")}</h2>
                             <p className="text-gray-600 text-lg leading-relaxed">
-                                Proper interpretation is just as important as the test itself. Our highly trained medical staff analyze your results using the latest insights to provide meaningful conclusions.
+                                {t("heartDiagnostics.expertPara")}
                             </p>
                         </div>
 
                         <div className="space-y-6">
                             {[
-                                "Highly Trained interpreting Experts",
-                                "Advanced High-Precision Equipment",
-                                "No Wait Time for Critical Results"
+                                t("heartDiagnostics.expertL1"),
+                                t("heartDiagnostics.expertL2"),
+                                t("heartDiagnostics.expertL3")
                             ].map((text, i) => (
                                 <div key={i} className="flex items-center gap-4 bg-gray-50 p-4 rounded-xl border border-gray-100">
                                     <div className="h-10 w-10 flex items-center justify-center bg-rose-600 text-white rounded-lg">
@@ -260,9 +266,9 @@ export default function HeartDiagnosticsPage() {
 
                 {/* Simple Conclusion Box (Requested) */}
                 <div className="mt-16 bg-white border border-gray-200 rounded-3xl p-8 md:p-12 shadow-sm transition-all hover:shadow-md">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Conclusion</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-6">{t("heartDiagnostics.conclusionTitle")}</h2>
                     <p className="leading-relaxed text-gray-600 text-lg">
-                        Diagnostics of the heart is a vital aspect of maintaining the general health. Raj Nursing Home offers patients care at all levels of their cardiac process through advanced testing, caring service, and accessible treatment. Professional guidance, as well as immediate action, is promoted through early evaluation. The decision of effective diagnostic services will ensure that people are educated, active, and assured of their heart condition today and in the future.
+                        {t("heartDiagnostics.conclusionPara")}
                     </p>
                 </div>
 
