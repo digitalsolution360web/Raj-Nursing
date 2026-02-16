@@ -2,15 +2,24 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 export default function ContactPage() {
   const { t } = useLanguage();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+  }
 
   return (
     <div className="min-h-screen bg-white text-gray-900 pt-[110px] md:pt-[130px]">
@@ -55,15 +64,18 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
-            <form className="grid gap-5 md:grid-cols-2">
+            <form onSubmit={handleSubmit} className="grid gap-5 md:grid-cols-2">
               <div>
                 <label className="text-xs font-bold uppercase tracking-widest text-gray-500">
                   {t("contact.name")}
                 </label>
                 <input
                   type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder={t("contact.namePlaceholder")}
                   className="mt-2 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30"
+                  required
                 />
               </div>
               <div>
@@ -75,8 +87,11 @@ export default function ContactPage() {
                 </p>
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder={t("contact.emailPlaceholder")}
                   className="mt-2 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30"
+                  required
                 />
               </div>
               <div>
@@ -85,8 +100,11 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="tel"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   placeholder={t("contact.phonePlaceholder")}
                   className="mt-2 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30"
+                  required
                 />
               </div>
               <div>
@@ -95,6 +113,8 @@ export default function ContactPage() {
                 </label>
                 <input
                   type="text"
+                  value={subject}
+                  onChange={(e) => setSubject(e.target.value)}
                   placeholder={t("contact.subjectPlaceholder")}
                   className="mt-2 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30"
                 />
@@ -105,6 +125,8 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   rows={5}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   placeholder={t("contact.messagePlaceholder")}
                   className="mt-2 w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm font-medium text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30"
                 />

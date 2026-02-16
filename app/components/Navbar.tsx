@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/app/context/LanguageContext";
+import { useAppointment } from "@/app/context/AppointmentContext";
 
 const PhoneIcon = () => (
   <svg
@@ -200,6 +201,7 @@ export default function Navbar() {
   }, []);
 
   const { lang, setLang, t } = useLanguage();
+  const { openAppointment } = useAppointment();
   const [isLangOpen, setIsLangOpen] = useState(false);
 
   const navLinks = [
@@ -423,14 +425,15 @@ export default function Navbar() {
               {/* Custom Language Switcher (EN / हिन्दी) - Desktop */}
               <div className="hidden lg:block">{langDropdown}</div>
 
-              <Link
-                href="/contact"
+              <button
+                type="button"
+                onClick={openAppointment}
                 className="hidden md:flex px-4 py-2 sm:px-6 sm:py-3 bg-[#9d174d] hover:bg-[#831843] text-white text-xs sm:text-sm font-black rounded-full shadow-lg shadow-red-500/20 transition-all hover:-translate-y-1 items-center gap-2 uppercase tracking-wide whitespace-nowrap"
               >
-                <span className="hidden sm:inline">{t("nav.bookAppointment")}</span>
+                <span className="hidden sm:inline cursor-pointer">{t("nav.bookAppointment")}</span>
                 <span className="sm:hidden">{t("nav.book")}</span>
                 <ArrowRightIcon />
-              </Link>
+              </button>
 
               <button
                 onClick={() => setIsMenuOpen(true)}
@@ -543,16 +546,16 @@ export default function Navbar() {
             </div>
 
             <div className="p-6 bg-white border-t border-gray-100 relative z-20">
-              <Link
-                href="/contact"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                type="button"
+                onClick={() => { openAppointment(); setIsMenuOpen(false); }}
                 className="w-full py-5 bg-gradient-to-r from-[#9d174d] to-[#be185d] text-white font-black text-lg rounded-2xl shadow-xl shadow-red-500/20 flex items-center justify-center gap-3 transition-transform active:scale-95 hover:shadow-red-500/30 group"
               >
                 <span>{t("nav.bookAppointment")}</span>
                 <div className="bg-white/20 p-1 rounded-full group-hover:translate-x-1 transition-transform">
                   <ArrowRightIcon />
                 </div>
-              </Link>
+              </button>
             </div>
           </div>
         </div>
