@@ -32,7 +32,7 @@ export default function DrMCSharma() {
                                 <ScissorsIcon className="w-4 h-4" />
                                 <span>{t("doctors.mcSharma.badge")}</span>
                             </div>
-                            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
                                 Dr. M.C. Sharma
                             </h1>
                             <p className="text-xl text-gray-300 font-bold uppercase tracking-wide">
@@ -70,7 +70,7 @@ export default function DrMCSharma() {
             </div>
 
             {/* Main Content */}
-            <div className="max-w-screen-2xl mx-auto px-6 py-8 md:py-12">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-8 md:py-12">
                 {/* Quick Info Cards */}
                 <div className="grid md:grid-cols-3 gap-4 -mt-16 relative z-10 mb-10 md:mb-12">
                     {[
@@ -92,7 +92,7 @@ export default function DrMCSharma() {
                 <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
                     <div className="space-y-8">
                         <div>
-                            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+                            <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-6">
                                 {t("doctors.mcSharma.aboutTitle")}
                             </h2>
                             <div className="h-2 w-24 bg-gray-900 rounded-full"></div>
@@ -114,7 +114,7 @@ export default function DrMCSharma() {
                     </div>
 
                     <div className="bg-gradient-to-br from-gray-50 to-slate-50 rounded-[3rem] p-8 md:p-12 border border-gray-200">
-                        <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-6">
+                        <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
                             {t("doctors.mcSharma.stitchlessTitle")}
                         </h3>
                         <p className="text-gray-700 leading-relaxed mb-6 font-medium">
@@ -142,7 +142,7 @@ export default function DrMCSharma() {
                             <div className="w-20 h-20 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center mx-auto mb-6">
                                 <Heart className="w-10 h-10 text-white" />
                             </div>
-                            <h3 className="text-3xl md:text-4xl font-black mb-4">{t("doctors.mcSharma.emergencyTitle")}</h3>
+                            <h3 className="text-xl md:text-2xl font-black mb-4">{t("doctors.mcSharma.emergencyTitle")}</h3>
                             <p className="text-xl text-red-100 leading-relaxed">
                                 {t("doctors.mcSharma.emergencyDesc")}
                             </p>
@@ -153,7 +153,7 @@ export default function DrMCSharma() {
                 {/* Patient Testimonial & Excellence */}
                 <div className="grid lg:grid-cols-2 gap-10 mb-20">
                     <div className="bg-white rounded-[3rem] p-10 border border-gray-100 shadow-2xl">
-                        <h3 className="text-2xl font-black text-gray-900 mb-6">{t("doctors.mcSharma.patientTestimonial")}</h3>
+                        <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">{t("doctors.mcSharma.patientTestimonial")}</h3>
                         <div className="bg-gradient-to-r from-gray-50 to-slate-50 rounded-3xl p-8 border-l-4 border-gray-900">
                             <p className="text-lg text-gray-700 italic leading-relaxed mb-4 font-semibold">
                                 {t("doctors.mcSharma.testimonial")}
@@ -163,7 +163,7 @@ export default function DrMCSharma() {
                     </div>
 
                     <div className="bg-gradient-to-br from-gray-900 to-slate-800 rounded-[3rem] p-10 text-white shadow-2xl">
-                        <h3 className="text-2xl font-black mb-6">{t("doctors.mcSharma.clinicalExcellence")}</h3>
+                        <h3 className="text-xl md:text-2xl font-black mb-6">{t("doctors.mcSharma.clinicalExcellence")}</h3>
                         <p className="text-gray-300 leading-relaxed font-medium">
                             {t("doctors.mcSharma.clinicalDesc")}
                         </p>
@@ -175,7 +175,7 @@ export default function DrMCSharma() {
 
                 {/* CTA Section */}
                 <div className="bg-gradient-to-r from-gray-900 to-slate-800 rounded-[4rem] p-12 md:p-16 text-white text-center">
-                    <h3 className="text-3xl md:text-5xl font-black mb-6">
+                    <h3 className="text-xl md:text-2xl font-black mb-6">
                         {t("doctors.mcSharma.ctaHeading")}
                     </h3>
                     <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">

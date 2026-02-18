@@ -13,15 +13,36 @@
   --font-outfit: var(--font-outfit);
 }
 
-/* Base Styles */
+/* Base Styles - smaller font site-wide (headings like "Where Healing Meets Excellence" + all text) */
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 12px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      font-size: 12.5px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 13px;
+    }
   }
 
   body {
     color: #1e293b;
     -webkit-font-smoothing: antialiased;
+    min-width: 0;
+  }
+
+  /* Prevent horizontal overflow on small screens */
+  img, video, iframe {
+    max-width: 100%;
+    height: auto;
   }
 }
 

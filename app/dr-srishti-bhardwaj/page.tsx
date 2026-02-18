@@ -32,7 +32,7 @@ export default function DrSrishtiBhardwaj() {
                                 <Sparkles className="w-4 h-4 fill-current" />
                                 <span>{t("doctors.srishti.badge")}</span>
                             </div>
-                            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
                                 Dr. Srishti Bhardwaj
                             </h1>
                             <p className="text-xl text-rose-200 font-bold uppercase tracking-wide">
@@ -70,7 +70,7 @@ export default function DrSrishtiBhardwaj() {
             </div>
 
             {/* Main Content */}
-            <div className="max-w-screen-2xl mx-auto px-6 py-8 md:py-12">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-8 md:py-12">
                 {/* Quick Info Cards */}
                 <div className="grid md:grid-cols-3 gap-4 -mt-16 relative z-10 mb-10 md:mb-12">
                     {[
@@ -92,7 +92,7 @@ export default function DrSrishtiBhardwaj() {
                 <div className="grid lg:grid-cols-2 gap-10 items-start mb-12">
                     <div className="space-y-8">
                         <div>
-                            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+                            <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-6">
                                 {t("doctors.srishti.aboutTitle")}
                             </h2>
                             <div className="h-2 w-24 bg-rose-600 rounded-full"></div>
@@ -139,7 +139,7 @@ export default function DrSrishtiBhardwaj() {
                     <div className="max-w-4xl mx-auto">
                         <div className="text-center mb-10">
                             <Heart className="w-16 h-16 text-rose-500 mx-auto mb-4" />
-                            <h3 className="text-3xl md:text-4xl font-black text-gray-900">{t("doctors.srishti.whatPatientsSay")}</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900">{t("doctors.srishti.whatPatientsSay")}</h3>
                         </div>
                         <div className="bg-gradient-to-r from-rose-50 to-pink-50 rounded-3xl p-8 md:p-12 border-l-4 border-rose-600">
                             <p className="text-xl text-gray-700 italic leading-relaxed mb-4 font-semibold">
@@ -152,7 +152,7 @@ export default function DrSrishtiBhardwaj() {
 
                 {/* CTA Section */}
                 <div className="bg-gradient-to-r from-[#800020] to-rose-700 rounded-[4rem] p-12 md:p-16 text-white text-center">
-                    <h3 className="text-3xl md:text-5xl font-black mb-6">
+                    <h3 className="text-xl md:text-2xl font-black mb-6">
                         {t("doctors.srishti.ctaHeading")}
                     </h3>
                     <p className="text-xl text-rose-100 mb-8 max-w-2xl mx-auto">

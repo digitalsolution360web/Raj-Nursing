@@ -89,7 +89,7 @@ export default function BestHospitalPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(157,23,77,0.05),transparent_40%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(59,130,246,0.03),transparent_40%)]" />
 
-        <div className="max-w-screen-2xl mx-auto px-6 pt-10 md:pt-20 relative">
+        <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 pt-10 md:pt-20 relative">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 animate-in slide-in-from-left-5 duration-700 fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] font-black uppercase tracking-widest bg-red-50 text-[#9d174d] border border-red-100 shadow-sm hover:shadow-md transition-shadow cursor-default">
@@ -176,7 +176,7 @@ export default function BestHospitalPage() {
       {/* Emergency Section */}
       <section className="py-24 bg-gray-50 overflow-hidden relative">
         <div className="absolute -left-20 top-20 w-96 h-96 bg-red-200/30 rounded-full blur-[100px]" />
-        <div className="max-w-screen-2xl mx-auto px-6 relative z-10">
+        <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="order-2 lg:order-1 relative group">
               <div className="absolute inset-0 bg-[#9d174d] rounded-[3rem] rotate-6 opacity-10 group-hover:rotate-3 transition-transform duration-500 scale-105" />
@@ -248,7 +248,7 @@ export default function BestHospitalPage() {
 
       {/* Women's Health Section */}
       <section className="py-24 bg-white relative">
-        <div className="max-w-screen-2xl mx-auto px-6">
+        <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-10">
               <div>
@@ -332,7 +332,7 @@ export default function BestHospitalPage() {
         <div className="absolute top-0 right-0 w-1/2 h-full bg-[#9d174d]/20 blur-[120px]" />
         <div className="absolute bottom-0 left-0 w-1/3 h-full bg-blue-600/20 blur-[120px]" />
 
-        <div className="max-w-screen-2xl mx-auto px-6 relative z-10">
+        <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 relative z-10">
           <div className="grid lg:grid-cols-2 gap-20 items-center mb-20">
             <div>
               <h2 className="text-3xl md:text-4xl font-black mb-8 leading-tight">
@@ -373,7 +373,7 @@ export default function BestHospitalPage() {
 
       {/* Conclusion / CTA */}
       <section className="py-24 bg-white relative">
-        <div className="max-w-screen-2xl mx-auto px-6">
+        <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
           <div className="bg-gradient-to-br from-[#9d174d] to-[#be185d] rounded-[3rem] p-8 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-red-900/30 group">
             <div className="absolute top-0 left-0 w-full h-full bg-[url('/file.svg')] opacity-10 bg-repeat bg-center mix-blend-overlay transition-opacity duration-500 group-hover:opacity-20" />
             <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-[80px]" />
@@ -384,7 +384,7 @@ export default function BestHospitalPage() {
                 <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-sm font-bold uppercase tracking-widest mb-6 backdrop-blur-sm">
                   {t("bestHospital.ourPromise")}
                 </span>
-                <h2 className="text-3xl md:text-5xl font-black tracking-tight mb-6 leading-tight">
+                <h2 className="text-2xl md:text-3xl font-black tracking-tight mb-6 leading-tight">
                   {t("bestHospital.conclusion")}
                 </h2>
               </div>

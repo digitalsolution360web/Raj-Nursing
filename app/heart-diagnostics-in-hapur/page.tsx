@@ -51,7 +51,7 @@ export default function HeartDiagnosticsPage() {
     return (
         <div className="bg-white min-h-screen animate-page-enter">
             {/* Hero Section - background image more visible, doctor image full show */}
-            <div className="relative min-h-[450px] md:min-h-[550px] flex items-center overflow-hidden">
+            <div className="relative min-h-[320px] md:min-h-[400px] flex items-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/raj/banner1.webp"
@@ -70,7 +70,7 @@ export default function HeartDiagnosticsPage() {
                             <Heart className="w-4 h-4 text-rose-400 fill-rose-400" />
                             <span>{t("heartDiagnostics.badge")}</span>
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
                             {t("heartDiagnostics.heroTitle")}<span className="text-rose-400">{t("heartDiagnostics.heroTitleHighlight")}</span>
                         </h1>
                         <p className="text-lg text-gray-200 leading-relaxed max-w-2xl">
@@ -104,7 +104,7 @@ export default function HeartDiagnosticsPage() {
             </div>
 
             {/* Main Content */}
-            <div className="max-w-screen-2xl mx-auto px-4 py-20">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-20 md:py-24">
 
                 {/* Quick Stats / Highlights */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
@@ -128,7 +128,7 @@ export default function HeartDiagnosticsPage() {
                     <div className="space-y-8 animate-page-enter" style={{ animationDelay: '0.2s' }}>
                         <div className="space-y-4">
                             <h2 className="text-sm font-bold tracking-widest text-rose-600 uppercase">{t("heartDiagnostics.introLabel")}</h2>
-                            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900 leading-tight">
                                 {t("heartDiagnostics.introTitle")}
                             </h3>
                         </div>
@@ -155,7 +155,7 @@ export default function HeartDiagnosticsPage() {
                 {/* Detailed Services Grid */}
                 <div className="space-y-16 mb-24">
                     <div className="text-center space-y-4 max-w-2xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t("heartDiagnostics.sectionTitle")}</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-gray-900">{t("heartDiagnostics.sectionTitle")}</h2>
                         <div className="h-1.5 w-24 bg-rose-600 mx-auto rounded-full"></div>
                     </div>
 
@@ -165,7 +165,7 @@ export default function HeartDiagnosticsPage() {
                             <div className="h-14 w-14 bg-rose-100 rounded-2xl flex items-center justify-center">
                                 <Activity className="w-8 h-8 text-rose-600" />
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900">{t("heartDiagnostics.echoTitle")}</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900">{t("heartDiagnostics.echoTitle")}</h3>
                             <p className="text-gray-600 leading-relaxed">
                                 {t("heartDiagnostics.echoDesc")}
                             </p>
@@ -183,7 +183,7 @@ export default function HeartDiagnosticsPage() {
                             <div className="h-14 w-14 bg-blue-100 rounded-2xl flex items-center justify-center">
                                 <Heart className="w-8 h-8 text-blue-600" />
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900">{t("heartDiagnostics.ecgTitle")}</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900">{t("heartDiagnostics.ecgTitle")}</h3>
                             <p className="text-gray-600 leading-relaxed">
                                 {t("heartDiagnostics.ecgDesc")}
                             </p>
@@ -204,7 +204,7 @@ export default function HeartDiagnosticsPage() {
                         <Heart className="w-64 h-64" />
                     </div>
                     <div className="max-w-3xl space-y-8 relative z-10">
-                        <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight">
                             {t("heartDiagnostics.ctaTitle")}
                         </h2>
                         <p className="text-white/80 text-lg leading-relaxed">
@@ -212,11 +212,11 @@ export default function HeartDiagnosticsPage() {
                         </p>
                         <div className="grid sm:grid-cols-2 gap-6 pt-6">
                             <div className="glass p-6 rounded-2xl">
-                                <h4 className="font-bold text-xl mb-2">{t("heartDiagnostics.ctaCard1Title")}</h4>
+                                <h4 className="font-black text-xl mb-2">{t("heartDiagnostics.ctaCard1Title")}</h4>
                                 <p className="text-sm text-white/70">{t("heartDiagnostics.ctaCard1Desc")}</p>
                             </div>
                             <div className="glass p-6 rounded-2xl">
-                                <h4 className="font-bold text-xl mb-2">{t("heartDiagnostics.ctaCard2Title")}</h4>
+                                <h4 className="font-black text-xl mb-2">{t("heartDiagnostics.ctaCard2Title")}</h4>
                                 <p className="text-sm text-white/70">{t("heartDiagnostics.ctaCard2Desc")}</p>
                             </div>
                         </div>
@@ -241,7 +241,7 @@ export default function HeartDiagnosticsPage() {
                     </div>
                     <div className="space-y-8">
                         <div className="space-y-4">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">{t("heartDiagnostics.expertTitle")}</h2>
+                            <h2 className="text-2xl md:text-3xl font-black text-gray-900">{t("heartDiagnostics.expertTitle")}</h2>
                             <p className="text-gray-600 text-lg leading-relaxed">
                                 {t("heartDiagnostics.expertPara")}
                             </p>
@@ -266,7 +266,7 @@ export default function HeartDiagnosticsPage() {
 
                 {/* Simple Conclusion Box (Requested) */}
                 <div className="mt-16 bg-white border border-gray-200 rounded-3xl p-8 md:p-12 shadow-sm transition-all hover:shadow-md">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">{t("heartDiagnostics.conclusionTitle")}</h2>
+                    <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-6">{t("heartDiagnostics.conclusionTitle")}</h2>
                     <p className="leading-relaxed text-gray-600 text-lg">
                         {t("heartDiagnostics.conclusionPara")}
                     </p>

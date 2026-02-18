@@ -11,7 +11,7 @@ export default function IvfTreatmentPage() {
   return (
     <div className="bg-white min-h-screen animate-page-enter mt-32">
       {/* Hero Section */}
-      <div className="relative min-h-[450px] md:min-h-[650px] flex items-center overflow-hidden">
+      <div className="relative min-h-[320px] md:min-h-[400px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/raj/banner1.webp"
@@ -29,7 +29,7 @@ export default function IvfTreatmentPage() {
               <Sparkles className="w-4 h-4 text-rose-300 fill-rose-300" />
               <span>{t("ivfTreatment.badge")}</span>
             </div>
-            <h1 className="text-4xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight">
               {t("ivfTreatment.heroTitle")}<br /><span className="text-rose-300">{t("ivfTreatment.heroTitleHighlight")}</span>
             </h1>
             <p className="text-xl text-gray-100 leading-relaxed max-w-2xl font-medium">
@@ -47,23 +47,10 @@ export default function IvfTreatmentPage() {
             </div>
           </div>
         </div>
-
-        {/* Floating - full image */}
-        <div className="absolute right-0 top-0 bottom-0 w-[42%] max-w-[420px] z-20 hidden lg:flex items-end justify-center">
-          <div className="relative w-full h-full min-h-[450px]">
-            <Image
-              src="/raj/dr.Vipin.jpg"
-              alt="Medical Expert"
-              fill
-              className="object-contain object-bottom"
-              sizes="(max-width: 1024px) 0px, 420px"
-            />
-          </div>
-        </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-screen-2xl mx-auto px-6 py-24 sm:py-32">
+      <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-24 sm:py-32">
 
         {/* Quick Highlights Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32">
@@ -87,7 +74,7 @@ export default function IvfTreatmentPage() {
           <div className="space-y-10 animate-page-enter">
             <div className="space-y-5">
               <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-sm">{t("ivfTreatment.introLabel")}</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1] tracking-tighter">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-[1.1] tracking-tight">
                 {t("ivfTreatment.introTitle")}<span className="text-[#9d174d]">{t("ivfTreatment.introTitleHighlight")}</span>
               </h2>
             </div>
@@ -116,7 +103,7 @@ export default function IvfTreatmentPage() {
         <div className="mb-32">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
             <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-sm">{t("ivfTreatment.expertiseLabel")}</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter">{t("ivfTreatment.expertiseTitle")}<span className="text-[#9d174d]">{t("ivfTreatment.expertiseTitleHighlight")}</span></h2>
+            <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">{t("ivfTreatment.expertiseTitle")}<span className="text-[#9d174d]">{t("ivfTreatment.expertiseTitleHighlight")}</span></h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             {[
@@ -130,7 +117,7 @@ export default function IvfTreatmentPage() {
                   <service.icon className="w-8 h-8" />
                 </div>
                 <div>
-                  <h4 className="text-2xl font-black text-gray-900 mb-3 tracking-tight">{service.title}</h4>
+                  <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-3 tracking-tight">{service.title}</h4>
                   <p className="text-gray-500 font-medium leading-relaxed">{service.desc}</p>
                 </div>
               </div>
@@ -145,7 +132,7 @@ export default function IvfTreatmentPage() {
 
           <div className="grid lg:grid-cols-2 gap-20 items-center relative z-10">
             <div className="space-y-10">
-              <h3 className="text-4xl md:text-6xl font-black leading-[1.1] tracking-tighter">
+              <h3 className="text-xl md:text-2xl font-black leading-tight tracking-tight">
                 Why Couples Trust <br /><span className="text-rose-300">Raj IVF Center?</span>
               </h3>
               <div className="space-y-6">
@@ -174,12 +161,12 @@ export default function IvfTreatmentPage() {
         </div>
 
         {/* Final CTA */}
-        <div id="appointment" className="max-w-screen-2xl mx-auto">
+        <div id="appointment" className="max-w-[1420px] mx-auto">
           <div className="relative rounded-[4rem] overflow-hidden bg-gray-50 p-12 md:p-24 flex flex-col items-center text-center space-y-10">
             <div className="w-24 h-24 bg-rose-100 rounded-full flex items-center justify-center text-[#9d174d] animate-bounce">
               <Heart className="w-12 h-12 fill-[#9d174d]" />
             </div>
-            <h2 className="text-4xl md:text-7xl font-black text-gray-900 tracking-tighter leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 tracking-tight leading-tight">
               Start Your <span className="text-[#9d174d]">Parenthood Dream</span> Today
             </h2>
             <p className="text-2xl text-gray-500 font-medium max-w-3xl">

@@ -37,8 +37,8 @@ export default function ServicesPage() {
     const features = Array.from({ length: activeContent.featureCount }, (_, i) => t("servicesPage." + activeContent.titleKey + "F" + (i + 1)));
 
     return (
-        <div className="bg-gray-50 min-h-screen text-gray-900 font-sans">
-            <main className="pt-[110px] md:pt-[125px] px-4 md:px-8 pb-8 max-w-screen-2xl mx-auto min-h-screen flex flex-col">
+        <div className="bg-gray-50 min-h-screen text-gray-900 font-sans overflow-x-hidden">
+            <main className="pt-[100px] sm:pt-[110px] md:pt-[125px] px-4 sm:px-8 md:px-10 lg:px-12 pb-8 max-w-[1420px] mx-auto min-h-screen flex flex-col">
                 <div className="mb-3 text-center max-w-3xl mx-auto">
                     <span className="inline-block px-2 py-0.5 bg-red-50 text-[#9d174d] font-bold tracking-widest uppercase text-[8px] rounded-full mb-1 border border-red-100">{t("servicesPage.badge")}</span>
                     <h1 className="text-xl md:text-2xl lg:text-3xl mt-1 font-black text-gray-900 mb-1 leading-tight uppercase tracking-tight">{t("servicesPage.title")}</h1>

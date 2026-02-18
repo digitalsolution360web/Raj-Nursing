@@ -33,7 +33,7 @@ const postData = {
                 <h3 className="text-2xl md:text-3xl font-black text-gray-900 pt-4">"We Are Focused on Core Services" – The Motto of Raj Nursing Home</h3>
                 <p>Raj nursing home has a meaning behind because those services provide always message to the world.</p>
 
-                <h3 className="text-3xl font-bold text-[#800020] pt-6">1. Diabetes Treatment in Hapur</h3>
+                <h3 className="text-xl md:text-2xl font-black text-[#800020] pt-6">1. Diabetes Treatment in Hapur</h3>
                 <p>At Raj Nursing Home, our specialist physician examines every patient, making sure the patient is given the proper treatment in return. The treatment for we provide including below the following areas of our best:</p>
                 <ul className="space-y-3 pl-6 list-disc marker:text-[#800020]">
                     <li>Blood sugar test levels.</li>
@@ -42,7 +42,7 @@ const postData = {
                 </ul>
                 <p>Specialist physician examine every patient, making sure the patient is given the proper treatment in return. The treatment includes: Training for the treatment throughout the treatment. Setting slow goals according to the reports. Poor healing management strategies. Need to take charge of your disease? Schedule a check-up and visit us at Raj Nursing Home the best center for diabetes treatment in Hapur.</p>
 
-                <h3 className="text-3xl font-bold text-[#800020] pt-6">2. Thyroid Treatment in Hapur</h3>
+                <h3 className="text-xl md:text-2xl font-black text-[#800020] pt-6">2. Thyroid Treatment in Hapur</h3>
                 <p>At Raj Nursing Home, our expert specialist physician examines and understand how to manage the following conditions:</p>
                 <ul className="space-y-3 pl-6 list-disc marker:text-[#800020]">
                     <li>Hyperthyroidism.</li>
@@ -52,7 +52,7 @@ const postData = {
                 </ul>
                 <p>Our highly qualified endocrine doctors assess every case and provide customized solution for every physical disorder after the necessary examination by our expert experts and specialists. We provide proper and best therapy only after the final reports. Call us today and talk about your thyroid health. Booker slots at Raj Nursing Home for a proper consultation with leading specialists in Hapur.</p>
 
-                <h3 className="text-3xl font-bold text-gray-900 pt-8">Why Raj Nursing Home for Thyroid and Diabetes Treatment in Hapur?</h3>
+                <h3 className="text-xl md:text-2xl font-black text-gray-900 pt-8">Why Raj Nursing Home for Thyroid and Diabetes Treatment in Hapur?</h3>
                 <p>We understand every result, symptom, and treatment assessment of thyroid and diabetes issues you are facing, our first priority is taking care for our patients. Our multidisciplined approach combines when with skilled specialists, surgeons, and nutritionists to provide any level service.</p>
                 <div className="bg-slate-50 rounded-3xl p-8 border-l-8 border-[#800020] shadow-sm space-y-4">
                     <p className="font-bold text-gray-900 text-xl mb-2">Our Key Differentiators:</p>
@@ -62,10 +62,10 @@ const postData = {
                     <p><strong>Advanced Diagnostic Services:</strong> We use advanced tools, testing methods, and procedures to identify diseases and provide treatment based on studies' edition.</p>
                 </div>
 
-                <h3 className="text-3xl font-bold text-gray-900 pt-8">Conclusion</h3>
+                <h3 className="text-xl md:text-2xl font-black text-gray-900 pt-8">Conclusion</h3>
                 <p>Towards the way towards becoming happier and healthier, visit Raj Nursing Home for top-level and essential treatment in Hapur.</p>
 
-                <h3 className="text-2xl font-bold text-gray-900 pt-8">FAQs</h3>
+                <h3 className="text-xl md:text-2xl font-black text-gray-900 pt-8">FAQs</h3>
                 <div className="space-y-6">
                     {[
                         { q: "What types of diabetes are treated at Raj Nursing Home?", a: "Our doctors treat all types, including: Type 1 diabetes, Type 2 diabetes, Gestational diabetes." },
@@ -325,11 +325,11 @@ const postData = {
                 </section>
 
                 <section className="space-y-8 pt-10 border-t border-gray-100">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">Why Choose Raj Nursing Home as Hapur's Diagnostic Imaging Center?</h3>
+                    <h3 className="text-2xl md:text-3xl font-black text-gray-900">Why Choose Raj Nursing Home as Hapur's Diagnostic Imaging Center?</h3>
                     <p>Everyone wants to join a healthcare system where they can receive responsive and accessible health-related facilities at marginal pricing. Well, Raj Nursing Home is one of the best diagnostic imaging centers in Hapur that delivers premium care to its patients.</p>
 
                     <div className="space-y-4">
-                        <h4 className="text-xl font-bold text-gray-900">With a legacy of more than a decade, we</h4>
+                        <h4 className="text-xl font-black text-gray-900">With a legacy of more than a decade, we</h4>
                         <ul className="space-y-2">
                             {[
                                 "Follow NABH certified protocols,",
@@ -350,7 +350,7 @@ const postData = {
                     </div>
 
                     <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 md:p-12 shadow-sm mt-12">
-                        <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">Conclusion</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-6 tracking-tight">Conclusion</h2>
                         <div className="space-y-4 text-gray-700 text-lg font-bold leading-relaxed">
                             <p>Whether it's your routine checkup, or you look for specialized imaging and pregnancy-based scans, Raj Nursing Home provides the best and unmatched level of diagnosis in Hapur.</p>
                             <p>Now, no more worries about getting the best ultrasound in Hapur. With Raj Nursing Home, get in touch with accuracy, commitment, and privacy. Reach out to Raj Nursing Home for all your ultrasound and diagnostic needs in Hapur!</p>
@@ -376,7 +376,7 @@ export default function BlogDetail() {
         return (
             <div className="min-h-screen flex items-center justify-center pt-20">
                 <div className="text-center">
-                    <h1 className="text-4xl font-black text-gray-900 mb-4">{t("blog.postNotFound")}</h1>
+                    <h1 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">{t("blog.postNotFound")}</h1>
                     <Link href="/blog" className="text-[#9d174d] font-bold hover:underline">{t("blog.backToBlog")}</Link>
                 </div>
             </div>
@@ -386,7 +386,7 @@ export default function BlogDetail() {
     return (
         <div className="bg-slate-50/50 min-h-screen animate-page-enter mt-32 pb-20">
             {/* Main Content Area */}
-            <div className="max-w-7xl mx-auto px-4 md:px-6 py-12">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-12">
                 <div className="flex flex-col lg:flex-row gap-10">
 
                     {/* Left Column: Article */}
@@ -418,7 +418,7 @@ export default function BlogDetail() {
                         </div>
 
                         {/* Title */}
-                        <h1 className="text-3xl md:text-5xl font-black text-gray-900 mb-8 leading-tight">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 mb-8 leading-tight">
                             {t(currentPost.titleKey)}
                         </h1>
 

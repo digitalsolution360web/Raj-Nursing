@@ -26,7 +26,7 @@ export default function HeartSpecialistPage() {
   return (
     <div className="bg-white min-h-screen animate-page-enter mt-32">
       {/* Hero Section */}
-      <div className="relative min-h-[450px] md:min-h-[650px] flex items-center overflow-hidden">
+      <div className="relative min-h-[320px] md:min-h-[400px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/raj/banner1.webp"
@@ -44,7 +44,7 @@ export default function HeartSpecialistPage() {
               <Sparkles className="w-4 h-4 text-rose-300 fill-rose-300" />
               <span>{t("heartSpecialist.badge")}</span>
             </div>
-            <h1 className="text-4xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight">
               {t("heartSpecialist.heroTitle")}<br /><span className="text-rose-300">{t("heartSpecialist.heroTitleHighlight")}</span>
             </h1>
             <p className="text-xl text-gray-100 leading-relaxed max-w-2xl font-medium">
@@ -62,23 +62,10 @@ export default function HeartSpecialistPage() {
             </div>
           </div>
         </div>
-
-        {/* Floating - full image */}
-        <div className="absolute right-0 top-0 bottom-0 w-[42%] max-w-[420px] z-20 hidden lg:flex items-end justify-center">
-          <div className="relative w-full h-full min-h-[450px]">
-            <Image
-              src="/raj/dr.Vipin.jpg"
-              alt="Dr. Vipin Sharma"
-              fill
-              className="object-contain object-bottom"
-              sizes="(max-width: 1024px) 0px, 420px"
-            />
-          </div>
-        </div>
       </div>
 
       {/* Main Content */}
-      <div className="max-w-screen-2xl mx-auto px-6 py-24 sm:py-32">
+      <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-24 sm:py-32">
 
         {/* Quick Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32">
@@ -102,7 +89,7 @@ export default function HeartSpecialistPage() {
           <div className="space-y-10 animate-page-enter">
             <div className="space-y-5">
               <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-sm">{t("heartSpecialist.tagline")}</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1] tracking-tighter">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-[1.1] tracking-tight">
                 {t("heartSpecialist.introHeading")}<span className="text-[#9d174d]">{t("heartSpecialist.introHeadingHighlight")}</span>
               </h2>
             </div>
@@ -134,7 +121,7 @@ export default function HeartSpecialistPage() {
         <div className="mb-32">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
             <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-sm">{t("heartSpecialist.servicesLabel")}</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter">{t("heartSpecialist.servicesTitle")}<span className="text-[#9d174d]">{t("heartSpecialist.servicesTitleHighlight")}</span></h2>
+            <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">{t("heartSpecialist.servicesTitle")}<span className="text-[#9d174d]">{t("heartSpecialist.servicesTitleHighlight")}</span></h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -150,7 +137,7 @@ export default function HeartSpecialistPage() {
                 <div className="w-16 h-16 bg-rose-50 text-[#9d174d] rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform shadow-inner">
                   <service.icon className="w-8 h-8" />
                 </div>
-                <h4 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">{t(service.titleKey)}</h4>
+                <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-4 tracking-tight">{t(service.titleKey)}</h4>
                 <p className="text-gray-500 font-medium leading-relaxed">{t(service.descKey)}</p>
               </div>
             ))}
@@ -163,7 +150,7 @@ export default function HeartSpecialistPage() {
             <Heart className="w-64 h-64 scale-150 rotate-12" />
           </div>
           <div className="max-w-4xl space-y-10 relative z-10">
-            <h2 className="text-4xl md:text-7xl font-black leading-tight tracking-tighter">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight tracking-tight">
               {t("heartSpecialist.ctaTitle")}<span className="text-rose-400">{t("heartSpecialist.ctaTitleHighlight")}</span>
             </h2>
             <p className="text-2xl text-white/80 font-medium leading-relaxed">
@@ -191,7 +178,7 @@ export default function HeartSpecialistPage() {
                 &quot;{t(testimonialKeys[currentTestimonial].textKey)}&quot;
               </p>
               <div className="flex flex-col items-center gap-2">
-                <p className="font-black text-gray-900 text-2xl tracking-tight">{t(testimonialKeys[currentTestimonial].nameKey)}</p>
+                <p className="font-black text-gray-900 text-xl md:text-2xl tracking-tight">{t(testimonialKeys[currentTestimonial].nameKey)}</p>
                 <div className="flex text-amber-400 gap-1.5 text-xl">
                   {[1, 2, 3, 4, 5].map((s) => <span key={s}>★</span>)}
                 </div>

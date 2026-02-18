@@ -22,7 +22,7 @@ export default function ServicePage({
 }) {
     return (
         <div className="min-h-screen bg-gray-50 pt-32 pb-20">
-            <div className="max-w-screen-2xl mx-auto px-6">
+            <div className="max-w-[1420px] mx-auto px-6">
                 <Link href="/" className="inline-flex items-center gap-2 text-[#9d174d] font-black mb-12 hover:gap-4 transition-all">
                     <ArrowLeft size={24} /> BACK TO HOME
                 </Link>

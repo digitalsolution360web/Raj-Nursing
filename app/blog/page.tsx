@@ -33,8 +33,8 @@ export default function BlogPage() {
                         className="object-cover"
                     />
                 </div>
-                <div className="max-w-7xl mx-auto relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl font-black mb-6">{t("blog.title")}</h1>
+                <div className="max-w-[1420px] mx-auto relative z-10 text-center">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6">{t("blog.title")}</h1>
                     <p className="text-xl text-rose-100 font-medium max-w-2xl mx-auto">
                         {t("blog.subtitle")}
                     </p>
@@ -43,7 +43,7 @@ export default function BlogPage() {
 
             {/* Breadcrumbs */}
             <div className="bg-white border-b border-gray-100 py-4 px-6 mb-12">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-[1420px] mx-auto">
                     <nav className="flex items-center text-sm font-bold text-gray-500">
                         <Link href="/" className="hover:text-[#800020] transition-colors">{t("nav.home")}</Link>
                         <span className="mx-3 text-gray-300">/</span>
@@ -53,7 +53,7 @@ export default function BlogPage() {
             </div>
 
             {/* Blog Grid */}
-            <div className="max-w-7xl mx-auto px-6">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {blogPosts.map((post) => (
                         <Link

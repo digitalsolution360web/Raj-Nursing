@@ -8,7 +8,7 @@ export default function UltrasoundPage() {
     return (
         <div className="bg-white min-h-screen animate-page-enter">
             {/* Hero Section */}
-            <div className="relative h-[450px] md:h-[550px] flex items-center overflow-hidden">
+            <div className="relative min-h-[320px] md:min-h-[400px] flex items-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/raj/banner1.webp"
@@ -26,7 +26,7 @@ export default function UltrasoundPage() {
                             <Scan className="w-4 h-4 text-blue-300 fill-blue-300" />
                             <span>Advanced Imaging Center</span>
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
                             Digital Ultrasound <span className="text-blue-300">& Imaging in Hapur</span>
                         </h1>
                         <p className="text-lg text-gray-100 leading-relaxed max-w-2xl">
@@ -57,7 +57,7 @@ export default function UltrasoundPage() {
             </div>
 
             {/* Main Content */}
-            <div className="max-w-screen-2xl mx-auto px-4 py-20">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-20">
 
                 {/* Quick Stats / Highlights */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
@@ -81,7 +81,7 @@ export default function UltrasoundPage() {
                     <div className="space-y-8 animate-page-enter" style={{ animationDelay: '0.2s' }}>
                         <div className="space-y-4">
                             <h2 className="text-sm font-bold tracking-widest text-[#0f4c81] uppercase">Diagnostic Excellence</h2>
-                            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900 leading-tight">
                                 Seeing Clearly for Better Health
                             </h3>
                         </div>
@@ -111,7 +111,7 @@ export default function UltrasoundPage() {
                 {/* Detailed Services Grid */}
                 <div className="space-y-16 mb-24">
                     <div className="text-center space-y-4 max-w-2xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Our Ultrasound Services</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-gray-900">Our Ultrasound Services</h2>
                         <div className="h-1.5 w-24 bg-[#0f4c81] mx-auto rounded-full"></div>
                     </div>
 
@@ -121,7 +121,7 @@ export default function UltrasoundPage() {
                             <div className="h-14 w-14 bg-blue-100 rounded-2xl flex items-center justify-center">
                                 <Activity className="w-8 h-8 text-[#0f4c81]" />
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900">General & Abdominal Scans</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900">General & Abdominal Scans</h3>
                             <p className="text-gray-600 leading-relaxed">
                                 We perform comprehensive scans for the abdomen, pelvis, thyroid, and other soft tissues. These help in diagnosing stones, cysts, infections, and organ enlargements effectively.
                             </p>
@@ -139,7 +139,7 @@ export default function UltrasoundPage() {
                             <div className="h-14 w-14 bg-pink-100 rounded-2xl flex items-center justify-center">
                                 <Baby className="w-8 h-8 text-pink-600" />
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-900">Pregnancy & Maternity</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900">Pregnancy & Maternity</h3>
                             <p className="text-gray-600 leading-relaxed">
                                 Monitoring the growth and health of your baby is our priority. We offer detailed pregnancy scans at every stage, from early confirmation to growth monitoring and color doppler studies.
                             </p>
@@ -160,7 +160,7 @@ export default function UltrasoundPage() {
                         <Scan className="w-64 h-64" />
                     </div>
                     <div className="max-w-3xl space-y-8 relative z-10">
-                        <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight">
                             Accurate Diagnostics, Timely Care
                         </h2>
                         <p className="text-white/90 text-lg leading-relaxed">
@@ -168,11 +168,11 @@ export default function UltrasoundPage() {
                         </p>
                         <div className="grid sm:grid-cols-2 gap-6 pt-6">
                             <div className="glass p-6 rounded-2xl">
-                                <h4 className="font-bold text-xl mb-2">Fast Reporting</h4>
+                                <h4 className="font-black text-xl mb-2">Fast Reporting</h4>
                                 <p className="text-sm text-white/80">Get your reports same-day for faster treatment.</p>
                             </div>
                             <div className="glass p-6 rounded-2xl">
-                                <h4 className="font-bold text-xl mb-2">Affordable</h4>
+                                <h4 className="font-black text-xl mb-2">Affordable</h4>
                                 <p className="text-sm text-white/80">High-quality imaging at reasonable prices.</p>
                             </div>
                         </div>
@@ -197,7 +197,7 @@ export default function UltrasoundPage() {
                     </div>
                     <div className="space-y-8">
                         <div className="space-y-4">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Why Choose Raj Nursing Home?</h2>
+                            <h2 className="text-2xl md:text-3xl font-black text-gray-900">Why Choose Raj Nursing Home?</h2>
                             <p className="text-gray-600 text-lg leading-relaxed">
                                 We combine technical expertise with compassionate care. Our facility is designed to ensure privacy and comfort, especially for femal patients requiring sensitive scans.
                             </p>
@@ -223,7 +223,7 @@ export default function UltrasoundPage() {
 
                 {/* Simple Conclusion Box */}
                 <div className="mt-16 bg-white border border-gray-200 rounded-3xl p-8 md:p-12 shadow-sm transition-all hover:shadow-md">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Your Trusted Imaging Partner in Hapur</h2>
+                    <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-6">Your Trusted Imaging Partner in Hapur</h2>
                     <p className="leading-relaxed text-gray-600 text-lg">
                         Whether you need a routine health check, abdominal scan, or maternity ultrasound, Raj Nursing Home is your trusted partner for diagnostic imaging in Hapur. We ensure that every scan is performed with the utmost care and precision, giving you the peace of mind you deserve. Visit us today for reliable and affordable ultrasound services.
                     </p>

@@ -44,6 +44,7 @@ export const hi = {
     fullName: "पूरा नाम",
     email: "ईमेल",
     phone: "फ़ोन",
+    city: "शहर",
     date: "तारीख",
     time: "समय",
     selectService: "सेवा चुनें",

@@ -209,8 +209,6 @@ export default function Navbar() {
     { label: t("nav.aboutUs"), href: "/about" },
     { label: t("nav.expertDoctors"), href: "/#doctors" },
     { label: t("nav.blogs"), href: "/blog" },
-    { label: t("nav.testimonials"), href: "/#testimonials" },
-    { label: t("nav.treatments"), href: "/treatment" },
     { label: t("nav.contactUs"), href: "/contact" },
   ];
 
@@ -258,25 +256,25 @@ export default function Navbar() {
       <nav className="fixed top-0 w-full z-50">
         {/* Top Header Bar - equal left/right gap via padding inside max-w container */}
         <div className="bg-[#9d174d] text-white py-2 border-b border-white/10">
-          <div className="max-w-[1700px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 lg:gap-4 py-1 justify-items-center">
+          <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 py-1 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
             <a
               href="tel:+916397970802"
-              className="flex items-center gap-3 hover:text-red-100 transition-colors group"
+              className="flex items-center gap-2 sm:gap-3 hover:text-red-100 transition-colors group shrink-0 min-h-[44px] min-w-[44px] items-center justify-center sm:justify-start"
             >
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all shrink-0">
                 <PhoneIcon />
               </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest">
+              <div className="flex flex-col min-w-0">
+                <span className="text-[9px] sm:text-[10px] font-bold opacity-70 uppercase tracking-widest hidden min-[400px]:block">
                   {t("nav.needUrgentCare")}
                 </span>
-                <span className="text-sm font-black">+91 63979 70802</span>
+                <span className="text-xs sm:text-sm font-black truncate">+91 63979 70802</span>
               </div>
             </a>
 
             <a
               href="mailto:drvipinkumarsharma@gmail.com"
-              className="hidden lg:flex items-center gap-3 hover:text-red-100 transition-colors group"
+              className="hidden lg:flex items-center gap-3 hover:text-red-100 transition-colors group shrink-0"
             >
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
                 <MailIcon />
@@ -291,7 +289,7 @@ export default function Navbar() {
               </div>
             </a>
 
-            <div className="hidden md:flex items-center gap-3 group">
+            <div className="hidden md:flex items-center gap-3 group shrink-0">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
                 <MapPinIcon />
               </div>
@@ -305,12 +303,12 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="hidden lg:flex items-center gap-3 group">
+            <div className="hidden lg:flex items-center gap-3 group shrink-0">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
                 <ClockIcon />
               </div>
-              <div className="flex flex-col">
-                <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest">
+              <div className="flex flex-col ">
+                <span className="text-[10px]  font-bold opacity-70 uppercase tracking-widest">
                   {t("nav.workingHours")}
                 </span>
                 <span className="text-sm font-black">
@@ -319,12 +317,12 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="hidden xl:flex items-center gap-3 group">
+            <div className="hidden xl:flex items-center gap-3 group shrink-0">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
                 <AyushmanCardIcon />
               </div>
               <div className="flex flex-col">
-                <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest">
+                <span className="text-[10px]  font-bold opacity-70 uppercase tracking-widest">
                   {t("nav.ayushmanCard")}
                 </span>
                 <span className="text-sm font-black">
@@ -342,9 +340,9 @@ export default function Navbar() {
             : "py-4"
             }`}
         >
-          <div className="max-w-[1700px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12 flex items-center justify-between gap-4 lg:gap-6 flex-nowrap">
-            <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0 pr-6 lg:pr-8">
-              <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 shrink-0 transition-transform group-hover:rotate-[360deg] duration-1000">
+          <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 flex items-center justify-between gap-3 lg:gap-6 flex-nowrap">
+            <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0 pr-2 sm:pr-6 lg:pr-8">
+              <div className="relative w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 shrink-0 transition-transform group-hover:rotate-[360deg] duration-1000">
                 <Image
                   src="/RNH logo.png"
                   alt="RNH Logo"
@@ -353,11 +351,11 @@ export default function Navbar() {
                   priority
                 />
               </div>
-              <div className="flex flex-col min-w-0 max-w-[260px] sm:max-w-[300px]">
-                <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl font-black text-[#9d174d] tracking-tight leading-none uppercase whitespace-nowrap">
+              <div className="flex flex-col min-w-0 max-w-[160px] min-[400px]:max-w-[220px] sm:max-w-[300px]">
+                <h1 className="text-sm sm:text-lg md:text-xl lg:text-2xl font-black text-[#9d174d] tracking-tight leading-none uppercase truncate">
                   {t("nav.rajNursingHome")}
                 </h1>
-                <p className="text-[8px] sm:text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-0.5 sm:mt-1 leading-tight">
+                <p className="text-[7px] sm:text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-0.5 sm:mt-1 leading-tight hidden min-[400px]:block">
                   {t("nav.excellenceSince")}
                 </p>
               </div>
@@ -368,7 +366,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-sm sm:text-base font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all whitespace-nowrap shrink-0"
+                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-base sm:text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all whitespace-nowrap shrink-0"
                 >
                   {item.label}
                 </Link>
@@ -377,7 +375,7 @@ export default function Navbar() {
               <div className="relative group shrink-0">
                 <Link
                   href="/services"
-                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-sm sm:text-base font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0"
+                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-base sm:text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0"
                 >
                   {t("nav.ourServices")}
                   <svg
@@ -414,7 +412,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-sm sm:text-base font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all whitespace-nowrap shrink-0"
+                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-base sm:text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all whitespace-nowrap shrink-0"
                 >
                   {item.label}
                 </Link>
@@ -437,7 +435,7 @@ export default function Navbar() {
 
               <button
                 onClick={() => setIsMenuOpen(true)}
-                className="xl:hidden p-2 sm:p-3 text-gray-900 bg-gray-50 hover:bg-red-50 hover:text-[#9d174d] rounded-2xl transition-all border border-gray-100 shrink-0"
+                className="xl:hidden p-3 text-gray-900 bg-gray-50 hover:bg-red-50 hover:text-[#9d174d] rounded-2xl transition-all border border-gray-100 shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
               >
                 <MenuIcon />
               </button>
@@ -496,8 +494,6 @@ export default function Navbar() {
                 { label: t("nav.blogs"), href: "/blog" },
                 { label: t("nav.healthPlans"), href: "/health-checkup-plans" },
                 { label: t("nav.expertDoctors"), href: "/#doctors" },
-                { label: t("nav.testimonials"), href: "/#testimonials" },
-                { label: t("nav.treatments"), href: "/treatment" },
                 { label: t("nav.contactUs"), href: "/contact" },
               ].map((item, index) => (
                 <div
@@ -509,7 +505,7 @@ export default function Navbar() {
                     <div className="space-y-2">
                       <button
                         onClick={() => setIsServicesOpen(!isServicesOpen)}
-                        className={`w-full flex items-center justify-between px-5 py-4 text-base font-bold rounded-2xl transition-all group duration-300 border ${isServicesOpen ? 'bg-[#9d174d] text-white border-[#9d174d] shadow-lg shadow-[#9d174d]/20' : 'bg-white text-gray-700 border-gray-100 hover:border-red-100 hover:bg-red-50/50'}`}
+                        className={`w-full flex items-center justify-between px-5 py-4 text-lg font-bold rounded-2xl transition-all group duration-300 border ${isServicesOpen ? 'bg-[#9d174d] text-white border-[#9d174d] shadow-lg shadow-[#9d174d]/20' : 'bg-white text-gray-700 border-gray-100 hover:border-red-100 hover:bg-red-50/50'}`}
                       >
                         {item.label}
                         <ChevronRightIcon className={`w-5 h-5 transition-transform duration-500 ${isServicesOpen ? 'rotate-90' : ''}`} />
@@ -535,7 +531,7 @@ export default function Navbar() {
                     <Link
                       href={item.href}
                       onClick={() => setIsMenuOpen(false)}
-                      className="flex items-center justify-between px-5 py-4 text-base font-bold text-gray-700 bg-white hover:text-[#9d174d] hover:bg-red-50/50 rounded-2xl transition-all group duration-300 border border-transparent hover:border-red-100 hover:shadow-sm"
+                      className="flex items-center justify-between px-5 py-4 text-lg font-bold text-gray-700 bg-white hover:text-[#9d174d] hover:bg-red-50/50 rounded-2xl transition-all group duration-300 border border-transparent hover:border-red-100 hover:shadow-sm"
                     >
                       {item.label}
                       <ChevronRightIcon className="w-5 h-5 opacity-0 group-hover:opacity-100 transition-all transform -translate-x-2 group-hover:translate-x-0 text-[#9d174d]" />

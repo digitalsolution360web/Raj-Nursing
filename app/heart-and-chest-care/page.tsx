@@ -10,8 +10,8 @@ export default function HeartChestCarePage() {
 
             {/* Header / Breadcrumb Area */}
             <div className="bg-[#800020] text-white py-12 px-6">
-                <div className="max-w-screen-2xl mx-auto">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-4">Heart & Chest Care in Hapur</h1>
+                <div className="max-w-[1420px] mx-auto">
+                    <h1 className="text-3xl md:text-4xl lg:text-5xl font-black mb-4">Heart & Chest Care in Hapur</h1>
                     <nav className="flex items-center gap-2 text-white/90 text-sm font-medium">
                         <Link href="/" className="hover:underline">Home</Link>
                         <span>/</span>
@@ -20,11 +20,11 @@ export default function HeartChestCarePage() {
                 </div>
             </div>
 
-            <div className="max-w-screen-2xl mx-auto px-6 py-12 md:py-20 space-y-20">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-12 md:py-20 space-y-20">
 
                 {/* Intro Section */}
                 <section className="space-y-6">
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                    <h2 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight">
                         Comprehensive Heart & Chest Care Services in Hapur
                     </h2>
                     <p className="text-gray-700 leading-relaxed text-lg">
@@ -44,21 +44,21 @@ export default function HeartChestCarePage() {
                     </div>
                     <div className="space-y-10">
                         <div className="space-y-4">
-                            <h3 className="text-2xl font-bold text-[#800020]">Expert Heart Specialist in Hapur</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-[#800020]">Expert Heart Specialist in Hapur</h3>
                             <p className="text-gray-600 leading-relaxed text-lg">
                                 Our clinic is led by an experienced heart specialist in Hapur who is dedicated to delivering accurate diagnosis and effective treatments. From general cardiology to advanced interventions, we provide comprehensive heart and chest care tailored to each patient's needs.
                             </p>
                         </div>
 
                         <div className="space-y-4">
-                            <h3 className="text-2xl font-bold text-[#800020]">Chest Pain Treatment in Hapur</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-[#800020]">Chest Pain Treatment in Hapur</h3>
                             <p className="text-gray-600 leading-relaxed text-lg">
                                 Chest pain is a serious health concern, ranging from heart issues to respiratory and other emergencies. Our facility offers quick chest pain assessment in Hapur, ensuring immediate evaluation with advanced diagnostic equipment. We focus on identifying the root cause quickly and delivering the right medical care to prevent complications.
                             </p>
                         </div>
 
                         <div className="space-y-5">
-                            <h3 className="text-2xl font-bold text-[#800020]">Cardiologist Consultation and Care</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-[#800020]">Cardiologist Consultation and Care</h3>
                             <p className="text-gray-600 leading-relaxed text-lg">
                                 Get expert advice from a cardiologist in Hapur for your routine heart check-ups, ECG, echocardiography, and other essential services. We prioritize your heart health with specialized care:
                             </p>
@@ -82,21 +82,21 @@ export default function HeartChestCarePage() {
                 {/* Section 2: Full Width Text */}
                 <section className="space-y-12">
                     <div className="space-y-4">
-                        <h3 className="text-2xl font-bold text-[#800020]">Complete Heart Care Clinic in Hapur</h3>
+                        <h3 className="text-xl md:text-2xl font-black text-[#800020]">Complete Heart Care Clinic in Hapur</h3>
                         <p className="text-gray-700 leading-relaxed text-lg">
                             As a dedicated heart clinic in Hapur, we focus on early detection and lifestyle management for heart disease. Our specialist takes the time to understand your heart health concerns, lifestyle, and medical history to prescribe a personalized care plan for a healthier heart.
                         </p>
                     </div>
 
                     <div className="space-y-4">
-                        <h3 className="text-2xl font-bold text-[#800020]">Blood Pressure & Hypertension Management</h3>
+                        <h3 className="text-xl md:text-2xl font-black text-[#800020]">Blood Pressure & Hypertension Management</h3>
                         <p className="text-gray-700 leading-relaxed text-lg">
                             High blood pressure is a leading cause of cardiovascular problems. Our specialist for blood pressure management in Hapur helps patients control hypertension through regular monitoring, medication, and counseling on lifestyle management techniques.
                         </p>
                     </div>
 
                     <div className="space-y-6">
-                        <h3 className="text-2xl font-bold text-[#800020]">Why Choose Us for Heart & Chest Care?</h3>
+                        <h3 className="text-xl md:text-2xl font-black text-[#800020]">Why Choose Us for Heart & Chest Care?</h3>
                         <ul className="grid sm:grid-cols-1 gap-4">
                             {[
                                 "Qualified Cardiologists with years of experience in heart and chest diseases.",
@@ -117,7 +117,7 @@ export default function HeartChestCarePage() {
                 <section className="grid lg:grid-cols-2 gap-16 items-center bg-gray-50/50 rounded-3xl p-8 md:p-12">
                     <div className="space-y-10 order-2 lg:order-1">
                         <div className="space-y-5">
-                            <h3 className="text-2xl font-bold text-[#800020]">Conditions We Treat</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-[#800020]">Conditions We Treat</h3>
                             <ul className="grid gap-3 text-gray-700 text-lg">
                                 {[
                                     "Hypertension & high cholesterol",
@@ -135,7 +135,7 @@ export default function HeartChestCarePage() {
                         </div>
 
                         <div className="space-y-5">
-                            <h3 className="text-2xl font-bold text-[#800020]">Book Your Appointment Today</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-[#800020]">Book Your Appointment Today</h3>
                             <p className="text-gray-700 leading-relaxed text-lg font-medium">
                                 If you are experiencing chest pain, irregular heartbeat, or want to monitor your heart health, don't delay. Leading heart care for heart and chest diseases in Hapur starts here. Let us help you achieve comprehensive heart care supported by modern medical advancements.
                             </p>
@@ -163,7 +163,7 @@ export default function HeartChestCarePage() {
 
                 {/* Bottom Box */}
                 <section className="bg-[#800020] text-white rounded-2xl p-10 md:p-14 shadow-xl -mx-4 md:mx-0">
-                    <h3 className="text-3xl font-bold mb-6">Your Trusted Partner for Heart & Chest Care in Hapur</h3>
+                    <h3 className="text-xl md:text-2xl font-black mb-6">Your Trusted Partner for Heart & Chest Care in Hapur</h3>
                     <p className="text-white/90 leading-relaxed text-xl">
                         For advanced heart and chest care in Hapur, trust our expert medical team to help you lead a healthy life. If you need a cardiologist in Hapur, or help with chest pain or hypertension management, we provide reliable, safe, and personalized care to help you lead a healthy life.
                     </p>

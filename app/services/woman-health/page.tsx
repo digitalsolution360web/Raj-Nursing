@@ -8,7 +8,7 @@ export default function WomanHealthPage() {
     return (
         <div className="bg-white min-h-screen animate-page-enter">
             {/* Hero Section */}
-            <div className="relative h-[450px] md:h-[550px] flex items-center overflow-hidden">
+            <div className="relative min-h-[320px] md:min-h-[400px] flex items-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/raj/banner1.webp"
@@ -26,7 +26,7 @@ export default function WomanHealthPage() {
                             <Baby className="w-4 h-4 text-fuchsia-200 fill-fuchsia-200" />
                             <span>Comprehensive Woman's Care</span>
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
                             Dedicated to <span className="text-fuchsia-200">Woman's Health</span>
                         </h1>
                         <p className="text-lg text-gray-100 leading-relaxed max-w-2xl">
@@ -57,7 +57,7 @@ export default function WomanHealthPage() {
             </div>
 
             {/* Main Content */}
-            <div className="max-w-screen-2xl mx-auto px-4 py-20">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-20">
 
                 {/* Quick Stats / Highlights */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
@@ -81,7 +81,7 @@ export default function WomanHealthPage() {
                     <div className="space-y-8 animate-page-enter" style={{ animationDelay: '0.2s' }}>
                         <div className="space-y-4">
                             <h2 className="text-sm font-bold tracking-widest text-[#c026d3] uppercase">Complete Care</h2>
-                            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900 leading-tight">
                                 Empowering Women Through Better Health
                             </h3>
                         </div>
@@ -111,7 +111,7 @@ export default function WomanHealthPage() {
                 {/* Detailed Services Grid */}
                 <div className="space-y-16 mb-24">
                     <div className="text-center space-y-4 max-w-2xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Our Services</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-gray-900">Our Services</h2>
                         <div className="h-1.5 w-24 bg-[#c026d3] mx-auto rounded-full"></div>
                     </div>
 
@@ -121,7 +121,7 @@ export default function WomanHealthPage() {
                             <div className="h-14 w-14 bg-fuchsia-100 rounded-2xl flex items-center justify-center">
                                 <Baby className="w-8 h-8 text-[#c026d3]" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900">Maternity & Delivery</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900">Maternity & Delivery</h3>
                             <p className="text-gray-600 leading-relaxed text-sm">
                                 Complete antenatal care, normal & C-section delivery services, and painless labor options ensuring a safe journey to motherhood.
                             </p>
@@ -135,7 +135,7 @@ export default function WomanHealthPage() {
                             <div className="h-14 w-14 bg-fuchsia-100 rounded-2xl flex items-center justify-center">
                                 <Stethoscope className="w-8 h-8 text-[#c026d3]" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900">Gynecology</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900">Gynecology</h3>
                             <p className="text-gray-600 leading-relaxed text-sm">
                                 Diagnosis and treatment of menstrual disorders, PCOD/PCOS, uterine fibroids, and other reproductive health issues.
                             </p>
@@ -149,7 +149,7 @@ export default function WomanHealthPage() {
                             <div className="h-14 w-14 bg-fuchsia-100 rounded-2xl flex items-center justify-center">
                                 <ShieldCheck className="w-8 h-8 text-[#c026d3]" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900">Laparoscopic Surgery</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900">Laparoscopic Surgery</h3>
                             <p className="text-gray-600 leading-relaxed text-sm">
                                 Minimally invasive surgeries for hysterectomy, ovarian cysts, and ectopic pregnancy for faster recovery and less pain.
                             </p>
@@ -166,7 +166,7 @@ export default function WomanHealthPage() {
                         <Heart className="w-64 h-64" />
                     </div>
                     <div className="max-w-3xl space-y-8 relative z-10">
-                        <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight">
                             Your Wellness, Our Priority
                         </h2>
                         <p className="text-white/90 text-lg leading-relaxed">
@@ -174,11 +174,11 @@ export default function WomanHealthPage() {
                         </p>
                         <div className="grid sm:grid-cols-2 gap-6 pt-6">
                             <div className="glass p-6 rounded-2xl">
-                                <h4 className="font-bold text-xl mb-2">Private & Confidential</h4>
+                                <h4 className="font-black text-xl mb-2">Private & Confidential</h4>
                                 <p className="text-sm text-white/80">We respect your privacy at every step.</p>
                             </div>
                             <div className="glass p-6 rounded-2xl">
-                                <h4 className="font-bold text-xl mb-2">24/7 Maternity Support</h4>
+                                <h4 className="font-black text-xl mb-2">24/7 Maternity Support</h4>
                                 <p className="text-sm text-white/80">Always here when you need us most.</p>
                             </div>
                         </div>
@@ -203,7 +203,7 @@ export default function WomanHealthPage() {
                     </div>
                     <div className="space-y-8">
                         <div className="space-y-4">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Why Choose Us?</h2>
+                            <h2 className="text-2xl md:text-3xl font-black text-gray-900">Why Choose Us?</h2>
                             <p className="text-gray-600 text-lg leading-relaxed">
                                 Raj Nursing Home is dedicated to providing high-quality, specialized care for women. Our facility combines modern technology with a warm, caring touch to ensure you feel supported throughout your healthcare journey.
                             </p>
@@ -229,7 +229,7 @@ export default function WomanHealthPage() {
 
                 {/* Simple Conclusion Box */}
                 <div className="mt-16 bg-white border border-gray-200 rounded-3xl p-8 md:p-12 shadow-sm transition-all hover:shadow-md">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Expert Care for Every Woman</h2>
+                    <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-6">Expert Care for Every Woman</h2>
                     <p className="leading-relaxed text-gray-600 text-lg">
                         At Raj Nursing Home, we are committed to excellence in women's health. Whether you are expecting a baby, planning a family, or addressing gynecological concerns, our team is here to guide you with expertise and compassion. Trust us to be your partner in health for a lifetime.
                     </p>

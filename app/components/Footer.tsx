@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useLanguage } from "@/app/context/LanguageContext";
 
 const PhoneIcon = () => (
@@ -87,7 +88,9 @@ const InstagramIcon = () => (
 
 export default function Footer() {
   const { t } = useLanguage();
+  const pathname = usePathname();
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const hideWhatsApp = pathname === "/about";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -104,36 +107,35 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="bg-[#0b1120] text-white pt-16 pb-8 relative overflow-hidden"
+      className="bg-[#0b1120] text-white pt-12 sm:pt-16 pb-8 relative overflow-hidden"
     >
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#9d174d]/50 to-transparent"></div>
       <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#9d174d]/20 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute top-40 -left-20 w-72 h-72 bg-blue-600/10 rounded-full blur-[80px] pointer-events-none"></div>
 
-      <div className="max-w-[1700px] mx-auto px-4 sm:px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12 border-b border-white/5 pb-10 mb-8 relative z-10">
-        {/* Brand Column */}
+      <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-8 lg:gap-12 border-b border-white/5 pb-10 mb-8 relative z-10">
+        {/* Brand Column - same logo as Navbar */}
         <div className="space-y-5">
-          <div className="flex items-center gap-4 group cursor-pointer">
-            <div className="relative w-12 h-12 transition-transform duration-700 group-hover:rotate-[360deg]">
+          <Link href="/" className="flex items-center gap-3 sm:gap-4 group shrink-0 min-w-0">
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 shrink-0 transition-transform duration-700 group-hover:rotate-[360deg]">
               <Image
                 src="/RNH logo.png"
                 alt="RNH Logo"
                 fill
-                className="object-contain brightness-110 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"
+                className="object-contain brightness-110 drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]"
+                sizes="64px"
               />
             </div>
-            <div className="flex flex-col">
-              <h3 className="text-xl font-black tracking-tighter leading-none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-                {t("footer.rajNursing")}
-                <br />
-                {t("footer.home")}
+            <div className="flex flex-col min-w-0">
+              <h3 className="text-base sm:text-lg md:text-xl font-black tracking-tight leading-none uppercase text-white">
+                {t("nav.rajNursingHome")}
               </h3>
-              <span className="text-[9px] font-bold text-[#9d174d] tracking-[0.2em] uppercase mt-1">
-                {t("footer.since1999")}
+              <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mt-0.5 sm:mt-1">
+                {t("nav.excellenceSince")}
               </span>
             </div>
-          </div>
+          </Link>
           <p className="text-gray-400 text-sm font-medium leading-relaxed max-w-xs">
             {t("footer.tagline")}
           </p>
@@ -170,6 +172,8 @@ export default function Footer() {
               { l: t("footer.bestHospital"), h: "/best-hospital-nursing-home-hapur" },
               { l: t("footer.expertTeam"), h: "/#doctors" },
               { l: t("footer.patientStories"), h: "/#testimonials" },
+              { l: t("nav.testimonials"), h: "/#testimonials" },
+              { l: t("nav.treatments"), h: "/treatment" },
               { l: t("footer.contactUs"), h: "/contact" },
             ].map((item, i) => (
               <li key={i}>
@@ -286,7 +290,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium text-gray-500">
+      <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 pt-4 flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-medium text-gray-500">
         <p>{t("footer.copyright")}</p>
         <div className="flex gap-8">
           <Link href="#" className="hover:text-white transition-colors">
@@ -301,18 +305,20 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* WhatsApp - fixed on right, fully visible; scroll button to its left when visible */}
-      <a
-        href="https://wa.me/916397970802"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-[999] w-14 h-14 min-w-[56px] min-h-[56px] bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20bd5a] transition-all duration-300 hover:-translate-y-2 hover:shadow-green-500/40 flex items-center justify-center shrink-0 overflow-visible"
-        aria-label="WhatsApp"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="shrink-0">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.865 9.865 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-      </a>
+      {/* WhatsApp - hidden on About page; fixed on right elsewhere */}
+      {!hideWhatsApp && (
+        <a
+          href="https://wa.me/916397970802"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-8 right-8 z-[999] w-14 h-14 min-w-[56px] min-h-[56px] bg-[#25D366] text-white rounded-full shadow-2xl hover:bg-[#20bd5a] transition-all duration-300 hover:-translate-y-2 hover:shadow-green-500/40 flex items-center justify-center shrink-0 overflow-visible"
+          aria-label="WhatsApp"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" className="shrink-0">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.865 9.865 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+        </a>
+      )}
 
       {showScrollTop && (
         <button

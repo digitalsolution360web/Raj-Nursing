@@ -32,7 +32,7 @@ export default function DrVipinKumarSharma() {
                                 <Stethoscope className="w-4 h-4" />
                                 <span>{t("doctors.vipin.badge")}</span>
                             </div>
-                            <h1 className="text-4xl md:text-6xl font-black text-white leading-tight">
+                            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
                                 Dr. Vipin Kumar Sharma
                             </h1>
                             <p className="text-xl text-indigo-200 font-bold uppercase tracking-wide">
@@ -70,7 +70,7 @@ export default function DrVipinKumarSharma() {
             </div>
 
             {/* Main Content */}
-            <div className="max-w-screen-2xl mx-auto px-6 py-8 md:py-12">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-8 md:py-12">
                 {/* Quick Info Cards */}
                 <div className="grid md:grid-cols-3 gap-4 -mt-16 relative z-10 mb-10 md:mb-12">
                     {[
@@ -92,7 +92,7 @@ export default function DrVipinKumarSharma() {
                 <div className="grid lg:grid-cols-2 gap-10 items-start mb-12">
                     <div className="space-y-8">
                         <div>
-                            <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6">
+                            <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-6">
                                 {t("doctors.vipin.aboutTitle")}
                             </h2>
                             <div className="h-2 w-24 bg-indigo-600 rounded-full"></div>
@@ -114,7 +114,7 @@ export default function DrVipinKumarSharma() {
                     </div>
 
                     <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-[3rem] p-8 md:p-12 border border-indigo-100">
-                        <h3 className="text-2xl md:text-3xl font-black text-gray-900 mb-6">
+                        <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">
                             {t("doctors.vipin.protocolTitle")}
                         </h3>
                         <p className="text-gray-700 leading-relaxed mb-6 font-medium">
@@ -133,7 +133,7 @@ export default function DrVipinKumarSharma() {
                 <div className="bg-gray-900 rounded-[4rem] p-8 md:p-12 text-white mb-12">
                     <div className="max-w-4xl mx-auto text-center space-y-6">
                         <Heart className="w-16 h-16 text-red-400 mx-auto" />
-                        <h3 className="text-3xl md:text-4xl font-black">{t("doctors.vipin.communityTitle")}</h3>
+                        <h3 className="text-xl md:text-2xl font-black">{t("doctors.vipin.communityTitle")}</h3>
                         <p className="text-xl text-gray-300 leading-relaxed">
                             {t("doctors.vipin.communityDesc")}
                         </p>
@@ -142,7 +142,7 @@ export default function DrVipinKumarSharma() {
 
                 {/* CTA Section */}
                 <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-[4rem] p-8 md:p-12 text-white text-center">
-                    <h3 className="text-3xl md:text-5xl font-black mb-6">
+                    <h3 className="text-xl md:text-2xl font-black mb-6">
                         {t("doctors.vipin.ctaHeading")}
                     </h3>
                     <p className="text-xl text-indigo-100 mb-8 max-w-2xl mx-auto">

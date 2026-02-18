@@ -9,12 +9,12 @@ export default function HeartChestCareHapur() {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 pt-[110px] md:pt-[130px]">
+    <div className="min-h-screen bg-white text-gray-900 pt-[100px] sm:pt-[110px] md:pt-[130px] overflow-x-hidden">
 
-      {/* Header / Breadcrumb Area */}
-      <div className="bg-[#800020] text-white py-12 px-6">
-        <div className="max-w-screen-2xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">{t("heartChestCare.heroTitle")}</h1>
+      {/* Header / Breadcrumb Area - same height & alignment as content below */}
+      <div className="bg-[#800020] text-white min-h-[320px] md:min-h-[400px] flex items-center">
+        <div className="max-w-[1420px] mx-auto w-full px-4 sm:px-8 md:px-10 lg:px-12">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-4">{t("heartChestCare.heroTitle")}</h1>
           <nav className="flex items-center gap-2 text-white/90 text-sm font-medium">
             <Link href="/" className="hover:underline">{t("heartChestCare.home")}</Link>
             <span>/</span>
@@ -23,11 +23,11 @@ export default function HeartChestCareHapur() {
         </div>
       </div>
 
-      <div className="max-w-screen-2xl mx-auto px-6 py-12 md:py-20 space-y-20">
+      <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 py-8 sm:py-12 md:py-20 space-y-12 sm:space-y-20">
 
         {/* Intro Section */}
         <section className="space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 leading-tight">
             {t("heartChestCare.introTitle")}
           </h2>
           <p className="text-gray-700 leading-relaxed text-lg">
@@ -47,21 +47,21 @@ export default function HeartChestCareHapur() {
           </div>
           <div className="space-y-10">
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-[#800020]">{t("heartChestCare.expertHeartTitle")}</h3>
+              <h3 className="text-xl md:text-2xl font-black text-[#800020]">{t("heartChestCare.expertHeartTitle")}</h3>
               <p className="text-gray-600 leading-relaxed text-lg">
                 {t("heartChestCare.expertHeartDesc")}
               </p>
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-[#800020]">{t("heartChestCare.chestPainTitle")}</h3>
+              <h3 className="text-xl md:text-2xl font-black text-[#800020]">{t("heartChestCare.chestPainTitle")}</h3>
               <p className="text-gray-600 leading-relaxed text-lg">
                 {t("heartChestCare.chestPainDesc")}
               </p>
             </div>
 
             <div className="space-y-5">
-              <h3 className="text-2xl font-bold text-[#800020]">{t("heartChestCare.cardiologistTitle")}</h3>
+              <h3 className="text-xl md:text-2xl font-black text-[#800020]">{t("heartChestCare.cardiologistTitle")}</h3>
               <p className="text-gray-600 leading-relaxed text-lg">
                 {t("heartChestCare.cardiologistIntro")}
               </p>
@@ -80,21 +80,21 @@ export default function HeartChestCareHapur() {
         {/* Section 2: Full Width Text */}
         <section className="space-y-12">
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-[#800020]">{t("heartChestCare.completeCareTitle")}</h3>
+            <h3 className="text-xl md:text-2xl font-black text-[#800020]">{t("heartChestCare.completeCareTitle")}</h3>
             <p className="text-gray-700 leading-relaxed text-lg">
               {t("heartChestCare.completeCareDesc")}
             </p>
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-[#800020]">{t("heartChestCare.bpTitle")}</h3>
+            <h3 className="text-xl md:text-2xl font-black text-[#800020]">{t("heartChestCare.bpTitle")}</h3>
             <p className="text-gray-700 leading-relaxed text-lg">
               {t("heartChestCare.bpDesc")}
             </p>
           </div>
 
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-[#800020]">{t("heartChestCare.whyChooseTitle")}</h3>
+            <h3 className="text-xl md:text-2xl font-black text-[#800020]">{t("heartChestCare.whyChooseTitle")}</h3>
             <ul className="grid sm:grid-cols-1 gap-4">
               {[
                 t("heartChestCare.whyChooseL1"),
@@ -115,7 +115,7 @@ export default function HeartChestCareHapur() {
         <section className="grid lg:grid-cols-2 gap-16 items-center bg-gray-50/50 rounded-3xl p-8 md:p-12">
           <div className="space-y-10 order-2 lg:order-1">
             <div className="space-y-5">
-              <h3 className="text-2xl font-bold text-[#800020]">{t("heartChestCare.conditionsTitle")}</h3>
+              <h3 className="text-xl md:text-2xl font-black text-[#800020]">{t("heartChestCare.conditionsTitle")}</h3>
               <ul className="grid gap-3 text-gray-700 text-lg">
                 {[
                   t("heartChestCare.cond1"),
@@ -133,7 +133,7 @@ export default function HeartChestCareHapur() {
             </div>
 
             <div className="space-y-5">
-              <h3 className="text-2xl font-bold text-[#800020]">{t("heartChestCare.bookTodayTitle")}</h3>
+              <h3 className="text-xl md:text-2xl font-black text-[#800020]">{t("heartChestCare.bookTodayTitle")}</h3>
               <p className="text-gray-700 leading-relaxed text-lg font-medium">
                 {t("heartChestCare.bookTodayDesc")}
               </p>
@@ -161,7 +161,7 @@ export default function HeartChestCareHapur() {
 
         {/* Bottom Box */}
         <section className="bg-[#800020] text-white rounded-2xl p-10 md:p-14 shadow-xl -mx-4 md:mx-0">
-          <h3 className="text-3xl font-bold mb-6">{t("heartChestCare.partnerHeading")}</h3>
+          <h3 className="text-xl md:text-2xl font-black mb-6">{t("heartChestCare.partnerHeading")}</h3>
           <p className="text-white/90 leading-relaxed text-xl">
             {t("heartChestCare.partnerDesc")}
           </p>

@@ -11,7 +11,7 @@ export default function InternalMedicinePage() {
   return (
     <div className="bg-white min-h-screen animate-page-enter mt-32">
       {/* Hero Section */}
-      <div className="relative h-[450px] md:h-[650px] flex items-center overflow-hidden">
+      <div className="relative min-h-[320px] md:min-h-[400px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/raj/banner3.webp"
@@ -29,7 +29,7 @@ export default function InternalMedicinePage() {
               <Sparkles className="w-4 h-4 text-blue-200 fill-blue-200" />
               <span>{t("internalMedicine.badge")}</span>
             </div>
-            <h1 className="text-4xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight">
               {t("internalMedicine.heroTitle")}<br /><span className="text-blue-200">{t("internalMedicine.heroTitleHighlight")}</span>
             </h1>
             <p className="text-xl text-gray-100 leading-relaxed max-w-2xl font-medium">
@@ -64,7 +64,7 @@ export default function InternalMedicinePage() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-screen-2xl mx-auto px-6 py-24 sm:py-32">
+      <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-24 sm:py-32">
 
         {/* Quick Highlights Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32">
@@ -88,7 +88,7 @@ export default function InternalMedicinePage() {
           <div className="space-y-10 animate-page-enter">
             <div className="space-y-5">
               <span className="text-blue-700 font-black tracking-[0.3em] uppercase text-sm">{t("internalMedicine.introLabel")}</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1] tracking-tighter">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-[1.1] tracking-tight">
                 {t("internalMedicine.introTitle")}<span className="text-blue-700">{t("internalMedicine.introTitleHighlight")}</span>
               </h2>
             </div>
@@ -126,7 +126,7 @@ export default function InternalMedicinePage() {
         <div className="mb-32">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
             <span className="text-blue-700 font-black tracking-[0.3em] uppercase text-sm">{t("internalMedicine.areasLabel")}</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter">{t("internalMedicine.areasTitle")}<span className="text-blue-700">{t("internalMedicine.areasTitleHighlight")}</span></h2>
+            <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">{t("internalMedicine.areasTitle")}<span className="text-blue-700">{t("internalMedicine.areasTitleHighlight")}</span></h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -139,7 +139,7 @@ export default function InternalMedicinePage() {
                 <div className="w-16 h-16 bg-blue-50 text-blue-700 rounded-2xl flex items-center justify-center mb-8 group-hover:rotate-12 transition-transform">
                   <service.icon className="w-8 h-8" />
                 </div>
-                <h4 className="text-2xl font-black text-gray-900 mb-4 tracking-tight">{t(service.titleKey)}</h4>
+                <h4 className="text-xl md:text-2xl font-black text-gray-900 mb-4 tracking-tight">{t(service.titleKey)}</h4>
                 <p className="text-gray-500 font-medium leading-relaxed">{t(service.descKey)}</p>
               </div>
             ))}
@@ -153,7 +153,7 @@ export default function InternalMedicinePage() {
           </div>
           <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-20 items-center relative z-10">
             <div className="space-y-10">
-              <h2 className="text-4xl md:text-6xl font-black leading-tight tracking-tighter">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight tracking-tight">
                 {t("internalMedicine.ctaTitle")}<span className="text-blue-200">{t("internalMedicine.ctaHighlight")}</span>
               </h2>
               <p className="text-2xl text-white/80 font-medium leading-relaxed">
@@ -170,7 +170,7 @@ export default function InternalMedicinePage() {
             </div>
             <div className="hidden lg:block">
               <div className="bg-white/10 backdrop-blur-xl p-10 rounded-[4rem] border border-white/20 space-y-8">
-                <h3 className="text-2xl font-black text-blue-200">{t("internalMedicine.waitFreeTitle")}</h3>
+                <h3 className="text-xl md:text-2xl font-black text-blue-200">{t("internalMedicine.waitFreeTitle")}</h3>
                 <div className="space-y-4">
                   {[
                     t("internalMedicine.waitFree1"),

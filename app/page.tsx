@@ -47,27 +47,27 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden pt-[110px] md:pt-[130px]">
+    <div className="min-h-screen bg-white overflow-x-hidden pt-[100px] sm:pt-[110px] md:pt-[130px]">
       {/* ═══════════════════════════════════════════════════════════════════════════
           HERO SECTION
       ═══════════════════════════════════════════════════════════════════════════ */}
-      <section id="home" className="relative h-auto min-h-[550px] md:min-h-[600px] lg:h-[750px] flex items-center overflow-hidden py-16 md:py-0 bg-white pb-24 md:pb-32">
-        <Image src="/Banner_1c.webp" alt="Raj Nursing Home Banner" fill className="object-cover z-0 opacity-90" priority />
+      <section id="home" className="relative h-auto min-h-[340px] sm:min-h-[380px] md:min-h-[420px] lg:h-[520px] flex items-center overflow-hidden py-8 sm:py-12 md:py-0 bg-white pb-12 sm:pb-16 md:pb-20">
+        <Image src="/Banner_1c.webp" alt="Raj Nursing Home Banner" fill className="object-cover z-0 opacity-90" priority sizes="100vw" />
 
         {/* Gradients */}
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/30 z-10"></div>
 
-        <div className="relative z-20 max-w-screen-2xl mx-auto px-6 md:px-12 w-full h-full flex items-center">
-          <div className="max-w-3xl space-y-6">
-            {/* Badge - Smaller */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/80 border border-gray-200 text-[#9d174d] text-[10px] md:text-xs font-bold rounded-full shadow-sm backdrop-blur-md">
+        <div className="relative z-20 max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 w-full h-full flex items-start pt-6 sm:pt-8 md:pt-12">
+          <div className="max-w-3xl space-y-4 sm:space-y-6">
+            {/* Badge - top se niche, content ke upar */}
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/90 border border-gray-200 text-[#9d174d] text-[10px] md:text-xs font-bold rounded-full shadow-sm backdrop-blur-md">
               <span className="w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse"></span>
               {t("home.hero.badge")}
             </div>
 
             {/* Main Heading - Smaller & Tight */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.1] tracking-tight">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.15] tracking-tight">
               {t("home.hero.title")} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d174d] via-[#f43f5e] to-[#9d174d]">{t("home.hero.titleHighlight")}</span>
             </h1>
@@ -91,7 +91,7 @@ export default function Home() {
             </div>
 
             {/* Stats - Compact & Left Aligned */}
-            <div className="flex flex-wrap gap-8 md:gap-12 pt-6 border-t border-gray-200/60 w-full max-w-2xl">
+            <div className="flex flex-wrap gap-6 sm:gap-8 md:gap-12 pt-4 sm:pt-6 border-t border-gray-200/60 w-full max-w-2xl">
               {[
                 { v: t("home.hero.stat1"), l: t("home.hero.yearsExp") },
                 { v: t("home.hero.stat2"), l: t("home.hero.deliveries") },
@@ -108,9 +108,9 @@ export default function Home() {
       </section>
 
       {/* QUICK SERVICES */}
-      <section className="py-10 bg-[#9d174d]">
-        <div className="max-w-[1700px] mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+      <section className="py-6 sm:py-10 bg-[#9d174d]">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-8">
             {[
               { i: "🚑", title: t("home.quick.emergency"), sub: t("home.quick.emergencySub") },
               { i: "🏥", title: t("home.quick.icu"), sub: t("home.quick.icuSub") },
@@ -130,8 +130,8 @@ export default function Home() {
       </section>
 
       {/* ABOUT SECTION */}
-      <section id="about" className="py-16 md:py-32 bg-gray-50">
-        <div className="max-w-screen-2xl mx-auto px-4 md:px-6">
+      <section id="about" className="py-12 sm:py-16 md:py-32 bg-gray-50">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center">
             <div className="grid grid-cols-2 gap-3 md:gap-6">
               <div className="space-y-3 md:space-y-6">
@@ -178,13 +178,13 @@ export default function Home() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" className="py-16 md:py-32 bg-white">
-        <div className="max-w-screen-2xl mx-auto px-4 md:px-6 text-center mb-12 md:mb-24">
+      <section id="services" className="py-12 sm:py-16 md:py-32 bg-white">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-8 sm:mb-12 md:mb-24">
           <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-xs md:text-sm">{t("home.services.label")}</span>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 md:mt-4">{t("home.services.title")} <span className="text-[#9d174d]">{t("home.services.titleHighlight")}</span></h2>
         </div>
 
-        <div className="max-w-[1700px] mx-auto px-4 md:px-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-10">
           {[
             { name: t("home.services.heart"), slug: "heart-specialist", img: "/heart-care.jpg", desc: t("home.services.heartDesc"), icon: "❤️" },
             { name: t("home.services.internal"), slug: "internal-medicine", img: "/internal1.jpg", desc: t("home.services.internalDesc"), icon: "🩺" },
@@ -213,13 +213,13 @@ export default function Home() {
 
       {/* DOCTORS */}
       {/* DOCTORS SECTION - Responsive Cards */}
-      <section id="doctors" className="py-16 md:py-24 bg-gray-50 overflow-hidden">
-        <div className="max-w-screen-2xl mx-auto px-4 md:px-6 text-center mb-10 md:mb-16">
+      <section id="doctors" className="py-12 sm:py-16 md:py-24 bg-gray-50 overflow-hidden">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-8 sm:mb-10 md:mb-16">
           <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-xs md:text-sm">{t("home.doctors.label")}</span>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 mt-2 md:mt-4 tracking-tighter">{t("home.doctors.title")} <span className="text-[#9d174d]">{t("home.doctors.titleHighlight")}</span></h2>
         </div>
 
-        <div className="max-w-[1780px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Doctor 1: Dr. Vipin Kumar Sharma */}
           <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-gray-100 flex flex-col sm:flex-row lg:flex-row xl:flex-row p-5 md:p-6 gap-6 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group min-h-auto lg:min-h-[520px]">
             {/* Left side: Content */}
@@ -229,7 +229,7 @@ export default function Home() {
                 <p className="text-[#9d174d] text-xs md:text-sm font-black uppercase tracking-tight mt-1">{t("home.doctors.drVipinRole")}</p>
               </div>
 
-              <div className="space-y-3 md:space-y-4 overflow-y-auto pr-2 custom-scrollbar max-h-[200px] md:max-h-none">
+              <div className="space-y-3 md:space-y-4">
                 <p className="text-[10px] md:text-[10px] text-gray-600 leading-relaxed font-bold">
                   {t("home.doctors.vipinDesc1")}
                 </p>
@@ -274,7 +274,7 @@ export default function Home() {
                 <h3 className="text-xl md:text-2xl font-black text-gray-900 leading-tight">{t("home.doctors.drSrishti")}</h3>
                 <p className="text-[#9d174d] text-xs md:text-sm font-black uppercase tracking-tight mt-1">{t("home.doctors.drSrishtiRole")}</p>
               </div>
-              <div className="space-y-3 md:space-y-4 overflow-y-auto pr-2 custom-scrollbar max-h-[200px] md:max-h-none">
+              <div className="space-y-3 md:space-y-4">
                 <p className="text-[10px] md:text-[10px] text-gray-600 leading-relaxed font-bold">
                   {t("home.doctors.srishtiDesc1")}
                 </p>
@@ -317,7 +317,7 @@ export default function Home() {
                 <p className="text-[#9d174d] text-xs md:text-sm font-black uppercase tracking-tight mt-1">{t("home.doctors.drMCRole")}</p>
               </div>
 
-              <div className="space-y-3 md:space-y-4 overflow-y-auto pr-2 custom-scrollbar max-h-[350px] md:max-h-[350px]">
+              <div className="space-y-3 md:space-y-4">
                 <p className="text-[10px] md:text-[10px] text-gray-600 leading-relaxed font-bold">
                   {t("home.doctors.mcDesc1")}
                 </p>
@@ -360,14 +360,14 @@ export default function Home() {
       </section>
 
       {/* DEPARTMENT SECTION - Premium Modern Design */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-red-50/30 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-gray-50 via-white to-red-50/30 relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-red-100 rounded-full blur-[120px] opacity-30" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#9d174d]/10 rounded-full blur-[120px] opacity-40" />
 
-        <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 relative z-10">
           {/* Section Title */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16">
             <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-sm">{t("home.departments.label")}</span>
             <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-4 mb-3">
               {t("home.departments.title")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d174d] to-[#f43f5e]">{t("home.departments.titleHighlight")}</span>
@@ -375,9 +375,9 @@ export default function Home() {
             <div className="h-1.5 w-24 bg-gradient-to-r from-[#9d174d] to-[#f43f5e] mx-auto rounded-full" />
           </div>
 
-          <div className="grid lg:grid-cols-[420px,1fr] gap-12 items-start">
+          <div className="grid lg:grid-cols-[420px,1fr] gap-6 sm:gap-8 lg:gap-12 items-start">
             {/* Left Tabs - Premium Cards */}
-            <div className="space-y-4">
+            <div className="space-y-3 sm:space-y-4">
               {[
                 { name: t("home.departments.surgery"), sub: t("home.departments.surgerySub"), icon: "🏥", color: "from-blue-500 to-cyan-500" },
                 { name: t("home.departments.internal"), sub: t("home.departments.internalSub"), icon: "🩺", color: "from-purple-500 to-pink-500" },
@@ -426,17 +426,17 @@ export default function Home() {
             </div>
 
             {/* Right Content - Premium Card */}
-            <div className="bg-white/60 backdrop-blur-xl rounded-[3rem] p-10 md:p-14 border border-gray-200/50 shadow-2xl min-h-[420px] flex flex-col">
+            <div className="bg-white/60 backdrop-blur-xl rounded-2xl sm:rounded-[3rem] p-6 sm:p-8 md:p-14 border border-gray-200/50 shadow-2xl min-h-[320px] sm:min-h-[420px] flex flex-col">
               <div key={activeDept} className="animate-in fade-in slide-in-from-right-10 duration-700 flex-1 flex flex-col">
                 {/* Title with icon */}
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#9d174d] to-[#f43f5e] flex items-center justify-center text-3xl shadow-lg shrink-0">
+                <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#9d174d] to-[#f43f5e] flex items-center justify-center text-2xl sm:text-3xl shadow-lg shrink-0">
                     {activeDept === 0 && "🏥"}
                     {activeDept === 1 && "🩺"}
                     {activeDept === 2 && "💗"}
                   </div>
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 leading-tight">
                       {activeDept === 0 && t("home.departments.surgicalCare")}
                       {activeDept === 1 && t("home.departments.expertMedical")}
                       {activeDept === 2 && t("home.departments.compassionateWomen")}
@@ -453,7 +453,7 @@ export default function Home() {
                 </p>
 
                 {/* Features */}
-                <div className="grid grid-cols-2 gap-4 mb-8">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
                   {activeDept === 0 && [
                     { icon: "🔬", text: t("home.departments.advancedTech") },
                     { icon: "⚡", text: t("home.departments.fastRecovery") },
@@ -503,16 +503,16 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS SECTION - Premium Redesign */}
-      <section id="testimonials" className="py-24 bg-[#0f172a] relative overflow-hidden text-white">
+      <section id="testimonials" className="py-12 sm:py-16 md:py-24 bg-[#0f172a] relative overflow-hidden text-white">
         {/* Abstract Background Shapes */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#9d174d] rounded-full blur-[120px]"></div>
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600 rounded-full blur-[120px]"></div>
         </div>
 
-        <div className="max-w-screen-2xl mx-auto px-6 relative z-10 text-center">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 relative z-10 text-center">
           {/* Section Title */}
-          <div className="mb-16">
+          <div className="mb-8 sm:mb-12 md:mb-16">
             <span className="text-red-400 font-black tracking-[0.3em] uppercase text-sm">{t("home.testimonials.label")}</span>
             <h2 className="text-3xl md:text-4xl font-black text-white mt-4">
               {t("home.testimonials.title")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d174d] to-[#f43f5e]">{t("home.testimonials.titleHighlight")}</span>
@@ -521,7 +521,7 @@ export default function Home() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div key={activeTestimonial} className="relative bg-white/10 backdrop-blur-xl border border-white/10 rounded-[3rem] p-8 md:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-8 duration-700">
+            <div key={activeTestimonial} className="relative bg-white/10 backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-[3rem] p-6 sm:p-8 md:p-12 shadow-2xl animate-in fade-in slide-in-from-bottom-8 duration-700">
               {/* Large Quote Icon */}
               <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-gradient-to-br from-[#9d174d] to-[#f43f5e] w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-red-500/30 rotate-12">
                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" className="text-white transform -rotate-12"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H15.017C14.4647 8 14.017 8.44772 14.017 9V11C14.017 11.5523 13.5693 12 13.017 12H12.017V5H22.017V15C22.017 18.3137 19.3307 21 16.017 21H14.017ZM5.0166 21L5.0166 18C5.0166 16.8954 5.91203 16 7.0166 16H10.0166C10.5689 16 11.0166 15.5523 11.0166 15V9C11.0166 8.44772 10.5689 8 10.0166 8H6.0166C5.46432 8 5.0166 8.44772 5.0166 9V11C5.0166 11.5523 4.56889 12 4.0166 12H3.0166V5H13.0166V15C13.0166 18.3137 10.3303 21 7.0166 21H5.0166Z" /></svg>
@@ -537,7 +537,7 @@ export default function Home() {
                 </div>
 
                 {/* Text */}
-                <p className="text-lg md:text-2xl leading-relaxed font-medium text-gray-200 italic mb-8">
+                <p className="text-base sm:text-lg md:text-2xl leading-relaxed font-medium text-gray-200 italic mb-6 sm:mb-8">
                   "{[t("home.testimonials.testimonial1"), t("home.testimonials.testimonial2"), t("home.testimonials.testimonial3")][activeTestimonial]}"
                 </p>
 
@@ -591,13 +591,13 @@ export default function Home() {
       </section>
 
       {/* FACILITIES */}
-      <section className="py-32 bg-gray-50">
-        <div className="max-w-screen-2xl mx-auto px-6 text-center mb-24">
+      <section className="py-12 sm:py-20 md:py-32 bg-gray-50">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-12 sm:mb-16 md:mb-24">
           <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-sm">{t("home.facilities.label")}</span>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-4">{t("home.facilities.title")} <span className="text-[#9d174d]">{t("home.facilities.titleHighlight")}</span></h2>
         </div>
 
-        <div className="max-w-screen-2xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {[
             { title: t("home.facilities.modularOT"), img: "/raj/ot.jpg", desc: t("home.facilities.modularOTDesc") },
             { title: t("home.facilities.advancedICU"), img: "/raj/raj-nursing-home-icu.jpg", desc: t("home.facilities.advancedICUDesc") },

@@ -11,7 +11,7 @@ export default function DiagnosticCenterHapur() {
   return (
     <div className="bg-white min-h-screen animate-page-enter mt-32">
       {/* Hero Section */}
-      <div className="relative min-h-[450px] md:min-h-[650px] flex items-center overflow-hidden">
+      <div className="relative min-h-[320px] md:min-h-[400px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/raj/banner1.webp"
@@ -29,7 +29,7 @@ export default function DiagnosticCenterHapur() {
               <Sparkles className="w-4 h-4 text-cyan-200 fill-cyan-200" />
               <span>{t("diagnosticCenter.badge")}</span>
             </div>
-            <h1 className="text-4xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight">
               {t("diagnosticCenter.heroTitle")}<br /><span className="text-cyan-200">{t("diagnosticCenter.heroTitleHighlight")}</span>
             </h1>
             <p className="text-xl text-gray-100 leading-relaxed max-w-2xl font-medium">
@@ -63,7 +63,7 @@ export default function DiagnosticCenterHapur() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-screen-2xl mx-auto px-6 py-24 sm:py-32">
+      <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-24 sm:py-32">
 
         {/* Quick Highlights Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32">
@@ -87,7 +87,7 @@ export default function DiagnosticCenterHapur() {
           <div className="space-y-10 animate-page-enter">
             <div className="space-y-5">
               <span className="text-cyan-700 font-black tracking-[0.3em] uppercase text-sm">{t("diagnosticCenter.introLabel")}</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-[1.1] tracking-tighter">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-[1.1] tracking-tight">
                 {t("diagnosticCenter.introTitle")}<span className="text-cyan-700">{t("diagnosticCenter.introTitleHighlight")}</span>
               </h2>
             </div>
@@ -123,7 +123,7 @@ export default function DiagnosticCenterHapur() {
         <div className="mb-32">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-6">
             <span className="text-cyan-700 font-black tracking-[0.3em] uppercase text-sm">{t("diagnosticCenter.coreLabel")}</span>
-            <h2 className="text-4xl md:text-5xl font-black text-gray-900 tracking-tighter">{t("diagnosticCenter.coreTitle")}<span className="text-cyan-700">{t("diagnosticCenter.coreHighlight")}</span></h2>
+            <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">{t("diagnosticCenter.coreTitle")}<span className="text-cyan-700">{t("diagnosticCenter.coreHighlight")}</span></h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -150,7 +150,7 @@ export default function DiagnosticCenterHapur() {
           </div>
           <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-20 items-center relative z-10">
             <div className="space-y-10">
-              <h2 className="text-4xl md:text-6xl font-black leading-tight tracking-tighter">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight tracking-tight">
                 {t("diagnosticCenter.ctaTitle")} <br /><span className="text-cyan-200">{t("diagnosticCenter.ctaHighlight")}</span>
               </h2>
               <p className="text-2xl text-cyan-50 font-medium leading-relaxed">

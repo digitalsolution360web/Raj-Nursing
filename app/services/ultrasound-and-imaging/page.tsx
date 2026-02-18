@@ -9,41 +9,37 @@ export default function UltrasoundPage() {
 
     return (
         <div className="bg-white">
-            {/* Hero Section */}
-            <div className="relative bg-[#701a2e] text-white overflow-hidden h-[300px] md:h-[400px] flex items-center">
+            {/* Hero Section - original height, image fixed inside */}
+            <div className="relative bg-[#701a2e] text-white overflow-hidden min-h-[320px] md:min-h-[400px] flex items-center">
                 <div className="absolute inset-0 z-0">
-                    <div className="absolute inset-0 bg-[#701a2e] opacity-90 z-10"></div>
+                    <div className="absolute inset-0 bg-[#701a2e]/95 z-10" />
                     <Image
                         src="/raj/banner1.webp"
                         alt="Banner"
                         fill
-                        className="object-cover object-top opacity-50"
+                        className="object-cover object-center opacity-40"
                     />
                 </div>
-                <div className="container mx-auto px-4 z-20 relative h-full flex flex-col justify-center">
-                    <h1 className="text-3xl md:text-5xl font-bold mb-4">
-                        {t("ultrasoundImaging.heroTitle")}
-                    </h1>
-                    <nav className="text-sm md:text-base text-gray-200">
-                        <Link href="/" className="hover:underline text-white">{t("ultrasoundImaging.home")}</Link> / {t("ultrasoundImaging.breadcrumbCurrent")}
-                    </nav>
-                </div>
-                <div className="absolute right-0 bottom-0 h-full w-1/3 md:w-1/4 z-20 hidden md:block">
-                    <Image
-                        src="/raj/dr-Srishti.jpg"
-                        alt="Doctor"
-                        fill
-                        className="object-contain object-center"
-                    />
+                <div className="relative z-20 w-full max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-12">
+                    <div className="flex flex-col justify-center text-center md:text-left">
+                        <nav className="text-xs md:text-sm text-white/80 font-medium mb-2 order-first">
+                            <Link href="/" className="hover:text-white transition-colors">{t("ultrasoundImaging.home")}</Link>
+                            <span className="mx-1.5">/</span>
+                            <span className="text-white">{t("ultrasoundImaging.breadcrumbCurrent")}</span>
+                        </nav>
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight tracking-tight">
+                            {t("ultrasoundImaging.heroTitle")}
+                        </h1>
+                    </div>
                 </div>
             </div>
 
             {/* Main Content */}
-            <div className="max-w-screen-2xl mx-auto px-4 py-12 md:py-20 text-gray-700 space-y-12">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-12 md:py-20 text-gray-700 space-y-12">
 
                 {/* Intro */}
                 <div className="space-y-6">
-                    <h2 className="text-3xl font-bold text-[#701a2e]">{t("ultrasoundImaging.introTitle")}</h2>
+                    <h2 className="text-2xl md:text-3xl font-black text-[#701a2e]">{t("ultrasoundImaging.introTitle")}</h2>
                     <p className="leading-relaxed">
                         {t("ultrasoundImaging.introP1")}
                     </p>
@@ -51,7 +47,7 @@ export default function UltrasoundPage() {
 
                 {/* Section 1 */}
                 <div className="space-y-6">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#701a2e]">
+                    <h2 className="text-2xl md:text-3xl font-black text-[#701a2e]">
                         Ultrasound & Imaging in Hapur: Your Guide to Comprehensive Care at Raj Nursing Home
                     </h2>
                     <p className="leading-relaxed">
@@ -70,7 +66,7 @@ export default function UltrasoundPage() {
                         />
                     </div>
                     <div className="space-y-4">
-                        <h2 className="text-2xl font-bold text-[#701a2e]">
+                        <h2 className="text-xl md:text-2xl font-black text-[#701a2e]">
                             Understanding the Basics of Ultrasound: What is the Importance?
                         </h2>
                         <p className="leading-relaxed text-sm md:text-base">
@@ -93,14 +89,14 @@ export default function UltrasoundPage() {
 
                 {/* Section 3: Pregnancy Scan */}
                 <div className="space-y-6">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#701a2e]">
+                    <h2 className="text-2xl md:text-3xl font-black text-[#701a2e]">
                         Pregnancy Scan Hapur: Nurturing New Life with Confidence
                     </h2>
                     <p className="leading-relaxed">
                         An expectant couple can understand the importance of joy and emotions and the expense of genial pregnancy imaging. Therefore, choosing Raj Nursing Home is the best one can have kept sweet pregnancy scan Hapur can see.
                     </p>
                     <div className="space-y-4">
-                        <h3 className="font-bold text-lg text-black">
+                        <h3 className="font-black text-lg md:text-xl text-black">
                             What do we actually do here for the lady who is expecting? The steps are as follows:
                         </h3>
                         <ul className="space-y-2 list-none pl-4">
@@ -134,7 +130,7 @@ export default function UltrasoundPage() {
                 {/* Section 4: Pelvic Ultrasound - Text Left, Image Right */}
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                     <div className="space-y-4">
-                        <h2 className="text-2xl font-bold text-[#701a2e]">
+                        <h2 className="text-xl md:text-2xl font-black text-[#701a2e]">
                             Pelvic Ultrasound Hapur: Women&apos;s Health Under One Roof
                         </h2>
                         <p className="leading-relaxed text-sm md:text-base">
@@ -162,14 +158,14 @@ export default function UltrasoundPage() {
 
                 {/* Section 5: Why Choose Us */}
                 <div className="space-y-6">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#701a2e]">
+                    <h2 className="text-2xl md:text-3xl font-black text-[#701a2e]">
                         Why Choose Raj Nursing Home as Hapur’s Diagnostic Imaging Center?
                     </h2>
                     <p className="leading-relaxed">
                         Everyone wants to join a healthcare system where they can receive responsive and accessible health-related facilities at marginal pricing. Well, Raj Nursing Home is one of the best diagnostic imaging centers in Hapur that delivers premium care to its patients.
                     </p>
                     <div className="space-y-4">
-                        <h3 className="font-bold text-xl text-black">
+                        <h3 className="font-black text-xl text-black">
                             With a legacy of more than a decade, we
                         </h3>
                         <ul className="space-y-2 list-none pl-4">
@@ -196,7 +192,7 @@ export default function UltrasoundPage() {
 
                 {/* Conclusion Box */}
                 <div className="bg-white border border-gray-200 rounded-lg p-6 md:p-8 shadow-sm">
-                    <h2 className="text-2xl font-bold text-gray-800 mb-4">Conclusion</h2>
+                    <h2 className="text-xl md:text-2xl font-black text-gray-800 mb-4">Conclusion</h2>
                     <p className="leading-relaxed text-gray-600">
                         Whether it&apos;s your routine checkup, or you look for specialized imaging and pregnancy-based scans, Raj Nursing Home provides the best and unmatched level of diagnosis in Hapur. Now, no more worries about getting the best ultrasound in Hapur. With Raj Nursing Home, get in touch with accuracy, commitment, and privacy. Reach out to Raj Nursing Home for all your ultrasound and diagnostic needs in Hapur!
                     </p>

@@ -22,8 +22,8 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 pt-[110px] md:pt-[130px]">
-      <section className="relative overflow-hidden">
+    <div className="min-h-screen bg-white text-gray-900 pt-[100px] sm:pt-[110px] md:pt-[130px] overflow-x-hidden">
+      <section className="relative overflow-hidden min-h-[280px] sm:min-h-[320px] md:min-h-[400px] flex items-center">
         <div className="absolute inset-0">
           <Image
             src="/medical.jpg"
@@ -34,7 +34,7 @@ export default function ContactPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#5b0f2d]/90 via-[#6f1436]/80 to-[#6f1436]/40" />
         </div>
-        <div className="max-w-screen-2xl mx-auto px-6 pt-12 pb-12 relative">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 py-8 sm:py-12 relative z-10 w-full">
           <span className="inline-flex w-fit items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/15 text-white border border-white/20">
             {t("contact.title")}
           </span>
@@ -48,15 +48,15 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="pb-24 bg-gradient-to-b from-white via-white to-gray-50/40">
-        <div className="max-w-screen-2xl mx-auto px-6 grid lg:grid-cols-[1.15fr,0.85fr] gap-10">
-          <div className="bg-white border border-gray-100 rounded-[2.75rem] shadow-[0_30px_80px_rgba(17,24,39,0.08)] p-6 md:p-12">
+      <section className="pb-16 sm:pb-24 bg-gradient-to-b from-white via-white to-gray-50/40">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 grid lg:grid-cols-[1.15fr,0.85fr] gap-6 sm:gap-10">
+          <div className="bg-white border border-gray-100 rounded-2xl sm:rounded-[2.75rem] shadow-[0_30px_80px_rgba(17,24,39,0.08)] p-4 sm:p-6 md:p-12">
             <div className="flex items-center gap-3 mb-6">
               <span className="inline-flex items-center justify-center w-10 h-10 rounded-2xl bg-red-50 text-[#9d174d] text-lg">
                 ✉️
               </span>
               <div>
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900">
                   {t("contact.hereForYou")}
                 </h1>
                 <p className="text-sm text-gray-500 mt-1">
@@ -223,13 +223,13 @@ export default function ContactPage() {
       </section>
 
       <section className="pb-24">
-        <div className="max-w-screen-2xl mx-auto px-6">
+        <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
           <div className="flex items-center justify-between mb-5">
             <div>
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#9d174d]">
                 {t("contact.location")}
               </span>
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mt-2">
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900 mt-2">
                 {t("contact.findOnMap")}
               </h2>
             </div>

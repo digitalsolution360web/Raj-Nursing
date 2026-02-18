@@ -44,6 +44,7 @@ export const en = {
     fullName: "Full Name",
     email: "Email",
     phone: "Phone",
+    city: "City",
     date: "Date",
     time: "Time",
     selectService: "Select Service",

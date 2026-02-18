@@ -11,7 +11,7 @@ export default function WomensHealthInHapur() {
     return (
         <div className="bg-white min-h-screen animate-page-enter mt-32">
             {/* Hero Section */}
-            <div className="relative min-h-[450px] md:min-h-[600px] flex items-center overflow-hidden">
+            <div className="relative min-h-[320px] md:min-h-[400px] flex items-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/raj/banner2.webp"
@@ -29,7 +29,7 @@ export default function WomensHealthInHapur() {
                             <Sparkles className="w-4 h-4 text-rose-300 fill-rose-300" />
                             <span>{t("womensHealth.badge")}</span>
                         </div>
-                        <h1 className="text-4xl md:text-7xl font-black text-white leading-[1.1] tracking-tighter">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight">
                             {t("womensHealth.heroTitle")}<br /><span className="text-rose-300">{t("womensHealth.heroTitleHighlight")}</span>
                         </h1>
                         <p className="text-xl text-gray-100 leading-relaxed max-w-2xl font-medium">
@@ -47,27 +47,10 @@ export default function WomensHealthInHapur() {
                         </div>
                     </div>
                 </div>
-
-                {/* Floating Decoration - full image visible */}
-                <div className="absolute right-0 top-0 bottom-0 w-[42%] max-w-[480px] z-20 hidden lg:flex items-end justify-center">
-                    <div className="relative w-full h-full min-h-[450px]">
-                        <Image
-                            src="/raj/dr-Srishti.jpg"
-                            alt="Dr. Srishti Bhardwaj"
-                            fill
-                            className="object-contain object-bottom"
-                            sizes="(max-width: 1024px) 0px, 480px"
-                        />
-                    </div>
-                    <div className="absolute bottom-10 left-32 bg-white/10 backdrop-blur-xl p-6 rounded-3xl border border-white/20 shadow-2xl">
-                        <p className="text-white font-black text-xl mb-1">{t("womensHealth.drName")}</p>
-                        <p className="text-rose-200 text-sm font-bold tracking-widest uppercase">{t("womensHealth.expertGynecologist")}</p>
-                    </div>
-                </div>
             </div>
 
             {/* Main Content */}
-            <div className="max-w-screen-2xl mx-auto px-6 py-24 sm:py-32">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-24 sm:py-32">
 
                 {/* Quick Highlights Grid */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-32">
@@ -90,7 +73,7 @@ export default function WomensHealthInHapur() {
                 <div className="mb-32">
                     {/* Main Section Heading */}
                     <div className="text-center max-w-5xl mx-auto mb-20 space-y-6">
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-tight">
+                        <h2 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight tracking-tight">
                             {t("womensHealth.section1Title")}<span className="text-[#800020]">{t("womensHealth.section1Highlight")}</span>
                         </h2>
                         <div className="h-2 w-32 bg-[#800020] mx-auto rounded-full"></div>
@@ -137,7 +120,7 @@ export default function WomensHealthInHapur() {
                         />
                     </div>
                     <div className="space-y-8">
-                        <h3 className="text-3xl md:text-5xl font-black text-gray-900 leading-tight">
+                        <h3 className="text-xl md:text-2xl font-black text-gray-900 leading-tight">
                             {t("womensHealth.findGynecologistTitle")}<span className="text-[#800020]">{t("womensHealth.findGynecologistHighlight")}</span>{t("womensHealth.findGynecologistSuffix")}
                         </h3>
                         <div className="text-gray-700 text-lg leading-relaxed space-y-6 font-medium">
@@ -168,7 +151,7 @@ export default function WomensHealthInHapur() {
                 {/* Section 3: Pregnancy Care - Complete Content */}
                 <div className="mb-32">
                     <div className="text-center max-w-5xl mx-auto mb-16 space-y-6">
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-tight">
+                        <h2 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight tracking-tight">
                             {t("womensHealth.pregnancyTitle")}<span className="text-[#800020]">{t("womensHealth.pregnancyTitleHighlight")}</span>{t("womensHealth.pregnancyTitleSuffix")}
                         </h2>
                         <div className="h-2 w-32 bg-[#800020] mx-auto rounded-full"></div>
@@ -210,7 +193,7 @@ export default function WomensHealthInHapur() {
                     <div className="absolute bottom-0 left-0 w-96 h-96 bg-black/10 rounded-full blur-3xl -ml-20 -mb-20"></div>
 
                     <div className="space-y-10 relative z-10">
-                        <h3 className="text-4xl md:text-5xl font-black leading-[1.1] tracking-tighter">
+                        <h3 className="text-xl md:text-2xl font-black leading-tight tracking-tight">
                             {t("womensHealth.pcosTitle")}<span className="text-rose-200">{t("womensHealth.pcosTitleHighlight")}</span>{t("womensHealth.pcosTitleSuffix")}
                         </h3>
                         <div className="space-y-6 text-rose-50 text-xl leading-relaxed font-medium">
@@ -253,7 +236,7 @@ export default function WomensHealthInHapur() {
                         <div className="space-y-8">
                             <div className="space-y-4">
                                 <span className="text-[#800020] font-black tracking-[0.3em] uppercase text-sm">{t("womensHealth.menstrualLabel")}</span>
-                                <h3 className="text-3xl md:text-5xl font-black text-gray-900 leading-tight tracking-tighter">
+                                <h3 className="text-xl md:text-2xl font-black text-gray-900 leading-tight tracking-tight">
                                     {t("womensHealth.menstrualTitle")}<br /><span className="text-[#800020]">{t("womensHealth.menstrualTitleHighlight")}</span> <br />{t("womensHealth.menstrualTitleSuffix")}
                                 </h3>
                             </div>
@@ -285,8 +268,8 @@ export default function WomensHealthInHapur() {
                 </div>
 
                 {/* WHY BEST SECTION */}
-                <div className="max-w-screen-xl mx-auto px-6 py-12 border-t border-gray-100">
-                    <h3 className="text-3xl font-bold text-gray-900 mb-6">{t("womensHealth.whyBestTitle")}</h3>
+                <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-12 border-t border-gray-100">
+                    <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-6">{t("womensHealth.whyBestTitle")}</h3>
                     <p className="text-gray-700 font-bold mb-6">{t("womensHealth.whyBestIntro")}</p>
                     <ul className="space-y-3 mb-16">
                         {[
@@ -304,7 +287,7 @@ export default function WomensHealthInHapur() {
                     </ul>
 
                     <div className="bg-white border border-gray-200 rounded-2xl p-8 md:p-12 shadow-sm">
-                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8 tracking-tight">{t("womensHealth.firstStepTitle")}</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-8 tracking-tight">{t("womensHealth.firstStepTitle")}</h2>
                         <div className="space-y-4 text-gray-700 text-lg font-bold leading-relaxed">
                             <p>{t("womensHealth.firstStepP1")}</p>
                             <p>{t("womensHealth.firstStepP2")}</p>
@@ -318,7 +301,7 @@ export default function WomensHealthInHapur() {
                         <Phone className="w-64 h-64" />
                     </div>
                     <div className="max-w-4xl space-y-10 relative z-10">
-                        <h2 className="text-4xl md:text-6xl font-black leading-tight tracking-tighter">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight tracking-tight">
                             {t("womensHealth.ctaTitle")}<br /><span className="text-rose-400">{t("womensHealth.ctaHighlight")}</span>
                         </h2>
                         <p className="text-2xl text-white/80 font-medium leading-relaxed">{t("womensHealth.ctaDesc")}</p>
@@ -336,7 +319,7 @@ export default function WomensHealthInHapur() {
             </div>
 
             {/* Structured Conclusion (Bottom Padding) */}
-            <div className="max-w-screen-2xl mx-auto px-6 pb-32">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 pb-32">
                 <div className="bg-gray-50 rounded-[4rem] p-12 md:p-20 border border-gray-100">
                     <p className="text-2xl md:text-3xl font-medium text-gray-500 leading-relaxed italic text-center max-w-5xl mx-auto">
                         &quot;{t("womensHealth.testimonialQuote")}&quot;

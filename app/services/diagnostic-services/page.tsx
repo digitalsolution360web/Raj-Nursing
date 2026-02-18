@@ -8,7 +8,7 @@ export default function DiagnosticServicesPage() {
     return (
         <div className="bg-white min-h-screen animate-page-enter">
             {/* Hero Section */}
-            <div className="relative h-[450px] md:h-[550px] flex items-center overflow-hidden">
+            <div className="relative min-h-[320px] md:min-h-[400px] flex items-center overflow-hidden">
                 <div className="absolute inset-0 z-0">
                     <Image
                         src="/raj/banner1.webp"
@@ -26,7 +26,7 @@ export default function DiagnosticServicesPage() {
                             <Microscope className="w-4 h-4 text-emerald-200 fill-emerald-200" />
                             <span>Precision Pathology Lab</span>
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
                             Comprehensive <span className="text-emerald-200">Diagnostic Services</span>
                         </h1>
                         <p className="text-lg text-gray-100 leading-relaxed max-w-2xl">
@@ -57,7 +57,7 @@ export default function DiagnosticServicesPage() {
             </div>
 
             {/* Main Content */}
-            <div className="max-w-screen-2xl mx-auto px-4 py-20">
+            <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-20">
 
                 {/* Quick Stats / Highlights */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-24">
@@ -81,7 +81,7 @@ export default function DiagnosticServicesPage() {
                     <div className="space-y-8 animate-page-enter" style={{ animationDelay: '0.2s' }}>
                         <div className="space-y-4">
                             <h2 className="text-sm font-bold tracking-widest text-[#059669] uppercase">Reliable Diagnostics</h2>
-                            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900 leading-tight">
                                 Because Accurate Diagnosis is the First Step to Cure
                             </h3>
                         </div>
@@ -111,7 +111,7 @@ export default function DiagnosticServicesPage() {
                 {/* Detailed Services Grid */}
                 <div className="space-y-16 mb-24">
                     <div className="text-center space-y-4 max-w-2xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Our Diagnostic Services</h2>
+                        <h2 className="text-2xl md:text-3xl font-black text-gray-900">Our Diagnostic Services</h2>
                         <div className="h-1.5 w-24 bg-[#059669] mx-auto rounded-full"></div>
                     </div>
 
@@ -121,7 +121,7 @@ export default function DiagnosticServicesPage() {
                             <div className="h-14 w-14 bg-emerald-100 rounded-2xl flex items-center justify-center">
                                 <FlaskConical className="w-8 h-8 text-[#059669]" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900">Clinical Pathology</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900">Clinical Pathology</h3>
                             <p className="text-gray-600 leading-relaxed text-sm">
                                 Comprehensive blood, urine, and body fluid analysis to detect infections and diseases. We use automated cell counters for error-free results.
                             </p>
@@ -140,7 +140,7 @@ export default function DiagnosticServicesPage() {
                             <div className="h-14 w-14 bg-emerald-100 rounded-2xl flex items-center justify-center">
                                 <Activity className="w-8 h-8 text-[#059669]" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900">Biochemistry</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900">Biochemistry</h3>
                             <p className="text-gray-600 leading-relaxed text-sm">
                                 Analyzing chemical components in the blood to assess organ function. Crucial for monitoring diabetes, liver, and kidney health.
                             </p>
@@ -159,7 +159,7 @@ export default function DiagnosticServicesPage() {
                             <div className="h-14 w-14 bg-emerald-100 rounded-2xl flex items-center justify-center">
                                 <Home className="w-8 h-8 text-[#059669]" />
                             </div>
-                            <h3 className="text-xl font-bold text-gray-900">Home Sample Collection</h3>
+                            <h3 className="text-xl md:text-2xl font-black text-gray-900">Home Sample Collection</h3>
                             <p className="text-gray-600 leading-relaxed text-sm">
                                 Cannot visit the lab? Our trained phlebotomists will visit your home to collect samples hygienically and safely at your convenience.
                             </p>
@@ -181,7 +181,7 @@ export default function DiagnosticServicesPage() {
                         <Microscope className="w-64 h-64" />
                     </div>
                     <div className="max-w-3xl space-y-8 relative z-10">
-                        <h2 className="text-3xl md:text-5xl font-bold leading-tight">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-black leading-tight">
                             Quality Diagnostics for Better Health
                         </h2>
                         <p className="text-white/90 text-lg leading-relaxed">
@@ -189,11 +189,11 @@ export default function DiagnosticServicesPage() {
                         </p>
                         <div className="grid sm:grid-cols-2 gap-6 pt-6">
                             <div className="glass p-6 rounded-2xl">
-                                <h4 className="font-bold text-xl mb-2">Accurate Results</h4>
+                                <h4 className="font-black text-xl mb-2">Accurate Results</h4>
                                 <p className="text-sm text-white/80">Double-checked by senior pathologists.</p>
                             </div>
                             <div className="glass p-6 rounded-2xl">
-                                <h4 className="font-bold text-xl mb-2">Modern Technology</h4>
+                                <h4 className="font-black text-xl mb-2">Modern Technology</h4>
                                 <p className="text-sm text-white/80">Using latest automated analyzers.</p>
                             </div>
                         </div>
@@ -218,7 +218,7 @@ export default function DiagnosticServicesPage() {
                     </div>
                     <div className="space-y-8">
                         <div className="space-y-4">
-                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Why Choose Raj Nursing Home Diagnostics?</h2>
+                            <h2 className="text-2xl md:text-3xl font-black text-gray-900">Why Choose Raj Nursing Home Diagnostics?</h2>
                             <p className="text-gray-600 text-lg leading-relaxed">
                                 We go beyond just testing. We ensure that every sample is handled with care and every report is verified for accuracy. Our integrated hospital setting means immediate consultation with doctors is available if reports show any abnormalities.
                             </p>
@@ -244,7 +244,7 @@ export default function DiagnosticServicesPage() {
 
                 {/* Simple Conclusion Box */}
                 <div className="mt-16 bg-white border border-gray-200 rounded-3xl p-8 md:p-12 shadow-sm transition-all hover:shadow-md">
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Trusted by Thousands</h2>
+                    <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-6">Trusted by Thousands</h2>
                     <p className="leading-relaxed text-gray-600 text-lg">
                         Raj Nursing Home has been a trusted name in healthcare for years. Our diagnostic services continue this legacy of trust by providing high-quality, affordable, and timely testing services to the community of Hapur. Whether it's a simple blood test or a complex profile, you can rely on us for the truth about your health.
                     </p>

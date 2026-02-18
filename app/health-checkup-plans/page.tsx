@@ -18,7 +18,7 @@ export default function HealthCheckupPlans() {
 
   return (
     <div className="min-h-screen bg-white text-gray-900 pt-[110px] md:pt-[130px]">
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden min-h-[320px] md:min-h-[400px] flex items-center">
         <div className="absolute inset-0">
           <Image
             src="/medical.jpg"
@@ -29,7 +29,7 @@ export default function HealthCheckupPlans() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#5b0f2d]/90 via-[#6f1436]/80 to-[#6f1436]/40" />
         </div>
-        <div className="max-w-screen-2xl mx-auto px-6 pt-12 pb-12 relative">
+        <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-12 relative z-10 w-full">
           <span className="inline-flex w-fit items-center gap-2 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-white/15 text-white border border-white/20">
             {t("healthPlans.preventiveCare")}
           </span>
@@ -49,9 +49,9 @@ export default function HealthCheckupPlans() {
       </section>
 
       <section className="py-20 bg-gray-50">
-        <div className="max-w-screen-2xl mx-auto px-6">
+        <div className="max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-tight mb-4">
+            <h2 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight mb-4">
               {t("healthPlans.sectionHeading")}
             </h2>
             <p className="text-gray-600 leading-relaxed text-lg">

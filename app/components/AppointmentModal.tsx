@@ -11,10 +11,12 @@ const XIcon = () => (
   </svg>
 );
 
-const ClockIcon = () => (
+const CalendarIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10" />
-    <polyline points="12 6 12 12 16 14" />
+    <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
+    <line x1="16" x2="16" y1="2" y2="6" />
+    <line x1="8" x2="8" y1="2" y2="6" />
+    <line x1="3" x2="21" y1="10" y2="10" />
   </svg>
 );
 
@@ -45,7 +47,8 @@ export default function AppointmentModal() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [time, setTime] = useState("");
+  const [city, setCity] = useState("");
+  const [date, setDate] = useState("");
   const [service, setService] = useState("");
   const [message, setMessage] = useState("");
 
@@ -132,18 +135,31 @@ export default function AppointmentModal() {
               />
             </div>
 
-            <div className="relative">
+            <div>
               <label className="block text-xs font-semibold text-gray-600 mb-1.5">
-                {t("appointment.time")}
+                {t("appointment.city")}
               </label>
               <input
-                type="time"
-                value={time}
-                onChange={(e) => setTime(e.target.value)}
+                type="text"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                placeholder="e.g. Hapur, Ghaziabad"
+                className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30 focus:border-[#9d174d]"
+              />
+            </div>
+
+            <div className="relative">
+              <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                {t("appointment.date")}
+              </label>
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
                 className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 pr-10 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#9d174d]/30 focus:border-[#9d174d]"
               />
               <span className="absolute right-3 bottom-3 text-gray-400 pointer-events-none">
-                <ClockIcon />
+                <CalendarIcon />
               </span>
             </div>
 
