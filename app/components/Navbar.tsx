@@ -330,6 +330,16 @@ export default function Navbar() {
                 </span>
               </div>
             </div>
+
+            {/* Book Appointment - top right */}
+            <button
+              type="button"
+              onClick={openAppointment}
+              className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-white text-[#9d174d] hover:bg-red-50 font-black text-xs sm:text-sm rounded-xl shadow-lg transition-all hover:-translate-y-0.5 shrink-0 uppercase tracking-wide"
+            >
+              <span>{t("nav.bookAppointment")}</span>
+              <ArrowRightIcon />
+            </button>
           </div>
         </div>
 
