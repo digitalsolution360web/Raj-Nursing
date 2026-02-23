@@ -1,0 +1,165 @@
+"use client";
+
+import Link from "next/link";
+import { useLanguage } from "@/app/context/LanguageContext";
+
+const PhoneIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l2.27-2.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+  </svg>
+);
+
+const CheckIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M20 6 9 17l-5-5" />
+  </svg>
+);
+
+export default function HospitalNursingHomeSimbhaoli() {
+  const { t } = useLanguage();
+
+  const sections = [
+    {
+      titleKey: "simbhaoli.emergencyTitle" as const,
+      introKey: "simbhaoli.emergencyIntro" as const,
+      bullets: ["simbhaoli.emergency1", "simbhaoli.emergency2", "simbhaoli.emergency3", "simbhaoli.emergency4", "simbhaoli.emergency5"] as const,
+      endKey: "simbhaoli.emergencyEnd" as const,
+    },
+    {
+      titleKey: "simbhaoli.icuTitle" as const,
+      introKey: "simbhaoli.icuIntro" as const,
+      bullets: ["simbhaoli.icu1", "simbhaoli.icu2", "simbhaoli.icu3", "simbhaoli.icu4"] as const,
+      endKey: "simbhaoli.icuEnd" as const,
+    },
+    {
+      titleKey: "simbhaoli.heartTitle" as const,
+      introKey: "simbhaoli.heartIntro" as const,
+      bullets: ["simbhaoli.heart1", "simbhaoli.heart2", "simbhaoli.heart3", "simbhaoli.heart4"] as const,
+      endKey: "simbhaoli.heartEnd" as const,
+    },
+    {
+      titleKey: "simbhaoli.surgeryTitle" as const,
+      introKey: "simbhaoli.surgeryIntro" as const,
+      leadKey: "simbhaoli.surgeryLead" as const,
+      bullets: ["simbhaoli.surgery1", "simbhaoli.surgery2", "simbhaoli.surgery3", "simbhaoli.surgery4", "simbhaoli.surgery5"] as const,
+      endKey: "simbhaoli.surgeryEnd" as const,
+    },
+    {
+      titleKey: "simbhaoli.internalTitle" as const,
+      introKey: "simbhaoli.internalIntro" as const,
+      bullets: ["simbhaoli.internal1", "simbhaoli.internal2", "simbhaoli.internal3", "simbhaoli.internal4"] as const,
+      endKey: "simbhaoli.internalEnd" as const,
+    },
+    {
+      titleKey: "simbhaoli.diagnosticTitle" as const,
+      introKey: "simbhaoli.diagnosticIntro" as const,
+      bullets: ["simbhaoli.diagnostic1", "simbhaoli.diagnostic2", "simbhaoli.diagnostic3", "simbhaoli.diagnostic4", "simbhaoli.diagnostic5"] as const,
+      endKey: "simbhaoli.diagnosticEnd" as const,
+    },
+    {
+      titleKey: "simbhaoli.womensTitle" as const,
+      introKey: "simbhaoli.womensIntro" as const,
+      bullets: ["simbhaoli.womens1", "simbhaoli.womens2", "simbhaoli.womens3", "simbhaoli.womens4", "simbhaoli.womens5"] as const,
+      endKey: "simbhaoli.womensEnd" as const,
+    },
+    {
+      titleKey: "simbhaoli.seasonalTitle" as const,
+      introKey: "simbhaoli.seasonalIntro" as const,
+      bullets: ["simbhaoli.seasonal1", "simbhaoli.seasonal2", "simbhaoli.seasonal3", "simbhaoli.seasonal4"] as const,
+      endKey: "simbhaoli.seasonalEnd" as const,
+    },
+  ];
+
+  return (
+    <div className="pt-[100px] sm:pt-[110px] md:pt-[130px] min-h-screen bg-white">
+      <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 py-12 sm:py-16 md:py-20">
+        {/* Breadcrumb */}
+        <nav className="text-sm text-gray-500 font-medium mb-8">
+          <Link href="/" className="hover:text-[#9d174d] transition-colors">{t("footer.home")}</Link>
+          <span className="mx-2">/</span>
+          <span className="text-gray-900">{t("footer.simbhaoli")}</span>
+        </nav>
+
+        {/* Main title */}
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900 leading-tight mb-6">
+          {t("simbhaoli.title")}
+        </h1>
+
+        {/* Intro paragraphs */}
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+          {t("simbhaoli.intro1")}
+        </p>
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+          {t("simbhaoli.intro2")}
+        </p>
+        <p className="text-gray-700 text-base md:text-lg leading-relaxed mb-12 font-medium">
+          {t("simbhaoli.goal")}
+        </p>
+
+        {/* Service sections with separators */}
+        {sections.map((sec, idx) => (
+          <div key={idx}>
+            <div className="h-px bg-gray-200 mb-10" />
+            <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-4">
+              {t(sec.titleKey)}
+            </h2>
+            <p className="text-gray-700 text-base leading-relaxed mb-4">
+              {t(sec.introKey)}
+            </p>
+            {"leadKey" in sec && sec.leadKey && (
+              <p className="text-gray-900 font-bold mb-2">{t(sec.leadKey)}</p>
+            )}
+            <ul className="space-y-2 mb-4 pl-4">
+              {sec.bullets.map((key, i) => (
+                <li key={i} className="flex items-start gap-2 text-gray-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#9d174d] shrink-0 mt-2" />
+                  {t(key)}
+                </li>
+              ))}
+            </ul>
+            <p className="text-gray-700 text-base leading-relaxed">
+              {t(sec.endKey)}
+            </p>
+          </div>
+        ))}
+
+        {/* Why Families Trust */}
+        <div className="h-px bg-gray-200 my-10" />
+        <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-4">
+          {t("simbhaoli.whyTitle")}
+        </h2>
+        <ul className="space-y-3 mb-4">
+          {["simbhaoli.why1", "simbhaoli.why2", "simbhaoli.why3", "simbhaoli.why4", "simbhaoli.why5", "simbhaoli.why6", "simbhaoli.why7"].map((key, i) => (
+            <li key={i} className="flex items-center gap-3 text-gray-700">
+              <span className="w-6 h-6 rounded-full bg-green-500/10 text-green-600 flex items-center justify-center shrink-0">
+                <CheckIcon />
+              </span>
+              {t(key as "simbhaoli.why1")}
+            </li>
+          ))}
+        </ul>
+        <p className="text-gray-700 text-base leading-relaxed">
+          {t("simbhaoli.whyEnd")}
+        </p>
+
+        {/* CTA */}
+        <div className="h-px bg-gray-200 my-10" />
+        <h2 className="text-xl md:text-2xl font-black text-gray-900 mb-4">
+          {t("simbhaoli.ctaTitle")}
+        </h2>
+        <p className="text-gray-700 text-base leading-relaxed mb-4">
+          {t("simbhaoli.ctaPara")}
+        </p>
+        <a
+          href="tel:+916397970802"
+          className="inline-flex items-center gap-3 px-6 py-4 bg-[#9d174d] text-white font-bold rounded-xl hover:bg-[#831843] transition-all shadow-lg"
+        >
+          <span className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center">
+            <PhoneIcon />
+          </span>
+          {t("simbhaoli.ctaCall")}
+        </a>
+      </div>
+    </div>
+  );
+}
