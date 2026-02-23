@@ -19,10 +19,13 @@ const MailIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height
 const FacebookIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>;
 const InstagramIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>;
 
+const ChevronDownIcon = ({ className }: { className?: string }) => <svg className={className} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m6 9 6 6 6-6" /></svg>;
+
 export default function Home() {
   const { t } = useLanguage();
   const [activeDept, setActiveDept] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const departments = [
     { name: t("home.services.heart"), img: "/heart-care.jpg", desc: t("home.services.heartDesc"), icon: "❤️" },
@@ -129,6 +132,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* INTRO BLOCK – Raj Nursing Home Best Hospital + Why Choose + 24/7 Emergency */}
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
+          <div className="flex items-start gap-3 mb-4">
+            <span className="w-10 h-10 rounded-lg bg-[#9d174d]/10 flex items-center justify-center text-[#9d174d] shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
+            </span>
+            <div>
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-gray-900 leading-tight">{t("home.introBlock.mainTitle")}</h2>
+              <p className="text-[#9d174d] font-bold mt-1 md:mt-2">{t("home.introBlock.subtitle")}</p>
+            </div>
+          </div>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 max-w-[900px]">
+            {t("home.introBlock.welcome")}
+          </p>
+          <p className="font-bold text-gray-900 mb-2">{t("home.introBlock.ifSearching")}</p>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-6">
+            {["search1", "search2", "search3", "search4", "search5", "search6"].map((key, i) => (
+              <li key={i} className="flex items-center gap-2 text-gray-700">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#9d174d] shrink-0" />
+                {t(`home.introBlock.${key}` as const)}
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-10 max-w-[900px]">
+            {t("home.introBlock.concluding")}
+          </p>
+
+          <h3 className="text-lg md:text-xl font-black text-gray-900 mb-4">{t("home.whyChoose.title")}</h3>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 max-w-[900px]">
+            {t("home.whyChoose.protocol")}
+          </p>
+          <ul className="space-y-4 mb-8">
+            <li>
+              <span className="font-bold text-gray-900">✓ {t("home.whyChoose.clinicalTeam")}</span>
+            </li>
+            <li>
+              <span className="font-bold text-gray-900">✓ {t("home.whyChoose.advancedInfraTitle")}</span>
+              <p className="text-gray-600 text-sm md:text-base mt-1">{t("home.whyChoose.advancedInfraDesc")}</p>
+            </li>
+            <li>
+              <span className="font-bold text-gray-900">✓ {t("home.whyChoose.experiencedTeamTitle")}</span>
+              <p className="text-gray-600 text-sm md:text-base mt-1">{t("home.whyChoose.experiencedTeamDesc")}</p>
+            </li>
+            <li>
+              <span className="font-bold text-gray-900">✓ {t("home.whyChoose.affordableTitle")}</span>
+              <p className="text-gray-600 text-sm md:text-base mt-1">{t("home.whyChoose.affordableDesc")}</p>
+            </li>
+          </ul>
+
+          <div className="border-t border-gray-200 pt-8">
+            <div className="flex items-start gap-3 mb-4">
+              <span className="w-10 h-10 rounded-lg bg-[#9d174d]/10 flex items-center justify-center text-[#9d174d] shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
+              </span>
+              <h3 className="text-lg md:text-xl font-black text-gray-900">{t("home.emergency24.title")}</h3>
+            </div>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-4 max-w-[900px]">
+              {t("home.emergency24.intro")}
+            </p>
+            <p className="font-bold text-gray-900 mb-2">{t("home.emergency24.weManage")}</p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+              {["m1", "m2", "m3", "m4", "m5", "m6"].map((key, i) => (
+                <li key={i} className="flex items-center gap-2 text-gray-700">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#9d174d] shrink-0" />
+                  {t(`home.emergency24.${key}` as const)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* ABOUT SECTION */}
       <section id="about" className="py-12 sm:py-16 md:py-32 bg-gray-50">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
@@ -206,6 +282,85 @@ export default function Home() {
                   {t("home.services.bookService")} <ArrowRightIcon />
                 </Link>
               </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* OUR FACILITY - 9 items grid (screenshot 2) */}
+      <section id="facility" className="py-12 sm:py-16 md:py-24 bg-white">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">{t("home.ourFacility.label")}</h2>
+          <div className="h-1 w-16 bg-[#9d174d] mx-auto rounded-full mt-3" />
+        </div>
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {[
+            { title: t("home.ourFacility.f1Title"), desc: t("home.ourFacility.f1Desc"), icon: "247" },
+            { title: t("home.ourFacility.f2Title"), desc: t("home.ourFacility.f2Desc"), icon: "🩺" },
+            { title: t("home.ourFacility.f3Title"), desc: t("home.ourFacility.f3Desc"), icon: "❤️" },
+            { title: t("home.ourFacility.f4Title"), desc: t("home.ourFacility.f4Desc"), icon: "👩" },
+            { title: t("home.ourFacility.f5Title"), desc: t("home.ourFacility.f5Desc"), icon: "🫁" },
+            { title: t("home.ourFacility.f6Title"), desc: t("home.ourFacility.f6Desc"), icon: "📡" },
+            { title: t("home.ourFacility.f7Title"), desc: t("home.ourFacility.f7Desc"), icon: "💓" },
+            { title: t("home.ourFacility.f8Title"), desc: t("home.ourFacility.f8Desc"), icon: "💊" },
+            { title: t("home.ourFacility.f9Title"), desc: t("home.ourFacility.f9Desc"), icon: "🩻" },
+          ].map((item, i) => (
+            <div key={i} className="flex gap-4 md:gap-5 p-5 md:p-6 bg-gray-50 rounded-2xl border border-gray-100 hover:border-[#9d174d]/30 hover:shadow-lg transition-all text-left">
+              <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#9d174d] text-white flex items-center justify-center font-black text-sm md:text-base shrink-0">
+                {item.icon === "247" ? "24/7" : item.icon}
+              </div>
+              <div>
+                <h3 className="font-black text-gray-900 text-base md:text-lg mb-1">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* DETAILED SERVICES – Critical Care intro + Cardiology, Internal, Surgery, Diagnostic, Women's, Lifestyle, Infectious */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
+          <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-2">{t("home.criticalCareIntro.p1")}</p>
+          <p className="font-bold text-gray-900 mb-10 md:mb-12">{t("home.criticalCareIntro.p2")}</p>
+
+          {[
+            { icon: "heart", iconColor: "text-pink-500 bg-pink-50", titleKey: "cardiologyTitle", introKey: "cardiologyIntro", bullets: ["cardiology1", "cardiology2", "cardiology3", "cardiology4", "cardiology5"], endKey: "cardiologyEnd" },
+            { icon: "stethoscope", iconColor: "text-sky-500 bg-sky-50", titleKey: "internalTitle", introKey: "internalIntro", leadKey: "internalWeTreat", bullets: ["internal1", "internal2", "internal3", "internal4", "internal5", "internal6"], approachKey: "internalApproach", endKey: "internalEnd" },
+            { icon: "scalpel", iconColor: "text-violet-500 bg-violet-50", titleKey: "surgeryTitle", introKey: "surgeryIntro", leadKey: "surgeryInclude", bullets: ["surgery1", "surgery2", "surgery3", "surgery4", "surgery5"], benefitsKey: "surgeryBenefits", endKey: "surgeryEnd" },
+            { icon: "scan", iconColor: "text-sky-500 bg-sky-50", titleKey: "diagnosticTitle", introKey: "diagnosticIntro", bullets: ["diagnostic1", "diagnostic2", "diagnostic3", "diagnostic4", "diagnostic5"], endKey: "diagnosticEnd" },
+            { icon: "woman", iconColor: "text-orange-500 bg-orange-50", titleKey: "womensTitle", introKey: "womensIntro", bullets: ["womens1", "womens2", "womens3", "womens4", "womens5", "womens6", "womens7"], endKeys: ["womensEnd1", "womensEnd2"] },
+            { icon: "lifestyle", iconColor: "text-rose-500 bg-rose-50", titleKey: "lifestyleTitle", introKey: "lifestyleIntro", bullets: ["lifestyle1", "lifestyle2", "lifestyle3", "lifestyle4", "lifestyle5"], endKey: "lifestyleEnd" },
+            { icon: "thermometer", iconColor: "text-gray-700 bg-gray-100", titleKey: "infectiousTitle", introKey: "infectiousIntro", bullets: ["infectious1", "infectious2", "infectious3", "infectious4"], endKey: "infectiousEnd" },
+          ].map((block, idx) => (
+            <div key={idx} className="mb-10 md:mb-14 last:mb-0">
+              <div className="flex items-start gap-3 mb-3">
+                <span className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 ${block.iconColor}`}>
+                  {block.icon === "heart" && <HeartIcon />}
+                  {block.icon === "stethoscope" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M11 2v2" /><path d="M11 20v2" /><path d="M11 2c-2 0-4.5 1.2-5 4-1 5 3 8 6 8 3 0 7-3 6-8-.5-2.8-3-4-5-4Z" /><path d="M11 2c2 0 4.5 1.2 5 4 1 5-3 8-6 8-3 0-7-3-6-8 .5-2.8 3-4 5-4Z" /></svg>}
+                  {block.icon === "scalpel" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m14 4 1.5 1.5" /><path d="M4 20 14 10" /><path d="m16 6 2 2-8 8-2-2 8-8Z" /></svg>}
+                  {block.icon === "scan" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" /><path d="M3 9h18" /><path d="M9 21V9" /></svg>}
+                  {block.icon === "woman" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4" /><path d="M12 14v6" /><path d="M9 18h6" /></svg>}
+                  {block.icon === "lifestyle" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" /></svg>}
+                  {block.icon === "thermometer" && <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z" /></svg>}
+                </span>
+                <h3 className="text-lg md:text-xl font-black text-gray-900">{t(`home.detailedServices.${block.titleKey}` as const)}</h3>
+              </div>
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-3 ml-0 md:ml-[52px]">{t(`home.detailedServices.${block.introKey}` as const)}</p>
+              {"leadKey" in block && block.leadKey && <p className="font-bold text-gray-900 mb-2 ml-0 md:ml-[52px]">{t(`home.detailedServices.${block.leadKey}` as const)}</p>}
+              <ul className="ml-0 md:ml-[52px] grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-3">
+                {(block.bullets as string[]).map((b, i) => (
+                  <li key={i} className="flex items-center gap-2 text-gray-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#9d174d] shrink-0" />
+                    {t(`home.detailedServices.${b}` as const)}
+                  </li>
+                ))}
+              </ul>
+              {"approachKey" in block && block.approachKey && <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-3 ml-0 md:ml-[52px]">{t(`home.detailedServices.${block.approachKey}` as const)}</p>}
+              {"benefitsKey" in block && block.benefitsKey && <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-3 ml-0 md:ml-[52px]">{t(`home.detailedServices.${block.benefitsKey}` as const)}</p>}
+              {"endKey" in block && block.endKey && <p className="text-gray-600 text-sm md:text-base leading-relaxed ml-0 md:ml-[52px]">{t(`home.detailedServices.${block.endKey}` as const)}</p>}
+              {"endKeys" in block && block.endKeys && <div className="ml-0 md:ml-[52px] space-y-2"><p className="text-gray-600 text-sm md:text-base leading-relaxed">{t(`home.detailedServices.${block.endKeys[0]}` as const)}</p><p className="text-gray-600 text-sm md:text-base leading-relaxed">{t(`home.detailedServices.${block.endKeys[1]}` as const)}</p></div>}
+              {idx < 6 && <div className="h-px bg-gray-200 mt-8 md:mt-10 w-full" />}
             </div>
           ))}
         </div>
@@ -590,6 +745,54 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SERVING HAPUR & NEARBY AREAS */}
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
+          <div className="flex items-start gap-3 mb-4">
+            <span className="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center text-teal-600 shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M2 12h20" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>
+            </span>
+            <div>
+              <h2 className="text-xl md:text-2xl font-black text-gray-900">{t("home.servingAreas.title")}</h2>
+              <p className="text-gray-600 text-sm md:text-base mt-2">{t("home.servingAreas.intro")}</p>
+            </div>
+          </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-4 ml-0 md:ml-[52px]">
+            {["area1", "area2", "area3", "area4", "area5"].map((key, i) => (
+              <li key={i} className="flex items-center gap-2 text-gray-700">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#9d174d] shrink-0" />
+                {t(`home.servingAreas.${key}` as const)}
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed ml-0 md:ml-[52px]">{t("home.servingAreas.end")}</p>
+        </div>
+      </section>
+
+      {/* OUR COMMITMENT TO SAFE & ETHICAL HEALTHCARE */}
+      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
+          <div className="flex items-start gap-3 mb-4">
+            <span className="w-10 h-10 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 shrink-0">
+              <ShieldIcon />
+            </span>
+            <div>
+              <h2 className="text-xl md:text-2xl font-black text-gray-900">{t("home.commitment.title")}</h2>
+              <p className="text-gray-600 text-sm md:text-base mt-2">{t("home.commitment.intro")}</p>
+            </div>
+          </div>
+          <ul className="space-y-2 mb-4 ml-0 md:ml-[52px]">
+            {["c1", "c2", "c3", "c4", "c5"].map((key, i) => (
+              <li key={i} className="flex items-center gap-2 text-gray-700">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#9d174d] shrink-0" />
+                {t(`home.commitment.${key}` as const)}
+              </li>
+            ))}
+          </ul>
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed ml-0 md:ml-[52px] font-medium">{t("home.commitment.end")}</p>
+        </div>
+      </section>
+
       {/* FACILITIES */}
       <section className="py-12 sm:py-20 md:py-32 bg-gray-50">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-12 sm:mb-16 md:mb-24">
@@ -616,8 +819,112 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section >
+      </section>
 
+      {/* MEDIA GALLERY - 2x3 grid (screenshot 3) */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">{t("home.mediaGallery.label")}</h2>
+          <div className="h-1 w-16 bg-[#9d174d] mx-auto rounded-full mt-3" />
+        </div>
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+          {[
+            "/raj/raj-nursing-home-icu.jpg",
+            "/raj/ot.jpg",
+            "/raj/ultrasound.jpg",
+            "/medical.jpg",
+            "/raj/cabin3.jpg",
+            "/raj/gyne-2.jpg",
+          ].map((src, i) => (
+            <div key={i} className="relative aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden border border-gray-200 shadow-md hover:shadow-xl transition-all">
+              <Image src={src} alt={`Gallery ${i + 1}`} fill className="object-cover hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 50vw, 33vw" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* NEWS AND HEALTH TIPS - 3 blog cards (screenshot 3) */}
+      <section className="py-12 sm:py-16 md:py-24 bg-white">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-8 sm:mb-12">
+          <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">{t("home.newsHealthTips.label")}</h2>
+          <div className="h-1 w-16 bg-[#9d174d] mx-auto rounded-full mt-3" />
+        </div>
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 grid sm:grid-cols-3 gap-6 md:gap-8">
+          {[
+            { title: t("blog.post1Title"), img: "/raj/ultrasound.jpg", date: "19-10-2023", slug: "diabetes-thyroid-clinic-hapur" },
+            { title: t("blog.post2Title"), img: "/raj/dr-Srishti.jpg", date: "19-10-2023", slug: "best-gynecologist-hapur" },
+            { title: t("blog.post3Title"), img: "/raj/gyne-2.jpg", date: "19-10-2023", slug: "pregnancy-ultrasound-guide-hindi" },
+          ].map((post, i) => (
+            <Link key={i} href={`/blog/${post.slug}`} className="group block bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 hover:shadow-xl hover:border-[#9d174d]/30 transition-all">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image src={post.img} alt={post.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="(max-width: 768px) 100vw, 33vw" />
+              </div>
+              <div className="p-4 md:p-5">
+                <h3 className="font-black text-gray-900 text-sm md:text-base mb-2 line-clamp-2 group-hover:text-[#9d174d] transition-colors">{post.title}</h3>
+                <p className="text-gray-500 text-xs font-bold">Date: {post.date}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mt-8">
+          <Link href="/blog" className="inline-flex items-center gap-2 px-6 py-3 bg-[#9d174d] text-white font-bold rounded-xl hover:bg-[#831843] transition-all">
+            {t("blog.readMore")} <ArrowRightIcon />
+          </Link>
+        </div>
+      </section>
+
+      {/* FAQ - Accordion */}
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-8 sm:mb-12">
+          <div className="inline-flex items-center gap-2 mb-2">
+            <span className="w-10 h-10 rounded-lg bg-[#9d174d]/10 flex items-center justify-center text-[#9d174d] shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" /><path d="M12 17h.01" /><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" /></svg>
+            </span>
+            <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">{t("home.faq.label")}</h2>
+          </div>
+          <div className="h-1 w-16 bg-[#9d174d] mx-auto rounded-full mt-3" />
+        </div>
+        <div className="max-w-3xl mx-auto px-4 sm:px-8 md:px-10 lg:px-12 space-y-2">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
+            <div key={n} className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+              <button
+                onClick={() => setOpenFaq(openFaq === n ? null : n)}
+                className={`w-full flex items-center justify-between gap-4 p-4 md:p-5 text-left font-bold text-gray-900 transition-colors ${openFaq === n ? "bg-[#9d174d] text-white" : "hover:bg-gray-50"}`}
+              >
+                <span className="text-sm md:text-base">{t(`home.faq.q${n}` as const)}</span>
+                <span className={`shrink-0 transition-transform ${openFaq === n ? "rotate-180" : ""}`}><ChevronDownIcon className={openFaq === n ? "text-white" : "text-gray-600"} /></span>
+              </button>
+              {openFaq === n && (
+                <div className="px-4 md:px-5 pb-4 md:pb-5 pt-0 text-gray-600 text-sm md:text-base leading-relaxed border-t border-gray-100">
+                  {t(`home.faq.a${n}` as const)}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* BOOK APPOINTMENT - 24/7 SUPPORT CTA */}
+      <section className="py-12 sm:py-16 md:py-24 bg-[#9d174d]">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
+          <div className="flex items-start gap-3 mb-6">
+            <span className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center text-white shrink-0 [&_svg]:text-white">
+              <PhoneIcon />
+            </span>
+            <div>
+              <h2 className="text-xl md:text-2xl font-black text-white">{t("home.bookCta.title")}</h2>
+            </div>
+          </div>
+          <p className="text-white/95 text-sm md:text-base leading-relaxed mb-4 max-w-[800px]">
+            {t("home.bookCta.p1")}
+          </p>
+          <p className="text-white font-bold mb-4">{t("home.bookCta.p2")}</p>
+          <p className="text-white/95 text-sm md:text-base mb-8">{t("home.bookCta.p3")}</p>
+          <Link href="/contact" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#9d174d] font-black rounded-xl hover:bg-gray-100 transition-all shadow-lg">
+            {t("footer.bookAppointment")} <ArrowRightIcon />
+          </Link>
+        </div>
+      </section>
 
     </div>
   );
