@@ -49,10 +49,10 @@ export default function HeartDiagnosticsPage() {
     const { t } = useLanguage();
 
     return (
-        <div className="bg-white min-h-screen animate-page-enter">
-            {/* Hero Section - background image more visible, doctor image full show */}
-            <div className="relative min-h-[320px] md:min-h-[400px] flex items-center overflow-hidden">
-                <div className="absolute inset-0 z-0">
+        <div className="bg-white min-h-screen animate-page-enter mt-32">
+            {/* Hero Section - title clear, doctor image fully inside hero */}
+            <div className="relative min-h-[420px] md:min-h-[500px] flex items-center">
+                <div className="absolute inset-0 z-0 overflow-hidden">
                     <Image
                         src="/raj/banner1.webp"
                         alt="Heart Diagnostics Banner"
@@ -61,44 +61,35 @@ export default function HeartDiagnosticsPage() {
                         priority
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#701a2e] via-[#701a2e]/85 to-[#701a2e]/40 z-10"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#9d174d] via-[#9d174d]/92 to-[#9d174d]/55 z-10" />
                 </div>
 
-                <div className="container mx-auto px-4 z-20 relative">
+                <div className="relative z-20 w-full max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 pt-16 pb-14 md:pt-20 md:pb-16">
                     <div className="max-w-3xl space-y-6">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-white text-sm font-medium animate-float">
-                            <Heart className="w-4 h-4 text-rose-400 fill-rose-400" />
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-white text-sm font-bold tracking-wide">
+                            <Heart className="w-4 h-4 text-rose-200 fill-rose-200 shrink-0" />
                             <span>{t("heartDiagnostics.badge")}</span>
                         </div>
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-tight">
-                            {t("heartDiagnostics.heroTitle")}<span className="text-rose-400">{t("heartDiagnostics.heroTitleHighlight")}</span>
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.2] tracking-tight drop-shadow-sm">
+                            {t("heartDiagnostics.heroTitle")}<span className="text-rose-200">{t("heartDiagnostics.heroTitleHighlight")}</span>
                         </h1>
-                        <p className="text-lg text-gray-200 leading-relaxed max-w-2xl">
+                        <p className="text-lg md:text-xl text-gray-100 leading-relaxed max-w-2xl font-medium">
                             {t("heartDiagnostics.heroDesc")}
                         </p>
-                        <div className="flex flex-wrap gap-4 pt-4">
-                            <Link href="#appointment" className="btn-primary">
-                                {t("heartDiagnostics.bookDiagnostic")} <ArrowRight className="w-4 h-4" />
+                        <div className="flex flex-wrap items-center gap-4 md:gap-6 pt-2 pb-2">
+                            <Link
+                                href="#appointment"
+                                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#9d174d] rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl hover:bg-rose-50 transition-all hover:-translate-y-0.5 border-2 border-transparent hover:border-white/50"
+                            >
+                                {t("heartDiagnostics.bookDiagnostic")}
+                                <ArrowRight className="w-4 h-4 shrink-0" />
                             </Link>
-                            <nav className="flex items-center text-sm text-white/80 py-3">
+                            <nav className="flex items-center text-sm text-white/80 font-semibold">
                                 <Link href="/" className="hover:text-white transition-colors">{t("heartDiagnostics.breadcrumbHome")}</Link>
                                 <span className="mx-2">/</span>
-                                <span className="text-white font-semibold">{t("heartDiagnostics.breadcrumbCurrent")}</span>
+                                <span className="text-white">{t("heartDiagnostics.breadcrumbCurrent")}</span>
                             </nav>
                         </div>
-                    </div>
-                </div>
-
-                {/* Doctor Image - full visibility with object-contain */}
-                <div className="absolute right-0 top-0 bottom-0 w-[38%] max-w-[420px] z-20 hidden lg:flex items-center justify-end pr-0">
-                    <div className="relative w-full h-full min-h-[450px] flex items-end justify-center">
-                        <Image
-                            src="/raj/dr.Vipin.jpg"
-                            alt="Dr. Vipin Kumar Sharma"
-                            fill
-                            className="object-contain object-bottom object-right"
-                            sizes="(max-width: 1024px) 0px, 420px"
-                        />
                     </div>
                 </div>
             </div>

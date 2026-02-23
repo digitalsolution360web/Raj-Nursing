@@ -20,7 +20,7 @@ export default function UltrasoundPage() {
                         className="object-cover object-center opacity-40"
                     />
                 </div>
-                <div className="relative z-20 w-full max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-12">
+                <div className="relative z-20 w-full max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 pt-24 pb-12 md:pt-32 md:pb-14">
                     <div className="flex flex-col justify-center text-center md:text-left">
                         <nav className="text-xs md:text-sm text-white/80 font-medium mb-2 order-first">
                             <Link href="/" className="hover:text-white transition-colors">{t("ultrasoundImaging.home")}</Link>

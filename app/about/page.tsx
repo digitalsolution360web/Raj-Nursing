@@ -53,44 +53,44 @@ export default function AboutPage() {
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-20 items-start">
           <div className="space-y-8">
             <div>
-              <h2 className="text-2xl md:text-3xl font-black text-gray-900 leading-tight mb-4">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-tight mb-5">
                 {t("about.storyTitle")} <span className="text-[#9d174d]">{t("about.storyHighlight")}</span>
               </h2>
-              <p className="text-gray-600 leading-relaxed text-base">
+              <p className="text-gray-600 leading-relaxed text-base md:text-lg">
                 {t("about.storyPara")}
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg md:text-xl font-black text-[#9d174d] mb-4">{t("about.whyChoose")}</h3>
-              <div className="space-y-4">
+              <h3 className="text-xl md:text-2xl font-black text-[#9d174d] mb-5">{t("about.whyChoose")}</h3>
+              <div className="space-y-5">
                 <div className="flex gap-4">
-                  <div className="shrink-0 w-6 h-6 mt-1 text-[#9d174d]">🩺</div>
+                  <div className="shrink-0 w-7 h-7 mt-1 text-[#9d174d] text-xl">🩺</div>
                   <div>
-                    <h4 className="text-sm md:text-base font-black text-gray-900">{t("about.doctorLed")}</h4>
-                    <p className="text-xs md:text-sm text-gray-600">{t("about.doctorLedDesc")}</p>
+                    <h4 className="text-base md:text-lg font-black text-gray-900">{t("about.doctorLed")}</h4>
+                    <p className="text-sm md:text-base text-gray-600">{t("about.doctorLedDesc")}</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="shrink-0 w-6 h-6 mt-1 text-[#9d174d]">💡</div>
+                  <div className="shrink-0 w-7 h-7 mt-1 text-[#9d174d] text-xl">💡</div>
                   <div>
-                    <h4 className="text-sm md:text-base font-black text-gray-900">{t("about.techCompassion")}</h4>
-                    <p className="text-xs md:text-sm text-gray-600">{t("about.techCompassionDesc")}</p>
+                    <h4 className="text-base md:text-lg font-black text-gray-900">{t("about.techCompassion")}</h4>
+                    <p className="text-sm md:text-base text-gray-600">{t("about.techCompassionDesc")}</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <div className="shrink-0 w-6 h-6 mt-1 text-[#9d174d]">🌱</div>
+                  <div className="shrink-0 w-7 h-7 mt-1 text-[#9d174d] text-xl">🌱</div>
                   <div>
-                    <h4 className="text-sm md:text-base font-black text-gray-900">{t("about.communityImpact")}</h4>
-                    <p className="text-xs md:text-sm text-gray-600">{t("about.communityImpactDesc")}</p>
+                    <h4 className="text-base md:text-lg font-black text-gray-900">{t("about.communityImpact")}</h4>
+                    <p className="text-sm md:text-base text-gray-600">{t("about.communityImpactDesc")}</p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-lg md:text-xl font-black text-[#9d174d] mb-4">{t("about.milestones")}</h3>
-              <ul className="space-y-2 list-disc list-inside text-sm md:text-base text-gray-700 font-medium">
+              <h3 className="text-xl md:text-2xl font-black text-[#9d174d] mb-5">{t("about.milestones")}</h3>
+              <ul className="space-y-3 list-disc list-inside text-base md:text-lg text-gray-700 font-medium">
                 <li>{t("about.milestone1")}</li>
                 <li>{t("about.milestone2")}</li>
               </ul>
@@ -120,14 +120,14 @@ export default function AboutPage() {
           </div>
           <div className="space-y-10">
             <div>
-              <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-4">{t("about.visionTitle")}</h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed whitespace-pre-line">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mb-5">{t("about.visionTitle")}</h3>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed whitespace-pre-line">
                 {t("about.visionText")}
               </p>
             </div>
             <div>
-              <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-4">{t("about.missionTitle")}</h3>
-              <p className="text-sm md:text-base text-gray-600 leading-relaxed whitespace-pre-line">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-gray-900 mb-5">{t("about.missionTitle")}</h3>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed whitespace-pre-line">
                 {t("about.missionText")}
               </p>
             </div>

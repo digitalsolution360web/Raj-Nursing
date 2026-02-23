@@ -10,9 +10,9 @@ export default function IvfTreatmentPage() {
 
   return (
     <div className="bg-white min-h-screen animate-page-enter mt-32">
-      {/* Hero Section */}
-      <div className="relative min-h-[320px] md:min-h-[400px] flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      {/* Hero Section - no clipping, proper padding */}
+      <div className="relative min-h-[380px] md:min-h-[460px] flex items-center">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <Image
             src="/raj/banner1.webp"
             alt="IVF & Fertility Center in Hapur"
@@ -20,26 +20,30 @@ export default function IvfTreatmentPage() {
             className="object-cover object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#9d174d] via-[#9d174d]/85 to-[#9d174d]/40 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#9d174d] via-[#9d174d]/85 to-[#9d174d]/40 z-10" />
         </div>
 
-        <div className="container mx-auto px-6 z-20 relative">
-          <div className="max-w-4xl space-y-8">
-            <div className="inline-flex mt-10 items-center gap-2 px-5 py-2.5 rounded-full glass text-white text-sm font-bold animate-float tracking-wide">
-              <Sparkles className="w-4 h-4 text-rose-300 fill-rose-300" />
+        <div className="relative z-20 w-full max-w-[1420px] mx-auto px-6 sm:px-8 md:px-10 lg:px-12 py-14 md:py-20">
+          <div className="max-w-4xl space-y-6 md:space-y-8">
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass text-white text-sm font-bold tracking-wide">
+              <Sparkles className="w-4 h-4 text-rose-300 fill-rose-300 shrink-0" />
               <span>{t("ivfTreatment.badge")}</span>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.1] tracking-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white leading-[1.15] tracking-tight">
               {t("ivfTreatment.heroTitle")}<br /><span className="text-rose-300">{t("ivfTreatment.heroTitleHighlight")}</span>
             </h1>
-            <p className="text-xl text-gray-100 leading-relaxed max-w-2xl font-medium">
+            <p className="text-lg md:text-xl text-gray-100 leading-relaxed max-w-2xl font-medium">
               {t("ivfTreatment.heroDesc")}
             </p>
-            <div className="flex flex-wrap gap-5 pt-4">
-              <Link href="#appointment" className="px-10 py-5 bg-white text-[#9d174d] rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl hover:bg-rose-50 transition-all transform hover:-translate-y-1">
-                {t("ivfTreatment.bookCta")} <ArrowRight className="w-5 h-5 ml-2 inline" />
+            <div className="flex flex-wrap items-center gap-4 md:gap-6 pt-2 pb-2">
+              <Link
+                href="#appointment"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#9d174d] rounded-2xl font-black text-sm uppercase tracking-widest shadow-2xl hover:bg-rose-50 transition-all hover:-translate-y-0.5 border-2 border-transparent hover:border-white/50"
+              >
+                {t("ivfTreatment.bookCta")}
+                <ArrowRight className="w-5 h-5 shrink-0" />
               </Link>
-              <nav className="flex items-center text-sm text-white/80 py-3 font-semibold">
+              <nav className="flex items-center text-sm text-white/80 font-semibold">
                 <Link href="/" className="hover:text-white transition-colors">{t("ivfTreatment.home")}</Link>
                 <span className="mx-2">/</span>
                 <span className="text-white">{t("ivfTreatment.breadcrumbCurrent")}</span>
