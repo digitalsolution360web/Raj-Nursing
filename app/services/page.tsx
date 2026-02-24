@@ -41,7 +41,7 @@ export default function ServicesPage() {
             <main className="pt-[100px] sm:pt-[110px] md:pt-[125px] px-4 sm:px-8 md:px-10 lg:px-12 pb-8 max-w-[1420px] mx-auto min-h-screen flex flex-col">
                 <div className="mb-3 text-center max-w-3xl mx-auto">
                     <span className="inline-block px-2 py-0.5 bg-red-50 text-[#9d174d] font-bold tracking-widest uppercase text-[8px] rounded-full mb-1 border border-red-100">{t("servicesPage.badge")}</span>
-                    <h1 className="text-xl md:text-2xl lg:text-3xl mt-1 font-black text-gray-900 mb-1 leading-tight uppercase tracking-tight">{t("servicesPage.title")}</h1>
+                    <h1 className="text-lg md:text-xl lg:text-2xl mt-1 font-black text-gray-900 mb-1 leading-tight uppercase tracking-tight">{t("servicesPage.title")}</h1>
                     <div className="h-1 w-12 bg-gradient-to-r from-[#9d174d] to-red-400 rounded-full mx-auto mb-2"></div>
                     <p className="text-gray-500 text-xs font-medium max-w-lg mx-auto leading-relaxed">
                         {t("servicesPage.intro")}
@@ -87,7 +87,7 @@ export default function ServicesPage() {
                                 <span className="px-2 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/20 text-[7px] font-bold uppercase tracking-widest flex items-center gap-1.5"><div className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></div> {t("servicesPage.excellence")}</span>
                             </div>
 
-                            <h2 className="text-lg md:text-2xl font-black mb-2 leading-none max-w-3xl drop-shadow-lg text-white uppercase tracking-tight">{heading}</h2>
+                            <h2 className="text-base md:text-xl font-black mb-2 leading-none max-w-3xl drop-shadow-lg text-white uppercase tracking-tight">{heading}</h2>
                             <p className="text-[10px] md:text-xs text-gray-200 mb-5 max-w-2xl leading-relaxed font-medium border-l-[3px] border-[#9d174d] pl-3 bg-black/20 p-2 rounded-r-lg">{description}</p>
 
                             <div className="grid sm:grid-cols-2 gap-2 mb-6">

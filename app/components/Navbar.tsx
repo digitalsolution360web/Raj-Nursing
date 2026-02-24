@@ -195,7 +195,7 @@ export default function Navbar() {
         setIsMenuOpen(false);
       }
     };
-    
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -256,16 +256,16 @@ export default function Navbar() {
       <nav className="fixed top-0 w-full z-50">
         {/* Top Header Bar - equal left/right gap via padding inside max-w container */}
         <div className="bg-[#9d174d] text-white py-2 border-b border-white/10">
-          <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 py-1 flex flex-wrap items-center justify-between gap-x-3 gap-y-2">
+          <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 py-1 flex flex-nowrap items-center justify-between">
             <a
               href="tel:+916397970802"
-              className="flex items-center gap-2 sm:gap-3 hover:text-red-100 transition-colors group shrink-0 min-h-[44px] min-w-[44px] items-center justify-center sm:justify-start"
+              className="flex items-center gap-2 sm:gap-4 hover:text-red-100 transition-colors group shrink-0 min-h-[44px] min-w-[44px] items-center justify-center sm:justify-start"
             >
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all shrink-0">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all shrink-0">
                 <PhoneIcon />
               </div>
               <div className="flex flex-col min-w-0">
-                <span className="text-[9px] sm:text-[10px] font-bold opacity-70 uppercase tracking-widest hidden min-[400px]:block">
+                <span className="text-[10px] font-bold opacity-70 uppercase tracking-widest hidden min-[450px]:block">
                   {t("nav.needUrgentCare")}
                 </span>
                 <span className="text-xs sm:text-sm font-black truncate">+91 63979 70802</span>
@@ -274,7 +274,7 @@ export default function Navbar() {
 
             <a
               href="mailto:drvipinkumarsharma@gmail.com"
-              className="hidden lg:flex items-center gap-3 hover:text-red-100 transition-colors group shrink-0"
+              className="hidden min-[1150px]:flex items-center gap-3 hover:text-red-100 transition-colors group shrink-0"
             >
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
                 <MailIcon />
@@ -289,7 +289,7 @@ export default function Navbar() {
               </div>
             </a>
 
-            <div className="hidden md:flex items-center gap-3 group shrink-0">
+            <div className="hidden min-[1300px]:flex items-center gap-3 group shrink-0">
               <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
                 <MapPinIcon />
               </div>
@@ -303,39 +303,12 @@ export default function Navbar() {
               </div>
             </div>
 
-            <div className="hidden lg:flex items-center gap-3 group shrink-0">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
-                <ClockIcon />
-              </div>
-              <div className="flex flex-col ">
-                <span className="text-[10px]  font-bold opacity-70 uppercase tracking-widest">
-                  {t("nav.workingHours")}
-                </span>
-                <span className="text-sm font-black">
-                  {t("nav.timing")}
-                </span>
-              </div>
-            </div>
-
-            <div className="hidden xl:flex items-center gap-3 group shrink-0">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-all">
-                <AyushmanCardIcon />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[10px]  font-bold opacity-70 uppercase tracking-widest">
-                  {t("nav.ayushmanCard")}
-                </span>
-                <span className="text-sm font-black">
-                  {t("nav.acceptedHere")}
-                </span>
-              </div>
-            </div>
 
             {/* Book Appointment - top right */}
             <button
               type="button"
               onClick={openAppointment}
-              className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-white text-[#9d174d] hover:bg-red-50 font-black text-xs sm:text-sm rounded-xl shadow-lg transition-all hover:-translate-y-0.5 shrink-0 uppercase tracking-wide"
+              className="flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white text-[#9d174d] hover:bg-red-50 font-black text-[10px] sm:text-xs rounded-lg shadow-lg transition-all hover:-translate-y-0.5 shrink-0 uppercase tracking-wide whitespace-nowrap"
             >
               <span>{t("nav.bookAppointment")}</span>
               <ArrowRightIcon />
@@ -351,8 +324,8 @@ export default function Navbar() {
             }`}
         >
           <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 flex items-center justify-between gap-3 lg:gap-6 flex-nowrap">
-            <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0 pr-2 sm:pr-6 lg:pr-8">
-              <div className="relative w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 shrink-0 transition-transform group-hover:rotate-[360deg] duration-1000">
+            <Link href="/" className="flex items-center gap-1.5 sm:gap-2 group shrink-0 min-w-0 pr-1 sm:pr-2 lg:pr-3">
+              <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 shrink-0 transition-transform group-hover:rotate-[360deg] duration-1000">
                 <Image
                   src="/RNH logo.png"
                   alt="RNH Logo"
@@ -361,11 +334,11 @@ export default function Navbar() {
                   priority
                 />
               </div>
-              <div className="flex flex-col min-w-0 max-w-[160px] min-[400px]:max-w-[220px] sm:max-w-[300px]">
-                <h1 className="text-sm sm:text-lg md:text-xl lg:text-2xl font-black text-[#9d174d] tracking-tight leading-none uppercase truncate">
+              <div className="flex flex-col min-w-0 max-w-[120px] min-[400px]:max-w-[150px] sm:max-w-[200px]">
+                <h1 className="text-[10px] sm:text-sm md:text-base lg:text-lg font-black text-[#9d174d] tracking-tight leading-none uppercase truncate">
                   {t("nav.rajNursingHome")}
                 </h1>
-                <p className="text-[7px] sm:text-[9px] md:text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-0.5 sm:mt-1 leading-tight hidden min-[400px]:block">
+                <p className="text-[5px] sm:text-[7px] md:text-[8px] font-bold text-gray-400 uppercase tracking-widest mt-0.5 leading-tight hidden min-[400px]:block">
                   {t("nav.excellenceSince")}
                 </p>
               </div>
@@ -376,7 +349,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-base sm:text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all whitespace-nowrap shrink-0"
+                  className="px-2 sm:px-2.5 py-1.5 sm:py-2 text-sm sm:text-base font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl transition-all whitespace-nowrap shrink-0"
                 >
                   {item.label}
                 </Link>
@@ -385,11 +358,11 @@ export default function Navbar() {
               <div className="relative group shrink-0">
                 <Link
                   href="/services"
-                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-base sm:text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0"
+                  className="px-2 sm:px-2.5 py-1.5 sm:py-2 text-sm sm:text-base font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl transition-all flex items-center gap-1.5 whitespace-nowrap shrink-0"
                 >
                   {t("nav.ourServices")}
                   <svg
-                    className="w-4 h-4 transition-transform group-hover:rotate-180"
+                    className="w-3.5 h-3.5 transition-transform group-hover:rotate-180"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -422,21 +395,21 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="px-2.5 sm:px-3 py-2 sm:py-2.5 text-base sm:text-lg font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl sm:rounded-2xl transition-all whitespace-nowrap shrink-0"
+                  className="px-2 sm:px-2.5 py-1.5 sm:py-2 text-sm sm:text-base font-bold text-gray-700 hover:text-[#9d174d] hover:bg-red-50 rounded-xl transition-all whitespace-nowrap shrink-0"
                 >
                   {item.label}
                 </Link>
               ))}
             </div>
 
-            <div className="flex items-center gap-2 sm:gap-3 shrink-0 pl-4 lg:pl-6">
+            <div className="flex items-center gap-1.5 sm:gap-2 shrink-0 pl-2 lg:pl-3">
               {/* Custom Language Switcher (EN / हिन्दी) - Desktop */}
               <div className="hidden lg:block">{langDropdown}</div>
 
               <button
                 type="button"
                 onClick={openAppointment}
-                className="hidden md:flex px-4 py-2 sm:px-6 sm:py-3 bg-[#9d174d] hover:bg-[#831843] text-white text-xs sm:text-sm font-black rounded-full shadow-lg shadow-red-500/20 transition-all hover:-translate-y-1 items-center gap-2 uppercase tracking-wide whitespace-nowrap"
+                className="hidden md:flex px-3 py-1.5 sm:px-4 sm:py-2 bg-[#9d174d] hover:bg-[#831843] text-white text-[10px] sm:text-xs font-black rounded-full shadow-lg shadow-red-500/20 transition-all hover:-translate-y-1 items-center gap-2 uppercase tracking-wide whitespace-nowrap"
               >
                 <span className="hidden sm:inline cursor-pointer">{t("nav.bookAppointment")}</span>
                 <span className="sm:hidden">{t("nav.book")}</span>
@@ -445,7 +418,7 @@ export default function Navbar() {
 
               <button
                 onClick={() => setIsMenuOpen(true)}
-                className="xl:hidden p-3 text-gray-900 bg-gray-50 hover:bg-red-50 hover:text-[#9d174d] rounded-2xl transition-all border border-gray-100 shrink-0 min-h-[44px] min-w-[44px] flex items-center justify-center touch-manipulation"
+                className="xl:hidden p-2 text-gray-900 bg-gray-50 hover:bg-red-50 hover:text-[#9d174d] rounded-xl transition-all border border-gray-100 shrink-0 min-h-[40px] min-w-[40px] flex items-center justify-center touch-manipulation"
               >
                 <MenuIcon />
               </button>
@@ -469,10 +442,10 @@ export default function Navbar() {
             }`}
         >
           <div className="flex flex-col h-full bg-white relative overflow-hidden">
-             {/* Stylish Background Decoration */}
+            {/* Stylish Background Decoration */}
             <div className="absolute top-[-50px] right-[-50px] w-80 h-80 bg-gradient-to-br from-red-50 to-[#9d174d]/5 rounded-full blur-[80px] opacity-70 pointer-events-none animate-pulse"></div>
             <div className="absolute bottom-[-50px] left-[-50px] w-64 h-64 bg-blue-50 rounded-full blur-[80px] opacity-70 pointer-events-none"></div>
-            
+
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-50 bg-white/90 backdrop-blur-xl sticky top-0 z-20">
               <span className="font-black text-xl text-[#9d174d] uppercase tracking-wider flex items-center gap-2">

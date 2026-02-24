@@ -61,27 +61,27 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/30 z-10"></div>
 
-        <div className="relative z-20 max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 w-full h-full flex items-start pt-6 sm:pt-8 md:pt-12">
-          <div className="max-w-3xl space-y-4 sm:space-y-6">
-            {/* Badge - top se niche, content ke upar */}
+        <div className="relative z-20 w-full max-w-[1420px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 h-full flex items-start pt-10 sm:pt-12 md:pt-16 lg:pt-20 min-w-0">
+          <div className="max-w-3xl w-full min-w-0 space-y-2 sm:space-y-3">
+            {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/90 border border-gray-200 text-[#9d174d] text-[10px] md:text-xs font-bold rounded-full shadow-sm backdrop-blur-md">
               <span className="w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse"></span>
               {t("home.hero.badge")}
             </div>
 
-            {/* Main Heading - Smaller & Tight */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.15] tracking-tight">
+            {/* Main Heading - tighter line gap */}
+            <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-[1.1] tracking-tight">
               {t("home.hero.title")} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d174d] via-[#f43f5e] to-[#9d174d]">{t("home.hero.titleHighlight")}</span>
             </h1>
 
-            {/* Description - Compact */}
-            <p className="text-sm md:text-base text-gray-700 max-w-xl leading-relaxed font-medium">
+            {/* Description - less line spacing */}
+            <p className="text-sm md:text-base text-gray-700 max-w-xl leading-snug font-medium">
               {t("home.hero.desc")}
             </p>
 
-            {/* Buttons - Smaller */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-1">
+            {/* Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-0.5">
               <Link href="/contact" className="px-6 py-3 bg-[#9d174d] hover:bg-[#831843] text-white font-bold text-sm rounded-xl shadow-lg shadow-red-500/20 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2">
                 {t("home.hero.bookConsultation")} <span className="w-4 h-4 flex items-center justify-center"><ArrowRightIcon /></span>
               </Link>
@@ -93,8 +93,8 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Stats - Compact & Left Aligned */}
-            <div className="flex flex-wrap gap-6 sm:gap-8 md:gap-12 pt-4 sm:pt-6 border-t border-gray-200/60 w-full max-w-2xl">
+            {/* Stats - left aligned, smaller gaps so nothing cuts off */}
+            <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-8 pt-3 sm:pt-4 border-t border-gray-200/60 w-full max-w-2xl min-w-0">
               {[
                 { v: t("home.hero.stat1"), l: t("home.hero.yearsExp") },
                 { v: t("home.hero.stat2"), l: t("home.hero.deliveries") },
@@ -133,18 +133,18 @@ export default function Home() {
       </section>
 
       {/* INTRO BLOCK – Raj Nursing Home Best Hospital + Why Choose + 24/7 Emergency */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
+      <section className="py-8 sm:py-12 md:py-14 bg-white">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
           <div className="flex items-start gap-3 mb-4">
             <span className="w-10 h-10 rounded-lg bg-[#9d174d]/10 flex items-center justify-center text-[#9d174d] shrink-0">
               <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
             </span>
             <div>
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-black text-gray-900 leading-tight">{t("home.introBlock.mainTitle")}</h2>
-              <p className="text-[#9d174d] font-bold mt-1 md:mt-2">{t("home.introBlock.subtitle")}</p>
+              <h2 className="text-lg md:text-xl lg:text-2xl font-black text-gray-900 leading-tight">{t("home.introBlock.mainTitle")}</h2>
+              <p className="text-[#9d174d] text-sm font-bold mt-1 md:mt-2">{t("home.introBlock.subtitle")}</p>
             </div>
           </div>
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 max-w-[900px]">
+          <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-6 max-w-[1100px]">
             {t("home.introBlock.welcome")}
           </p>
           <p className="font-bold text-gray-900 mb-2">{t("home.introBlock.ifSearching")}</p>
@@ -205,8 +205,144 @@ export default function Home() {
         </div>
       </section>
 
+      {/* NEW SECTION 1: OUR MEDICAL SERVICES (Image Left, Text Right) */}
+      <section className="py-10 sm:py-12 md:py-16 bg-white overflow-hidden">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
+          <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-16">
+            {/* Image Side */}
+            <div className="w-full lg:w-1/2 relative group">
+              <div className="relative h-[300px] md:h-[500px] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl">
+                <Image
+                  src="/medical.jpg"
+                  alt="Medical Services"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#9d174d]/20 to-transparent" />
+              </div>
+              {/* Decorative Element */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 md:w-48 md:h-48 bg-[#9d174d]/5 rounded-full -z-10 blur-2xl" />
+            </div>
+
+            {/* Text Side */}
+            <div className="w-full lg:w-1/2 space-y-6 md:space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 rounded-full">
+                <span className="w-2 h-2 rounded-full bg-[#9d174d] animate-pulse" />
+                <span className="text-[#9d174d] font-black tracking-widest uppercase text-[10px] md:text-xs">
+                  {t("home.ourMedicalServices.title")}
+                </span>
+              </div>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-[1.1]">
+                {t("home.ourMedicalServices.title")}
+              </h2>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed font-medium">
+                {t("home.ourMedicalServices.para")}
+              </p>
+              <div className="pt-4">
+                <Link href="#contact" className="px-8 py-4 bg-[#9d174d] text-white font-black rounded-2xl hover:bg-[#831843] transition-all shadow-xl hover:shadow-[#9d174d]/20 inline-flex items-center gap-3">
+                  {t("nav.bookAppointment")} <ArrowRightIcon />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section >
+
+      {/* NEW SECTION 2: HEALTH SERVICES FOR EVERYONE (Text Left, Image Right) */}
+      <section className="py-10 sm:py-12 md:py-16 bg-gray-50 overflow-hidden">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
+          <div className="flex flex-col-reverse lg:flex-row items-center gap-10 md:gap-16">
+            {/* Text Side */}
+            <div className="w-full lg:w-1/2 space-y-6 md:space-y-8">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-100">
+                <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
+                <span className="text-gray-900 font-black tracking-widest uppercase text-[10px] md:text-xs">
+                  {t("home.healthServices.title")}
+                </span>
+              </div>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 leading-[1.1]">
+                {t("home.healthServices.title")}
+              </h2>
+              <p className="text-base md:text-lg text-gray-600 leading-relaxed font-medium">
+                {t("home.healthServices.para")}
+              </p>
+              <div className="grid grid-cols-2 gap-4 pt-4">
+                <div className="p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                  <span className="text-2xl mb-2 block">🏥</span>
+                  <p className="font-bold text-gray-900 text-sm">24/7 Availability</p>
+                </div>
+                <div className="p-4 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                  <span className="text-2xl mb-2 block">👨‍⚕️</span>
+                  <p className="font-bold text-gray-900 text-sm">Expert Doctors</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image Side */}
+            <div className="w-full lg:w-1/2 relative group">
+              <div className="relative h-[300px] md:h-[500px] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden shadow-2xl">
+                <Image
+                  src="/raj/ot.jpg"
+                  alt="Modern Facility"
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-1000"
+                />
+                <div className="absolute inset-0 bg-gradient-to-bl from-blue-500/10 to-transparent" />
+              </div>
+              {/* Decorative Element */}
+              <div className="absolute -top-6 -left-6 w-32 h-32 md:w-48 md:h-48 bg-blue-500/5 rounded-full -z-10 blur-2xl" />
+            </div>
+          </div>
+        </div>
+      </section >
+
+      {/* TRUSTED PARTNER - clean two-column */}
+      <section className="py-14 sm:py-16 md:py-20 bg-white overflow-hidden">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 md:px-8 lg:px-10">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+            {/* Image - simple, no overlay text */}
+            <div className="w-full lg:w-[42%] shrink-0 order-2 lg:order-1">
+              <div className="relative aspect-[4/3] max-h-[320px] lg:max-h-[380px] rounded-xl overflow-hidden bg-gray-100">
+                <Image
+                  src="/raj/cabin3.jpg"
+                  alt="Raj Hospital - Care at Hapur"
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 42vw"
+                />
+              </div>
+            </div>
+
+            {/* Text - no heavy card, clean left accent */}
+            <div className="w-full lg:w-[58%] order-1 lg:order-2 lg:pl-2">
+              <div className="border-l-4 border-[#9d174d] pl-5 sm:pl-6">
+                <p className="text-[#9d174d] font-bold text-xs uppercase tracking-widest mb-3">
+                  {t("home.trustedPartner.badge")}
+                </p>
+                <h2 className="text-xl sm:text-2xl md:text-[1.6rem] font-bold text-gray-900 leading-snug mb-4">
+                  {t("home.trustedPartner.title")}
+                </h2>
+                <p className="text-sm text-gray-600 leading-snug max-w-prose mb-5">
+                  {t("home.trustedPartner.para")}
+                </p>
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {["highlight1", "highlight2", "highlight3", "highlight4"].map((key) => (
+                    <span key={key} className="inline-block px-2.5 py-1 bg-gray-50 text-gray-700 text-[11px] font-medium rounded-md">
+                      {t(("home.trustedPartner." + key) as "home.trustedPartner.highlight1")}
+                    </span>
+                  ))}
+                </div>
+                <Link href="/services" className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#9d174d] text-white font-semibold rounded-lg hover:bg-[#831843] transition-colors text-sm">
+                  {t("home.trustedPartner.ctaButton")} <ArrowRightIcon />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ABOUT SECTION */}
-      <section id="about" className="py-12 sm:py-16 md:py-32 bg-gray-50">
+      <section id="about" className="py-10 sm:py-12 md:py-16 bg-gray-50">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-10 md:gap-20 items-center">
             <div className="grid grid-cols-2 gap-3 md:gap-6">
@@ -226,7 +362,7 @@ export default function Home() {
                 <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 md:mt-4 leading-tight">{t("home.about.title")} <span className="text-[#9d174d]">{t("home.about.titleHighlight")}</span></h2>
               </div>
 
-              <p className="text-base md:text-xl text-gray-600 leading-relaxed">
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                 {t("home.about.para")}
               </p>
 
@@ -251,10 +387,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* SERVICES */}
-      <section id="services" className="py-12 sm:py-16 md:py-32 bg-white">
+      <section id="services" className="py-10 sm:py-12 md:py-16 bg-white">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-8 sm:mb-12 md:mb-24">
           <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-xs md:text-sm">{t("home.services.label")}</span>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-2 md:mt-4">{t("home.services.title")} <span className="text-[#9d174d]">{t("home.services.titleHighlight")}</span></h2>
@@ -276,19 +412,19 @@ export default function Home() {
                 <span className="absolute bottom-6 left-8 text-4xl md:text-5xl drop-shadow-2xl">{d.icon}</span>
               </div>
               <div className="p-6 md:p-10">
-                <h3 className="text-xl md:text-2xl font-black text-gray-900 mb-3 md:mb-4">{d.name}</h3>
-                <p className="text-gray-600 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed">{d.desc}</p>
-                <Link href={`/services/${d.slug}`} className="flex items-center gap-3 text-[#9d174d] font-black text-base md:text-lg group-hover:gap-6 transition-all">
+                <h3 className="text-lg md:text-xl font-black text-gray-900 mb-3 md:mb-4">{d.name}</h3>
+                <p className="text-gray-600 text-sm md:text-base mb-6 md:mb-8 leading-relaxed">{d.desc}</p>
+                <Link href={`/services/${d.slug}`} className="flex items-center gap-3 text-[#9d174d] font-black text-sm md:text-base group-hover:gap-6 transition-all">
                   {t("home.services.bookService")} <ArrowRightIcon />
                 </Link>
               </div>
             </div>
           ))}
         </div>
-      </section>
+      </section >
 
       {/* OUR FACILITY - 9 items grid (screenshot 2) */}
-      <section id="facility" className="py-12 sm:py-16 md:py-24 bg-white">
+      <section id="facility" className="py-10 sm:py-12 md:py-16 bg-white">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-8 sm:mb-12">
           <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">{t("home.ourFacility.label")}</h2>
           <div className="h-1 w-16 bg-[#9d174d] mx-auto rounded-full mt-3" />
@@ -316,10 +452,10 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section >
 
       {/* DETAILED SERVICES – Critical Care intro + Cardiology, Internal, Surgery, Diagnostic, Women's, Lifestyle, Infectious */}
-      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+      < section className="py-12 sm:py-16 md:py-24 bg-gray-50" >
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
           <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-2">{t("home.criticalCareIntro.p1")}</p>
           <p className="font-bold text-gray-900 mb-10 md:mb-12">{t("home.criticalCareIntro.p2")}</p>
@@ -364,7 +500,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </section>
+      </section >
 
       {/* DOCTORS */}
       {/* DOCTORS SECTION - Responsive Cards */}
@@ -376,140 +512,151 @@ export default function Home() {
 
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Doctor 1: Dr. Vipin Kumar Sharma */}
-          <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-gray-100 flex flex-col sm:flex-row lg:flex-row xl:flex-row p-5 md:p-6 gap-6 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group min-h-auto lg:min-h-[520px]">
-            {/* Left side: Content */}
-            <div className="flex-1 flex flex-col gap-3 md:gap-4 order-2 sm:order-1">
-              <div>
-                <h3 className="text-xl md:text-2xl font-black text-gray-900 leading-tight">{t("home.doctors.drVipin")}</h3>
-                <p className="text-[#9d174d] text-xs md:text-sm font-black uppercase tracking-tight mt-1">{t("home.doctors.drVipinRole")}</p>
+          <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-gray-100 flex flex-col p-5 md:p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group min-h-[580px] lg:min-h-[620px]">
+            {/* Top Zone: Header & Photo */}
+            <div className="flex flex-row justify-between items-start gap-4 mb-6">
+              <div className="flex-1">
+                <h3 className="text-base md:text-lg font-black text-gray-900 leading-tight">{t("home.doctors.drVipin")}</h3>
+                <p className="text-[#9d174d] text-[10px] md:text-xs font-black uppercase tracking-tight mt-1">{t("home.doctors.drVipinRole")}</p>
+                <div className="mt-4 hidden sm:block">
+                  <Link href="/dr-vipin-kumar-sharma" className="inline-block py-2.5 px-6 bg-[#9d174d] text-white font-black text-[10px] rounded-xl uppercase tracking-widest hover:bg-[#831843] transition-all shadow-lg active:scale-95">
+                    {t("home.doctors.readMore")}
+                  </Link>
+                </div>
               </div>
-
-              <div className="space-y-3 md:space-y-4">
-                <p className="text-[10px] md:text-[10px] text-gray-600 leading-relaxed font-bold">
-                  {t("home.doctors.vipinDesc1")}
-                </p>
-                <p className="text-[10px] md:text-[10px] text-gray-500 leading-relaxed italic font-medium hidden sm:block">
-                  {t("home.doctors.vipinDesc2")}
-                </p>
+              <div className="w-24 sm:w-36 shrink-0 relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md">
+                <Image src="/raj/dr.Vipin.jpg" alt="Dr. Vipin" fill className="object-cover object-center" />
               </div>
+            </div>
 
-              <div className="space-y-1 mt-auto pt-4 sm:pt-0">
+            {/* Bottom Zone: Full Width Content */}
+            <div className="space-y-3">
+              <p className="text-[10px] md:text-[11px] text-gray-600 leading-relaxed font-bold">
+                {t("home.doctors.vipinDesc1")}
+              </p>
+              <p className="text-[10px] md:text-[11px] text-gray-500 leading-relaxed italic font-medium">
+                {t("home.doctors.vipinDesc2")}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2">
                 {[
                   { l: t("home.doctors.regNo"), v: t("home.doctors.vipinRegVal") },
                   { l: t("home.doctors.consultant"), v: t("home.doctors.vipinConsultantVal") },
                   { l: t("home.doctors.specialty"), v: t("home.doctors.vipinSpecialtyVal") },
                 ].map((item, i) => (
-                  <div key={i} className="flex justify-between items-center text-[10px] bg-gray-50 px-3 py-1.5 rounded-xl border border-gray-100/50">
-                    <span className="font-black text-gray-400 uppercase tracking-widest text-[9px]">{item.l}</span>
-                    <span className="font-bold text-gray-900">{item.v}</span>
+                  <div key={i} className="flex flex-col gap-0.5 bg-gray-50 px-3 py-2 rounded-xl border border-gray-100/50">
+                    <span className="font-black text-gray-400 uppercase tracking-widest text-[8px]">{item.l}</span>
+                    <span className="font-bold text-gray-900 text-[10px]">{item.v}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right side: Photo */}
-            <div className="w-full sm:w-36 shrink-0 flex flex-col gap-4 order-1 sm:order-2">
-              <div className="relative aspect-[3/4] w-full sm:w-36 mx-auto overflow-hidden">
-                <Image src="/raj/dr.Vipin.jpg" alt="Dr. Vipin" fill className="object-cover object-center" />
-              </div>
-              <Link href="/dr-vipin-kumar-sharma" className="hidden sm:block w-full py-3.5 bg-[#9d174d] text-white font-black text-[10px] rounded-xl uppercase tracking-widest hover:bg-[#831843] transition-all shadow-lg active:scale-95 text-center inline-block">
+            {/* Mobile Button - Visible only on mobile */}
+            <div className="mt-6 sm:hidden">
+              <Link href="/dr-vipin-kumar-sharma" className="block w-full py-3 bg-[#9d174d] text-white font-black text-xs rounded-xl uppercase tracking-widest shadow-lg text-center">
                 {t("home.doctors.readMore")}
               </Link>
             </div>
-            {/* Mobile Button */}
-            <Link href="/dr-vipin-kumar-sharma" className="sm:hidden w-full py-3 bg-[#9d174d] text-white font-black text-xs rounded-xl uppercase tracking-widest shadow-lg order-3 text-center block">
-              {t("home.doctors.readMore")}
-            </Link>
           </div>
 
           {/* Doctor 2: Dr. Srishti Bhardwaj */}
-          <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-gray-100 flex flex-col sm:flex-row lg:flex-row xl:flex-row p-5 md:p-6 gap-6 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group min-h-auto lg:min-h-[520px]">
-            <div className="flex-1 flex flex-col gap-3 md:gap-4 order-2 sm:order-1">
-              <div>
-                <h3 className="text-xl md:text-2xl font-black text-gray-900 leading-tight">{t("home.doctors.drSrishti")}</h3>
-                <p className="text-[#9d174d] text-xs md:text-sm font-black uppercase tracking-tight mt-1">{t("home.doctors.drSrishtiRole")}</p>
+          <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-gray-100 flex flex-col p-5 md:p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group min-h-[580px] lg:min-h-[620px]">
+            {/* Top Zone */}
+            <div className="flex flex-row justify-between items-start gap-4 mb-6">
+              <div className="flex-1">
+                <h3 className="text-base md:text-lg font-black text-gray-900 leading-tight">{t("home.doctors.drSrishti")}</h3>
+                <p className="text-[#9d174d] text-[10px] md:text-xs font-black uppercase tracking-tight mt-1">{t("home.doctors.drSrishtiRole")}</p>
+                <div className="mt-4 hidden sm:block">
+                  <Link href="/dr-srishti-bhardwaj" className="inline-block py-2.5 px-6 bg-[#9d174d] text-white font-black text-[10px] rounded-xl uppercase tracking-widest hover:bg-[#831843] transition-all shadow-lg active:scale-95">
+                    {t("home.doctors.readMore")}
+                  </Link>
+                </div>
               </div>
-              <div className="space-y-3 md:space-y-4">
-                <p className="text-[10px] md:text-[10px] text-gray-600 leading-relaxed font-bold">
-                  {t("home.doctors.srishtiDesc1")}
-                </p>
-                <p className="text-[10px] md:text-[10px] text-gray-500 leading-relaxed italic font-medium hidden sm:block">
-                  {t("home.doctors.srishtiDesc2")}
-                </p>
+              <div className="w-24 sm:w-36 shrink-0 relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md grayscale group-hover:grayscale-0 transition-all">
+                <Image src="/raj/dr-Srishti.jpg" alt="Dr. Srishti" fill className="object-cover object-center" />
               </div>
-              <div className="space-y-1 mt-auto pt-4 sm:pt-0">
+            </div>
+
+            {/* Bottom Zone */}
+            <div className="space-y-3">
+              <p className="text-[10px] md:text-[11px] text-gray-600 leading-relaxed font-bold">
+                {t("home.doctors.srishtiDesc1")}
+              </p>
+              <p className="text-[10px] md:text-[11px] text-gray-500 leading-relaxed italic font-medium">
+                {t("home.doctors.srishtiDesc2")}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2">
                 {[
                   { l: t("home.doctors.regNo"), v: t("home.doctors.srishtiRegVal") },
                   { l: t("home.doctors.consultant"), v: t("home.doctors.srishtiConsultantVal") },
                   { l: t("home.doctors.specialty"), v: t("home.doctors.srishtiSpecialtyVal") },
                 ].map((item, i) => (
-                  <div key={i} className="flex justify-between items-center text-[10px] bg-gray-50 px-3 py-1.5 rounded-xl border border-gray-100/50">
-                    <span className="font-black text-gray-400 uppercase tracking-widest text-[9px]">{item.l}</span>
-                    <span className="font-bold text-gray-900">{item.v}</span>
+                  <div key={i} className="flex flex-col gap-0.5 bg-gray-50 px-3 py-2 rounded-xl border border-gray-100/50">
+                    <span className="font-black text-gray-400 uppercase tracking-widest text-[8px]">{item.l}</span>
+                    <span className="font-bold text-gray-900 text-[10px]">{item.v}</span>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="w-full sm:w-36 shrink-0 flex flex-col gap-4 order-1 sm:order-2">
-              <div className="relative aspect-[3/4] w-full sm:w-36 mx-auto overflow-hidden grayscale group-hover:grayscale-0 transition-all">
-                <Image src="/raj/dr-Srishti.jpg" alt="Dr. Srishti" fill className="object-cover object-center" />
-              </div>
-              <Link href="/dr-srishti-bhardwaj" className="hidden sm:block w-full py-3.5 bg-[#9d174d] text-white font-black text-[10px] rounded-xl uppercase tracking-widest hover:bg-[#831843] transition-all shadow-lg active:scale-95 text-center inline-block">
+
+            <div className="mt-6 sm:hidden">
+              <Link href="/dr-srishti-bhardwaj" className="block w-full py-3 bg-[#9d174d] text-white font-black text-xs rounded-xl uppercase tracking-widest shadow-lg text-center">
                 {t("home.doctors.readMore")}
               </Link>
             </div>
-            <Link href="/dr-srishti-bhardwaj" className="sm:hidden w-full py-3 bg-[#9d174d] text-white font-black text-xs rounded-xl uppercase tracking-widest shadow-lg order-3 text-center block">
-              {t("home.doctors.readMore")}
-            </Link>
           </div>
 
           {/* Doctor 3: Dr. M.C. Sharma */}
-          <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-gray-100 flex flex-col sm:flex-row lg:flex-row xl:flex-row p-5 md:p-6 gap-6 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group min-h-auto lg:min-h-[520px]">
-            {/* Left side: Content */}
-            <div className="flex-1 flex flex-col gap-3 md:gap-4 order-2 sm:order-1">
-              <div>
-                <h3 className="text-xl md:text-2xl font-black text-gray-900 leading-tight">{t("home.doctors.drMC")}</h3>
-                <p className="text-[#9d174d] text-xs md:text-sm font-black uppercase tracking-tight mt-1">{t("home.doctors.drMCRole")}</p>
+          <div className="bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-xl border border-gray-100 flex flex-col p-5 md:p-8 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 group min-h-[580px] lg:min-h-[620px]">
+            {/* Top Zone */}
+            <div className="flex flex-row justify-between items-start gap-4 mb-6">
+              <div className="flex-1">
+                <h3 className="text-base md:text-lg font-black text-gray-900 leading-tight">{t("home.doctors.drMC")}</h3>
+                <p className="text-[#9d174d] text-[10px] md:text-xs font-black uppercase tracking-tight mt-1">{t("home.doctors.drMCRole")}</p>
+                <div className="mt-4 hidden sm:block">
+                  <Link href="/dr-mc-sharma" className="inline-block py-2.5 px-6 bg-[#9d174d] text-white font-black text-[10px] rounded-xl uppercase tracking-widest hover:bg-[#831843] transition-all shadow-lg active:scale-95">
+                    {t("home.doctors.readMore")}
+                  </Link>
+                </div>
               </div>
-
-              <div className="space-y-3 md:space-y-4">
-                <p className="text-[10px] md:text-[10px] text-gray-600 leading-relaxed font-bold">
-                  {t("home.doctors.mcDesc1")}
-                </p>
-                <p className="text-[10px] md:text-[10px] text-gray-500 leading-relaxed italic font-medium hidden sm:block">
-                  {t("home.doctors.mcDesc2")}
-                </p>
-                <p className="text-[10px] md:text-[10px] text-gray-600 leading-relaxed font-bold hidden sm:block">
-                  {t("home.doctors.mcDesc3")}
-                </p>
+              <div className="w-24 sm:w-36 shrink-0 relative aspect-[3/4] rounded-2xl overflow-hidden shadow-md">
+                <Image src="/raj/M.C.Sharma.jpg" alt="Dr. M.C. Sharma" fill className="object-cover object-center" />
               </div>
+            </div>
 
-              <div className="space-y-1 mt-auto pt-4 sm:pt-0">
+            {/* Bottom Zone */}
+            <div className="space-y-3">
+              <p className="text-[10px] md:text-[11px] text-gray-600 leading-relaxed font-bold">
+                {t("home.doctors.mcDesc1")}
+              </p>
+              <p className="text-[10px] md:text-[11px] text-gray-500 leading-relaxed italic font-medium">
+                {t("home.doctors.mcDesc2")}
+              </p>
+              <p className="text-[10px] md:text-[11px] text-gray-600 leading-relaxed font-bold">
+                {t("home.doctors.mcDesc3")}
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-2">
                 {[
                   { l: t("home.doctors.regNo"), v: t("home.doctors.mcRegVal") },
                   { l: t("home.doctors.opdHours"), v: t("home.doctors.mcOpdVal") },
                   { l: t("home.doctors.expertise"), v: t("home.doctors.mcExpertiseVal") },
                 ].map((item, i) => (
-                  <div key={i} className="flex justify-between items-center text-[10px] bg-gray-50 px-3 py-1.5 rounded-xl border border-gray-100/50">
-                    <span className="font-black text-gray-400 uppercase tracking-widest text-[9px]">{item.l}</span>
-                    <span className="font-bold text-gray-900">{item.v}</span>
+                  <div key={i} className="flex flex-col gap-0.5 bg-gray-50 px-3 py-2 rounded-xl border border-gray-100/50">
+                    <span className="font-black text-gray-400 uppercase tracking-widest text-[8px]">{item.l}</span>
+                    <span className="font-bold text-gray-900 text-[10px]">{item.v}</span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right side: Photo */}
-            <div className="w-full sm:w-36 shrink-0 flex flex-col gap-4 order-1 sm:order-2">
-              <div className="relative aspect-[3/4] w-full sm:w-36 mx-auto overflow-hidden">
-                <Image src="/raj/M.C.Sharma.jpg" alt="Dr. M.C. Sharma" fill className="object-cover object-center" />
-              </div>
-              <Link href="/dr-mc-sharma" className="hidden sm:block w-full py-3.5 bg-[#9d174d] text-white font-black text-[10px] rounded-xl uppercase tracking-widest hover:bg-[#831843] transition-all shadow-lg active:scale-95 text-center inline-block">
+            <div className="mt-6 sm:hidden">
+              <Link href="/dr-mc-sharma" className="block w-full py-3 bg-[#9d174d] text-white font-black text-xs rounded-xl uppercase tracking-widest shadow-lg text-center">
                 {t("home.doctors.readMore")}
               </Link>
             </div>
-            <Link href="/dr-mc-sharma" className="sm:hidden w-full py-3 bg-[#9d174d] text-white font-black text-xs rounded-xl uppercase tracking-widest shadow-lg order-3 text-center block">
-              {t("home.doctors.readMore")}
-            </Link>
           </div>
         </div>
       </section>
@@ -601,7 +748,7 @@ export default function Home() {
                 </div>
 
                 {/* Description */}
-                <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8 flex-1">
+                <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-8 flex-1">
                   {activeDept === 0 && t("home.departments.deptPara1")}
                   {activeDept === 1 && t("home.departments.deptPara2")}
                   {activeDept === 2 && t("home.departments.deptPara3")}
@@ -658,7 +805,7 @@ export default function Home() {
       </section>
 
       {/* TESTIMONIALS SECTION - Premium Redesign */}
-      <section id="testimonials" className="py-12 sm:py-16 md:py-24 bg-[#0f172a] relative overflow-hidden text-white">
+      <section id="testimonials" className="py-10 sm:py-14 md:py-16 bg-[#0f172a] relative overflow-hidden text-white">
         {/* Abstract Background Shapes */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-20">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#9d174d] rounded-full blur-[120px]"></div>
@@ -746,7 +893,7 @@ export default function Home() {
       </section>
 
       {/* SERVING HAPUR & NEARBY AREAS */}
-      <section className="py-12 sm:py-16 md:py-20 bg-white">
+      <section className="py-8 sm:py-12 md:py-14 bg-white">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
           <div className="flex items-start gap-3 mb-4">
             <span className="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center text-teal-600 shrink-0">
@@ -770,7 +917,7 @@ export default function Home() {
       </section>
 
       {/* OUR COMMITMENT TO SAFE & ETHICAL HEALTHCARE */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
+      <section className="py-8 sm:py-12 md:py-14 bg-gray-50">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
           <div className="flex items-start gap-3 mb-4">
             <span className="w-10 h-10 rounded-lg bg-gray-200 flex items-center justify-center text-gray-600 shrink-0">
@@ -793,8 +940,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FACILITIES */}
-      <section className="py-12 sm:py-20 md:py-32 bg-gray-50">
+      {/* FACILITIES (Secondary) */}
+      <section className="py-10 sm:py-14 md:py-16 bg-gray-50">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-12 sm:mb-16 md:mb-24">
           <span className="text-[#9d174d] font-black tracking-[0.3em] uppercase text-sm">{t("home.facilities.label")}</span>
           <h2 className="text-3xl md:text-4xl font-black text-gray-900 mt-4">{t("home.facilities.title")} <span className="text-[#9d174d]">{t("home.facilities.titleHighlight")}</span></h2>
@@ -822,7 +969,7 @@ export default function Home() {
       </section>
 
       {/* MEDIA GALLERY - 2x3 grid (screenshot 3) */}
-      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+      <section className="py-10 sm:py-14 md:py-16 bg-gray-50">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-8 sm:mb-12">
           <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">{t("home.mediaGallery.label")}</h2>
           <div className="h-1 w-16 bg-[#9d174d] mx-auto rounded-full mt-3" />
@@ -844,7 +991,7 @@ export default function Home() {
       </section>
 
       {/* NEWS AND HEALTH TIPS - 3 blog cards (screenshot 3) */}
-      <section className="py-12 sm:py-16 md:py-24 bg-white">
+      <section className="py-10 sm:py-14 md:py-16 bg-white">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-8 sm:mb-12">
           <h2 className="text-2xl md:text-3xl font-black text-gray-900 tracking-tight">{t("home.newsHealthTips.label")}</h2>
           <div className="h-1 w-16 bg-[#9d174d] mx-auto rounded-full mt-3" />
@@ -874,7 +1021,7 @@ export default function Home() {
       </section>
 
       {/* FAQ - Accordion */}
-      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+      <section className="py-10 sm:py-14 md:py-16 bg-gray-50">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 text-center mb-8 sm:mb-12">
           <div className="inline-flex items-center gap-2 mb-2">
             <span className="w-10 h-10 rounded-lg bg-[#9d174d]/10 flex items-center justify-center text-[#9d174d] shrink-0">
@@ -884,7 +1031,7 @@ export default function Home() {
           </div>
           <div className="h-1 w-16 bg-[#9d174d] mx-auto rounded-full mt-3" />
         </div>
-        <div className="max-w-3xl mx-auto px-4 sm:px-8 md:px-10 lg:px-12 space-y-2">
+        <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12 space-y-2">
           {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
             <div key={n} className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
               <button
@@ -895,7 +1042,7 @@ export default function Home() {
                 <span className={`shrink-0 transition-transform ${openFaq === n ? "rotate-180" : ""}`}><ChevronDownIcon className={openFaq === n ? "text-white" : "text-gray-600"} /></span>
               </button>
               {openFaq === n && (
-                <div className="px-4 md:px-5 pb-4 md:pb-5 pt-0 text-gray-600 text-sm md:text-base leading-relaxed border-t border-gray-100">
+                <div className="px-4 md:px-5 pb-4 md:pb-5 pt-0 text-gray-600 text-sm md:text-base leading-snug border-t border-gray-100">
                   {t(`home.faq.a${n}` as const)}
                 </div>
               )}
@@ -905,7 +1052,7 @@ export default function Home() {
       </section>
 
       {/* BOOK APPOINTMENT - 24/7 SUPPORT CTA */}
-      <section className="py-12 sm:py-16 md:py-24 bg-[#9d174d]">
+      <section className="py-10 sm:py-14 md:py-16 bg-[#9d174d]">
         <div className="max-w-[1420px] mx-auto px-4 sm:px-8 md:px-10 lg:px-12">
           <div className="flex items-start gap-3 mb-6">
             <span className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center text-white shrink-0 [&_svg]:text-white">
@@ -926,6 +1073,6 @@ export default function Home() {
         </div>
       </section>
 
-    </div>
+    </div >
   );
 }

@@ -13,7 +13,7 @@
   --font-outfit: var(--font-outfit);
 }
 
-/* Base Styles - same text scale poori website (single source of truth) */
+/* Base Styles - same text size across whole website */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -23,13 +23,13 @@
 
   @media (min-width: 768px) {
     html {
-      font-size: 18px;
+      font-size: 17.5px;
     }
   }
 
   @media (min-width: 1024px) {
     html {
-      font-size: 19px;
+      font-size: 18px;
     }
   }
 
